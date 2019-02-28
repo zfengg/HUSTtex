@@ -1,1 +1,2 @@
-This is the Tex file I coded for the undergraduate thesis at Huazhong University of Science and Technology.
+This is the LaTex template as Tex file I coded for the undergraduate thesis at Huazhong University of Science and Technology. 
+Also, the TexStudio is recommended by Zhou and the compiler XeLaTex is needed for the Chinese language package 'XeCJK'. 
