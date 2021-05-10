@@ -1,0 +1,484 @@
+%%
+%% This is the file `fzHUSTproposal.tex' designed for the undergraduate thesis proposal task at Huazhong University of Science and Technology. 
+%% 
+%% 
+%% Copyright (C) 2019~ by Zhou Feng 冯洲 <https://github.com/frenzy666>
+%% 
+%% Annoucement:
+%% Since this work is created by Zhou Feng in 2019 to help finish the undergraduate thesis at HUST more efficiently and elegantly, it can only serve for educational and academical purpose while should never be used for commercial or profitable business.
+%% ONLY for the undergratuate thesis at HUST. 
+%% This work has no LPPL maintenance or any other public liscenses like MIT Liscense or General Public Liscenses(GPL). Hence the author take no responsibilites for any loss of the user using this template.
+%% 
+%% The Current Maintainer of this work is Zhou Feng. All the advice is welcomed by sending an e-mail to the mailbox fengzhou1113@gmail.com
+%% 
+%% Aiming to reach more friends, this work directly and only contains the fzHUSTproposal.tex. And I have carefully included all the settings according to the offical documents and explaination after each command line.
+
+%% This file should compiled with XeLaTex. The edit sorftware TexStudio is recommended by zhou.
+
+%% Btw: My operating system is windows and this file has been tested successfully at my computer(win10). For other OSs like linux or mac, you should find someone else, hahaha! Be aware that my purpose is to provide a friendly latex template for myself or maybe other HUSTers, so the only thing you need to do before you start your own work is to imitate the example tex file, fzHUSTproposal.tex. Good luck!
+
+\documentclass[11pt,a4paper]{article}
+%10.5pt equals 5 hao font. 
+
+%----------------------------------------------------------------%
+%% For the layout of paper
+%\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry}
+\geometry{headsep=1em,footskip=2em}
+\geometry{headheight=14pt}
+
+%----------------------------------------------------------------%
+%% For Math Symbols, 载入常用的数学包, 符号包
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%----------------------------------------------------------------%
+%% For the linespace 行间距，段间距等等
+\usepackage{setspace} 
+% \usepackage{indentfirst} % then the first line of each title should start with a indent.
+%定义标题和段落样式
+%定义1.5倍行距
+\renewcommand{\baselinestretch}{1.62}
+\setlength{\baselineskip}{19pt} % this is used to set the fixed value of the lineskip  小四的单倍倍行距就是19pt
+\setlength\parskip{\baselineskip} % set the space between the paragraphs, set the variable \parskip \baselineskip
+% parindent
+\setlength{\parindent}{0pt}
+
+%----------------------------------------------------------------%
+%% For the fonts (style, color, size).字体的大小，颜色，以及定义常用的字号
+ \usepackage{ctex}% If you are lazy, the CTEX suit is enough.
+ % Chinese Font
+ \usepackage{xeCJK}% For the Chinese through XeLaTex
+ \setCJKmainfont{SimSun} % set the mainfont of Chinese as songti. (serif) for  
+ \setCJKsansfont{SimSun} % sans serif font for \textsf
+ \setCJKmonofont{SimSun} % monospace font for \texttt
+% \punctstyle{kaiming}   % Remove the space used by symbols like comma. Special for the mainland students like us HUSTers.
+ \setCJKfamilyfont{song}{SimSun}                             %宋体 song
+ \newcommand{\song}{\CJKfamily{song}}                        
+ \setCJKfamilyfont{kai}{KaiTi_GB2312}                        %楷体2312  kai
+ \newcommand{\kai}{\CJKfamily{kai}}  
+ \setCJKfamilyfont{hwzs}{STZhongsong}                        %华文中宋  hwzs
+ \newcommand{\hwzs}{\CJKfamily{hwzs}}
+ % English Font
+ \usepackage{fontspec}% Then you can use the fonts installed at your device. 
+ \setmainfont{Times New Roman}
+ \setsansfont{Times New Roman}
+ \setmonofont{Times New Roman}
+ %\setsansfont{[foo.ttf]} % for the fonts at this default path.
+ % Font Color 利用definecolor自己可以定义颜色
+ \usepackage{xcolor}
+ \definecolor{MSBlue}{rgb}{.204,.353,.541}
+ \definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+ % Font Size (I use pinyin represents the corresponding size in Microsorft Word)
+% \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+% \newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+% \newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+% \newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+ \newcommand{\sihao}{\fontsize{14pt}{24pt}\selectfont}
+ \newcommand{\xiaosihao}{\fontsize{12pt}{24pt}\selectfont}
+ \newcommand{\wuhao}{\fontsize{10.5pt}{18pt}\selectfont}
+% \newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+% \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+% \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+% 还可以输出伪斜体
+%{\CJKfontspec[FakeSlant = 0.2]{STSong}伪斜体（华文宋体）}
+
+%----------------------------------------------------------------%
+%% For the header and footer. 页眉，页脚
+ \usepackage{fancyhdr} % Then you can specialize the header and footer for your own use.
+ %设置页眉样式
+ \newcommand{\headstyle}{
+ 	\fancyhead[C]{ \hwzs\wuhao 华中科技大学本科生毕业设计（论文）开题报告}
+ }
+ %设置页脚样式
+ \newcommand{\footstyle}{\fancyfoot[C]{\normalfont \thepage}
+ 	\fancyfoot[L]{\rule[5pt]{6.7cm}{0.4pt}}
+ 	\fancyfoot[R]{\rule[5pt]{6.7cm}{0.4pt}}
+ }
+ \pagestyle{fancy}
+ \fancyhf{} %清空原有样式
+ \headstyle
+ \footstyle
+ %定义一种新的格式叫做main
+ \fancypagestyle{main}{%
+ 	\fancyhf{} %清空原有样式
+ 	\headstyle
+ 	\footstyle
+ }
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+% %\renewcommand{\footrule}{\rule{\textwidth}{0.4pt}}
+% \lhead{} \chead{华中科技大学本科生毕业设计（论文）参考文献译文} \rhead{}
+% \lfoot{} \cfoot{\thepage} \lfoot{}
+
+
+ 
+
+%----------------------------------------------------------------%
+%% For the styles of sections at all levels
+ %设置各个标题样式
+ %不需要使用part和chapter层级
+ \usepackage{titlesec}
+ \usepackage{titletoc}
+ \titleformat{\section}{\sihao\bfseries}{\thesection、}{0pt}{} %在section标题编号后面加个点
+% \titleformat*{\section}{\wuhao\bfseries} % 设置标签的形式，5号加粗
+ \usepackage{ctex}
+ \renewcommand\thesection{\chinese{section}} 
+ \titleformat*{\subsection}{\wuhao\bfseries}
+ \titleformat*{\subsubsection}{\wuhao\bfseries}
+ % 用titlespacing修改section与正文第一行之间的距离
+ \titlespacing*{\section}{0pt}{1em}{0pt}
+% \titlespacing*{\subsection}{0pt}{}{}
+% \titlespacing*{\subsubsection}{0pt}{}{}
+ \newcommand{\sectionbreak}{\clearpage} %小节从新的一页开始
+%根据学校要求设置新的section, subsection, subsection, subsubsection 以及 paragraph
+
+% For the content of section and so on
+\newcommand\seccontent{
+	\xiaosihao %默认五号字体, 行间距为1.5*\baselineskip
+    \setlength{\parindent}{2em} %首段缩进两个M字符
+    \setlength{\parskip}{0pt}
+    }
+
+
+%----------------------------------------------------------------%
+%% For the style of theorems, definitions, proofs and remarks 定义数学里面一些常用的环境
+%\usepackage{amsthm,amssymb}
+\usepackage{amsmath}
+\usepackage{ntheorem}%用来清除计数器后面的点
+%\theoremstyle{plain}
+\theoremstyle{definition} 
+\newtheorem{prop}{\textbf{命题}}[section]
+\newtheorem{lemma}{\textbf{引理}}[section]
+ %The section in [] can be replaced by chapter or subsection
+ \newtheorem{corol}[prop]{\textbf{推论}}
+
+% \theoremstyle{style}% 命令，通过从三个预定义样
+% 式中选择其一来定义定理的外观，三个样式分别为：definition（标题粗体，
+% 内容罗马体），plain（标题粗体，内容斜体）和remark（标题斜体，内容罗马
+% 体）。
+% \theoremheaderfont{\normalfont\rmfamily\CJKfamily{hei}}%定理标题字体
+% \theorembodyfont{\normalfont\rm\CJKfamily{kai}} %定理正文字体。
+% \theoremindent %缩进
+% \theoremseparator{\hspace{1em}}%标题与正文的分隔符
+% \theoremsymbol{} %定理结束时自动添加的标志
+% \setlength{\theorempreskipamount}{0em}%调整定理环境与上文的距离
+% 
+% \setlength{\theorempostskipamount}{0em}%调整定理环境与下文的距离
+%  \theoremstyle{definition} 
+%\theoremstyle{plain} \newtheorem{jury}[thm]{Jury}
+% \theoremstyle{remark} \newtheorem*{marg}{Margaret}
+
+%----------------------------------------------------------------%
+%% For the caption and reference 图表及公式的编号规范
+\usepackage{caption}
+\captionsetup[figure]{labelformat=default, labelsep=quad,name={图}}
+\captionsetup[table]{labelformat=default,labelsep=quad,name={表}}
+%设置图表标题的计数方式
+\renewcommand{\thefigure}{\thesection--\arabic{figure}} % set caption label style to 2-1 
+\renewcommand{\thetable}{\arabic{table}} % set caption label style to 2-1 
+\captionsetup[figure]{labelfont=normalfont,textfont=normalfont} 
+\captionsetup[table]{labelfont=normalfont,textfont=normalfont} 
+%设置图表的autoref的格式
+\newcommand{\reffig}[1]{图 \ref{#1}}
+\newcommand{\reftab}[1]{表 \ref{#1}}
+\newcommand{\refeq}[1]{公式 \ref{#1}}
+\newcommand{\refprop}[1]{命题 \ref{#1}}
+\newcommand{\reflmm}[1]{引理 \ref{#1}}
+%公式的编号格式
+\numberwithin{equation}{section}
+\renewcommand\theequation{\arabic{section}--\arabic{equation}}
+
+
+%\DeclareCaptionFont{hust}{\normalsize}
+%\captionsetup{labelsep=quad}
+%\captionsetup{font={hust,singlespacing}}
+%\captionsetup[figure]{position=bottom}
+%\captionsetup[table]{position=top}
+%\setlength{\textfloatsep}{6pt}
+%\setlength{\floatsep}{0pt}
+%\setlength{\intextsep}{6pt}
+%\setlength{\abovecaptionskip}{15pt}
+%\setlength{\belowcaptionskip}{0pt}
+
+%重新定制figure和table环境使其更好使用(这样做好处在于方便，不用再打\centering, \label之类的，但是texstudio的autoref系统无法提前预知reference的名字，觉得合适的朋友可以newenvironment.)
+%\newenvironment{generalfig}[3][htbp]{
+%	\def \figcaption {#2}
+%	\def \figlabel {#3}
+%	\begin{figure}[#1]
+%		\centering
+%	}{
+%		\caption{\figcaption} \label{\figlabel}
+%	\end{figure}
+%}
+%\newenvironment{generaltab}[3][htbp]{
+%	\def \tabcaption {#2}
+%	\def \tablabel {#3}
+%	\begin{table}[#1]
+%		\caption{\tabcaption} \label{\tablabel}
+%		\zihao{5}
+%		\centering
+%	}{
+%	\end{table}
+%}
+%% For the figures and tabulars
+\usepackage{graphicx} % To include graphixs
+\usepackage{tabularx} % for the total width of the tabular
+\usepackage{booktabs} % To create three line table including the commands toprule, bottomrule, and midrule
+%\usepackage{colortbl} %
+\usepackage{multirow} % for the command \multirow{number of rows}{width}{text} 
+
+%----------------------------------------------------------------%
+%% For the tableofcontents, listoftables and listoffigures, 目录 
+%参考文献翻译不需要管，之后制作论文tex文档的时候需要设定
+\usepackage{tocloft}
+\renewcommand\contentsname{目录}
+\renewcommand\listfigurename{插图目录}
+\renewcommand\listtablename{表格目录} 
+%\titlecontents{section} [3cm] {\bf \large}{\contentslabel{2.5em}}{}{\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}
+%\titlecontents{标题名}[左间距]{标题格式}{标题标志}{无序号标题}{指引线与页码}[下间距]
+
+%----------------------------------------------------------------%
+%% For the bibiliograph or reference and citation
+\usepackage{natbib}
+\renewcommand{\refname}{\sihao\thesection、\textbf{主要参考文献}}
+\bibsep=0pt % 用来设置每个\bibitem之间的间距
+%\renewcommand{\bibname}{参考文献} % For the document class 参考文献
+%\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} % If you want the citation label to show at the uperscript position.
+
+%----------------------------------------------------------------%
+%\usepackage{makeindex} For the index 索引
+\usepackage{listings} %For the code. 代码
+%----------------------------------------------------------------%
+%% For the hyperlink and bookmark 超链接及书签，这样生成的pdf中的引用直接点击链接即可到达目的地
+\usepackage[bookmarks=true,colorlinks,linkcolor=black,citecolor=black,urlcolor=purple]{hyperref}% 设置超链接并修改风格
+%----------------------------------------------------------------%
+%% For the appendix, 附录
+
+
+%----------------------------------------------------------------%
+%% For the bibiliograph or reference and citation 设置计数器
+%% Since my reference material starts from section 6 from a book, I have to make the counter of section starting from 6.
+%\newcounter{counterA} %创建新的counter
+%\addtocounter{counterA}{1} %直接增加或减少counter的当前数值
+\setcounter{section}{0}
+
+%----------------------------------------------------------------%
+%定制引用格式
+%\usepackage{showkeys}
+%这样在pdf里面就会显示出你label里面的代号，方便你在ref的输入。在你最后要给教授提交的时候，在把showkeys这个package取消掉就一切ok了
+
+%----------------------------------------------------------------%
+%Something to improve my work efficiency.
+\newcommand{\comma}{\text{，}}
+\newcommand{\juhao}{\text{。}}
+\newcommand{\fenhao}{\text{；}}
+\newcommand{\pmone}{\pm1}
+\newcommand{\xysolution}[2]{$ x=#1\comma y=#2 $}
+\newcommand{\conalpha}{$ \alpha=\left[a_{1},a_{2},a_{3},\ldots\right] $}
+\newcommand{\parquo}[1]{$ p_{#1}/q_{#1}=\left[a_{1},\ldots,a_{#1-1}\right] $}
+\newcommand{\qfield}[1]{$ \mathbf{Q}\left(\sqrt{#1}\right) $}%二次域每次输入太麻烦了，
+\newcommand{\pelleq}[2]{ $ x^{2}-#1y^{2}=#2 $} % Pell方程
+\newcommand{\mymod}[3]{$ #1\equiv#2\left(\!\!\mod#3\right) $}
+\newcommand{\periodrep}[3]{$ \sqrt{#1}=\left[#2;\overline{#3}\right] $}
+\newcommand{\erfenzy}{\dfrac{1}{2}}
+\newcommand{\mathmod}[3]{ #1\equiv#2\left(\!\!\mod#3\right) }
+\newcommand{\mathnotmod}[3]{ #1\not\equiv#2\left(\!\!\mod#3\right) }
+\newcommand{\dekd}{D\left(H,K\right)}
+\newcommand{\dekdKH}{D\left(K,H\right)}
+\newcommand{\ddek}[2]{D\left(H_{#1},H_{#2}\right)}
+\newcommand{\gdek}[2]{g\left(H_{#1},H_{#2}\right)}
+\newcommand{\myone}[1]{\left(-1\right)^{#1}} 
+%戴德金符号
+%QED
+\newcommand{\QEDclosed}{\mbox{\rule[0pt]{1.3ex}{1.3ex}}} % 定义实心符
+\newcommand{\QEDopen}{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.2pt}\fbox{\rule[0pt]{0pt}{1.3ex}\rule[0pt]{1.3ex}{0pt}}}}
+\newcommand{\ddbrace}[1]{\left(\left(#1\right)\right)}
+\newcommand{\glHKdekd}[1]{D\left(H, K; #1\right)}
+\newcommand{\glKHdekd}[1]{D\left(K, H; #1\right)}
+%\newenvironment{multieq}{\begin{equation*}\begin{split}
+%	}{\end{split}\end{equation*}}
+%创建一个新的环境，来实现公式内部创建子编号
+%\newcounter{subeq_counter}[equation]
+%\newcommand\thesbeqnumber{(\arabic{section}--\arabic{equation}--\arabic{subeq_counter})}
+%\newcommand\subeq[1]{\stepcounter{equation}\stepcounter{subeq_counter} \[ #1  \] \hfill\text{\thesbeqnumber}}
+
+
+%----------------------------------------------------------------%
+% For the titlepage 标题页，此处可以省略，建议直接使用官方给出的标题页即可
+\usepackage{titling} 
+\title{华中科技大学本科生毕业设计 \break{（论文）开题报告} \vspace{-200em}}
+\author{冯洲}
+\date{}
+
+%\makeatletter % change default title style
+%\renewcommand*\maketitle{%
+%	\begin{center}% 居中标题
+%		\normalfont % 默认粗体
+%		{\sihao \@title \par} % LARGE字号
+%		\vskip -1000pt% %%%  标题下面只有1em的缩进或margin
+%		{\global\let\author\@empty}%
+%		{\global\let\date\@empty}%
+%		\thispagestyle{fancy} %  不设置页面样式
+%	\end{center}%
+%	\setcounter{footnote}{0}%
+%}
+%\makeatother
+
+%\pretitle{\vspace{-10ex} \begin{center}\sihao} 
+%  \posttitle{\par\end{center}\vspace{-8mm}}
+%\preauthor{} 
+%  \postauthor{} 
+%\predate{} 
+%	\postdate{\vspace{-400pt}}
+
+
+\begin{document}
+    %\maketitle %输出标题页
+	
+	
+	
+	
+	
+	
+	
+%----------------------------------------------------------------%   	
+	\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+	$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+	
+	{\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+	
+    \hspace{15em} \ldots\ldots\ldots
+    
+   \hspace{15em} \ldots\ldots\ldots
+   
+    \hspace{15em} \ldots\ldots\ldots
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ %----------------------------------------------------------------%      
+   \section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+    $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+    
+    {\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------%       
+    	\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+    $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+    
+    {\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ %----------------------------------------------------------------%   
+    \section{课题研究进度安排 {\wuhao  \textcolor{red}{(可参考如下表格式)}}}
+    
+    \begin{table}[htpb]
+    	\seccontent
+    	\centering
+        \caption{课题研究进度安排表}	
+    
+    	\begin{tabular}{ccp{18em}<{\centering}}
+    		\hline
+    		学期&周次&工作任务\\\hline
+    		\multirow{2}{5em}{2014-2015第一学期}& $ \times\times $周-- --$\times\times $周&$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $\\
+    		\cline{2-3}
+    		&\ldots\ldots\ldots&\ldots\ldots\ldots\\
+    		\hline\multirow{2}{5em}{2014-2015第二学期}& $ \times\times $周-- --$\times\times $周&$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $\\
+    		\cline{2-3}
+    		&\ldots\ldots\ldots&\ldots\ldots\ldots\\
+    		\hline
+    	\end{tabular}
+    \end{table}
+     {\wuhao\textcolor{red}{(``\fbox{\phantom{x}}''表示空格)}}
+    
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------%   
+%	\appendix
+    \stepcounter{section}
+    \bibliographystyle{plain}	
+	\begin{thebibliography}{2}		
+	 \seccontent
+	 \bibitem{Bec1}
+	 Beck, J\'ozsef.: Probabilistic Diophantine Approximation, Randomness in lattice point counting. Springer 2015.
+	  
+	 \bibitem{Be4}
+	 Beck, J.: Randomness in lattice point problems, Discrete Mahtematics \textbf{229} (2001), pp. 29-45
+	 
+	 \bibitem{Di}
+	 Dieter, U.: Das Verhaltender Kleischen Functionen gegen\"uber Modultransformationen und verallgemeinerte Dedekindsche Summen, Journ. Reine Angew. Math. \textbf{201} (1959), 37-70.
+	 
+	 \bibitem{Ha-Li2}
+	 Hardy, G.H. and Littlewood, J.: The lattice-points of a right-angled triangle. II, Abh. Math. Sem. Hamburg \textbf{1} (1922), 212-249.
+	 
+	  \bibitem{Ha-Li3}
+	 Hardy, G.H. and Littlewood, J.: Some problems of Diophantine approximation: A series of cosecants, Bull. Calcutta Math. Soc. \textbf{20} (1930), 251-266 
+
+	\end{thebibliography}
+%	
+
+      \hspace{15em} \ldots\ldots\ldots
+      
+      {\wuhao\textcolor{red}{(宋体小4号)}}
+      \\
+      \\
+      \\
+      {\wuhao\textcolor{red}{(可加页，A4纸双面打印)}}
+\end{document}

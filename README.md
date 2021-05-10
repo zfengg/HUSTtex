@@ -1,8 +1,6 @@
-# fzHUST
-A series of LaTeX templates for the tasks included in the undergraduate thesis at Huazhong University of Science and Technology. I hope this repository will help you finish your job more effectively and elegantly.
+# HUSTtex
+A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology. 
 
-Sincerely, the editor TexStudio is recommended by Zhou and be sure to set the compiler as XeLaTeX. 
+I hope this repository can help you finish your job more effectively and elegantly. The TeX editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou and be sure to set the compiler as XeLaTeX. 
 
-Please feel free to contact Zhou Feng at fengzhou1113@gmail.com if you have any question or suggestion. 
-
-Thank you for your help!
+Please feel free to open a issue if you have any question or suggestion. 

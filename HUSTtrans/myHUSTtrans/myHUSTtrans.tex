@@ -1,0 +1,1431 @@
+%%
+%% This is the file `fzHUSTtrans.tex' designed for the undergraduate translation task at Huazhong University of Science and Technology. 
+%% 
+%% 
+%% Copyright (C) 2019~ by Zhou Feng 冯洲 <https://github.com/frenzy666>
+%% 
+%% Annoucement:
+%% Since this work is created by Zhou Feng in 2019 to help finish the undergraduate thesis at HUST more efficiently and elegantly, it can only serve for educational and academical purpose while should never be used for commercial or profitable business.
+%% ONLY for the undergratuate thesis at HUST. 
+%% This work has no LPPL maintenance or any other public liscenses like MIT Liscense or General Public Liscenses(GPL). Hence the author take no responsibilites for any loss of the user using this template.
+%% 
+%% The Current Maintainer of this work is Zhou Feng. All the advice is welcomed by sending an e-mail to the mailbox fengzhou1113@gmail.com
+%% 
+%% Aiming to reach more friends, this work directly and only contains the fzHUSTtrans.tex. And I have carefully included all the settings according to the offical documents and explaination after each command line.
+
+%% This file should compiled with XeLaTex. The edit sorftware TexStudio is recommended by zhou.
+
+%% Btw: My operating system is windows and this file has been tested successfully at my computer(win1). For other OSs like linux or mac, you should find someone else, hahaha! Be aware that my purpose is to provide a friendly latex template for myself or maybe other HUSTers, so the only thing you need to do before you start your own work is to imitate the example tex file, fzHUSTtrans.tex. Good luck!
+
+\documentclass[11pt,a4paper]{article}
+%10.5pt equals 5 hao font. 
+
+%----------------------------------------------------------------%
+%% For the layout of paper
+%\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\usepackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry}
+\geometry{headsep=1em,footskip=2em}
+\geometry{headheight=14pt}
+
+%----------------------------------------------------------------%
+%% For Math Symbols, 载入常用的数学包, 符号包
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%----------------------------------------------------------------%
+%% For the linespace 行间距，段间距等等
+\usepackage{setspace} 
+% \usepackage{indentfirst} % then the first line of each title should start with a indent.
+%定义标题和段落样式
+%定义1.5倍行距
+\renewcommand{\baselinestretch}{1.62}
+\setlength{\baselineskip}{12pt} % this is used to set the fixed value of the lineskip  1.5倍行距就是12pt
+\setlength\parskip{\baselineskip} % set the space between the paragraphs, set the variable \parskip \baselineskip
+% parindent
+\setlength{\parindent}{0pt}
+
+%----------------------------------------------------------------%
+%% For the fonts (style, color, size).字体的大小，颜色，以及定义常用的字号
+ \usepackage{ctex}% If you are lazy, the CTEX suit is enough.
+ % Chinese Font
+ \usepackage{xeCJK}% For the Chinese through XeLaTex
+ \setCJKmainfont{SimSun} % set the mainfont of Chinese as songti. (serif) for  
+ \setCJKsansfont{SimSun} % sans serif font for \textsf
+ \setCJKmonofont{SimSun} % monospace font for \texttt
+% \punctstyle{kaiming}   % Remove the space used by symbols like comma. Special for the mainland students like us HUSTers.
+ \setCJKfamilyfont{song}{SimSun}                             %宋体 song
+ \newcommand{\song}{\CJKfamily{song}}                        
+ \setCJKfamilyfont{kai}{KaiTi_GB2312}                        %楷体2312  kai
+ \newcommand{\kai}{\CJKfamily{kai}}  
+ \setCJKfamilyfont{hwzs}{STZhongsong}                        %华文中宋  hwzs
+ \newcommand{\hwzs}{\CJKfamily{hwzs}}
+ % English Font
+ \usepackage{fontspec}% Then you can use the fonts installed at your device. 
+ \setmainfont{Times New Roman}
+ \setsansfont{Times New Roman}
+ \setmonofont{Times New Roman}
+ %\setsansfont{[foo.ttf]} % for the fonts at this default path.
+ % Font Color 利用definecolor自己可以定义颜色
+ \usepackage{xcolor}
+ \definecolor{MSBlue}{rgb}{.204,.353,.541}
+ \definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+ % Font Size (I use pinyin represents the corresponding size in Microsorft Word)
+% \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+% \newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+% \newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+% \newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+ \newcommand{\sihao}{\fontsize{14pt}{18pt}\selectfont}
+ \newcommand{\xiaosihao}{\fontsize{12pt}{18pt}\selectfont}
+ \newcommand{\wuhao}{\fontsize{10.5pt}{18pt}\selectfont}
+% \newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+% \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+% \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+% 还可以输出伪斜体
+%{\CJKfontspec[FakeSlant = 0.2]{STSong}伪斜体（华文宋体）}
+
+%----------------------------------------------------------------%
+%% For the header and footer. 页眉，页脚
+ \usepackage{fancyhdr} % Then you can specialize the header and footer for your own use.
+ %设置页眉样式
+ \newcommand{\headstyle}{
+ 	\fancyhead[C]{ \hwzs\wuhao 华中科技大学本科生毕业设计（论文）参考文献译文}
+ }
+ %设置页脚样式
+ \newcommand{\footstyle}{\fancyfoot[C]{\normalfont \thepage}
+ 	\fancyfoot[L]{\rule[5pt]{6.7cm}{0.4pt}}
+ 	\fancyfoot[R]{\rule[5pt]{6.7cm}{0.4pt}}
+ }
+ \pagestyle{fancy}
+ \fancyhf{} %清空原有样式
+ \headstyle
+ \footstyle
+ %定义一种新的格式叫做main
+ \fancypagestyle{main}{%
+ 	\fancyhf{} %清空原有样式
+ 	\headstyle
+ 	\footstyle
+ }
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+% %\renewcommand{\footrule}{\rule{\textwidth}{0.4pt}}
+% \lhead{} \chead{华中科技大学本科生毕业设计（论文）参考文献译文} \rhead{}
+% \lfoot{} \cfoot{\thepage} \lfoot{}
+
+
+ 
+
+%----------------------------------------------------------------%
+%% For the styles of sections at all levels
+ %设置各个标题样式
+ %不需要使用part和chapter层级
+ \usepackage{titlesec}
+ \usepackage{titletoc}
+ \titleformat{\section}{\wuhao\bfseries}{\thesection.}{1em}{} %在section标题编号后面加个点
+% \titleformat*{\section}{\wuhao\bfseries} % 设置标签的形式，5号加粗
+ \titleformat*{\subsection}{\wuhao\bfseries}
+ \titleformat*{\subsubsection}{\wuhao\bfseries}
+ % 用titlespacing修改section与正文第一行之间的距离
+ \titlespacing*{\section}{0pt}{1em}{0pt}
+% \titlespacing*{\subsection}{0pt}{}{}
+% \titlespacing*{\subsubsection}{0pt}{}{}
+ \newcommand{\sectionbreak}{\clearpage} %小节从新的一页开始
+%根据学校要求设置新的section, subsection, subsection, subsubsection 以及 paragraph
+
+% For the content of section and so on
+\newcommand\seccontent{
+	\wuhao %默认五号字体, 行间距为1.5*\baselineskip
+    \setlength{\parindent}{2em} %首段缩进两个M字符
+    \setlength{\parskip}{0pt}
+    }
+
+
+%----------------------------------------------------------------%
+%% For the style of theorems, definitions, proofs and remarks 定义数学里面一些常用的环境
+%\usepackage{amsthm,amssymb}
+\usepackage{amsmath}
+\usepackage{ntheorem}%用来清除计数器后面的点
+%\theoremstyle{plain}
+\theoremstyle{definition} 
+\newtheorem{prop}{\textbf{命题}}[section]
+\newtheorem{lemma}{\textbf{引理}}[section]
+ %The section in [] can be replaced by chapter or subsection
+ \newtheorem{corol}[prop]{\textbf{推论}}
+
+% \theoremstyle{style}% 命令，通过从三个预定义样
+% 式中选择其一来定义定理的外观，三个样式分别为：definition（标题粗体，
+% 内容罗马体），plain（标题粗体，内容斜体）和remark（标题斜体，内容罗马
+% 体）。
+% \theoremheaderfont{\normalfont\rmfamily\CJKfamily{hei}}%定理标题字体
+% \theorembodyfont{\normalfont\rm\CJKfamily{kai}} %定理正文字体。
+% \theoremindent %缩进
+% \theoremseparator{\hspace{1em}}%标题与正文的分隔符
+% \theoremsymbol{} %定理结束时自动添加的标志
+% \setlength{\theorempreskipamount}{0em}%调整定理环境与上文的距离
+% 
+% \setlength{\theorempostskipamount}{0em}%调整定理环境与下文的距离
+%  \theoremstyle{definition} 
+%\theoremstyle{plain} \newtheorem{jury}[thm]{Jury}
+% \theoremstyle{remark} \newtheorem*{marg}{Margaret}
+
+%----------------------------------------------------------------%
+%% For the caption and reference 图表及公式的编号规范
+\usepackage{caption}
+\captionsetup[figure]{labelformat=default, labelsep=quad,name={图}}
+\captionsetup[table]{labelformat=default,labelsep=quad,name={表}}
+%设置图表标题的计数方式
+\renewcommand{\thefigure}{\thesection--\arabic{figure}} % set caption label style to 2-1 
+\renewcommand{\thetable}{\thesection--\arabic{table}} % set caption label style to 2-1 
+\captionsetup[figure]{labelfont=normalfont,textfont=normalfont} 
+\captionsetup[table]{labelfont=normalfont,textfont=normalfont} 
+%设置图表的autoref的格式
+\newcommand{\reffig}[1]{图 \ref{#1}}
+\newcommand{\reftab}[1]{表 \ref{#1}}
+\newcommand{\refeq}[1]{公式 \ref{#1}}
+\newcommand{\refprop}[1]{命题 \ref{#1}}
+\newcommand{\reflmm}[1]{引理 \ref{#1}}
+%公式的编号格式
+\numberwithin{equation}{section}
+\renewcommand\theequation{\arabic{section}--\arabic{equation}}
+
+
+%\DeclareCaptionFont{hust}{\normalsize}
+%\captionsetup{labelsep=quad}
+%\captionsetup{font={hust,singlespacing}}
+%\captionsetup[figure]{position=bottom}
+%\captionsetup[table]{position=top}
+%\setlength{\textfloatsep}{6pt}
+%\setlength{\floatsep}{0pt}
+%\setlength{\intextsep}{6pt}
+\setlength{\abovecaptionskip}{15pt}
+%\setlength{\belowcaptionskip}{0pt}
+
+%重新定制figure和table环境使其更好使用(这样做好处在于方便，不用再打\centering, \label之类的，但是texstudio的autoref系统无法提前预知reference的名字，觉得合适的朋友可以newenvironment.)
+%\newenvironment{generalfig}[3][htbp]{
+%	\def \figcaption {#2}
+%	\def \figlabel {#3}
+%	\begin{figure}[#1]
+%		\centering
+%	}{
+%		\caption{\figcaption} \label{\figlabel}
+%	\end{figure}
+%}
+%\newenvironment{generaltab}[3][htbp]{
+%	\def \tabcaption {#2}
+%	\def \tablabel {#3}
+%	\begin{table}[#1]
+%		\caption{\tabcaption} \label{\tablabel}
+%		\zihao{5}
+%		\centering
+%	}{
+%	\end{table}
+%}
+%% For the figures and tabulars
+\usepackage{graphicx} % To include graphixs
+\usepackage{booktabs} % To create three line table including the commands toprule, bottomrule, and midrule
+%\usepackage{colortbl} % 
+
+%----------------------------------------------------------------%
+%% For the tableofcontents, listoftables and listoffigures, 目录 
+%参考文献翻译不需要管，之后制作论文tex文档的时候需要设定
+\usepackage{tocloft}
+\renewcommand\contentsname{目录}
+\renewcommand\listfigurename{插图目录}
+\renewcommand\listtablename{表格目录} 
+%\titlecontents{section} [3cm] {\bf \large}{\contentslabel{2.5em}}{}{\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}
+%\titlecontents{标题名}[左间距]{标题格式}{标题标志}{无序号标题}{指引线与页码}[下间距]
+
+%----------------------------------------------------------------%
+%% For the bibiliograph or reference and citation
+\usepackage{natbib}
+\renewcommand{\refname}{\wuhao\textbf{参考文献}}
+\bibsep=0pt % 用来设置每个\bibitem之间的间距
+%\renewcommand{\bibname}{参考文献} % For the document class 参考文献
+%\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} % If you want the citation label to show at the uperscript position.
+
+%----------------------------------------------------------------%
+%\usepackage{makeindex} For the index 索引
+\usepackage{listings} %For the code. 代码
+%----------------------------------------------------------------%
+%% For the hyperlink and bookmark 超链接及书签，这样生成的pdf中的引用直接点击链接即可到达目的地
+\usepackage[bookmarks=true,colorlinks,linkcolor=black,citecolor=black,urlcolor=purple]{hyperref}% 设置超链接并修改风格
+%----------------------------------------------------------------%
+%% For the appendix, 附录
+
+
+%----------------------------------------------------------------%
+%% For the bibiliograph or reference and citation 设置计数器
+%% Since my reference material starts from section 6 from a book, I have to make the counter of section starting from 6.
+%\newcounter{counterA} %创建新的counter
+%\addtocounter{counterA}{1} %直接增加或减少counter的当前数值
+\setcounter{section}{5}
+
+%----------------------------------------------------------------%
+%定制引用格式
+%\usepackage{showkeys}
+%这样在pdf里面就会显示出你label里面的代号，方便你在ref的输入。在你最后要给教授提交的时候，在把showkeys这个package取消掉就一切ok了
+
+%----------------------------------------------------------------%
+%Something to improve my work efficiency.
+\newcommand{\comma}{\text{，}}
+\newcommand{\juhao}{\text{。}}
+\newcommand{\fenhao}{\text{；}}
+\newcommand{\pmone}{\pm1}
+\newcommand{\xysolution}[2]{$ x=#1\comma y=#2 $}
+\newcommand{\conalpha}{$ \alpha=\left[a_{1},a_{2},a_{3},\ldots\right] $}
+\newcommand{\parquo}[1]{$ p_{#1}/q_{#1}=\left[a_{1},\ldots,a_{#1-1}\right] $}
+\newcommand{\qfield}[1]{$ \mathbf{Q}\left(\sqrt{#1}\right) $}%二次域每次输入太麻烦了，
+\newcommand{\pelleq}[2]{ $ x^{2}-#1y^{2}=#2 $} % Pell方程
+\newcommand{\mymod}[3]{$ #1\equiv#2\left(\!\!\mod#3\right) $}
+\newcommand{\periodrep}[3]{$ \sqrt{#1}=\left[#2;\overline{#3}\right] $}
+\newcommand{\erfenzy}{\dfrac{1}{2}}
+\newcommand{\mathmod}[3]{ #1\equiv#2\left(\!\!\mod#3\right) }
+\newcommand{\mathnotmod}[3]{ #1\not\equiv#2\left(\!\!\mod#3\right) }
+\newcommand{\dekd}{D\left(H,K\right)}
+\newcommand{\dekdKH}{D\left(K,H\right)}
+\newcommand{\ddek}[2]{D\left(H_{#1},H_{#2}\right)}
+\newcommand{\gdek}[2]{g\left(H_{#1},H_{#2}\right)}
+\newcommand{\myone}[1]{\left(-1\right)^{#1}} 
+%戴德金符号
+%QED
+\newcommand{\QEDclosed}{\mbox{\rule[0pt]{1.3ex}{1.3ex}}} % 定义实心符
+\newcommand{\QEDopen}{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.2pt}\fbox{\rule[0pt]{0pt}{1.3ex}\rule[0pt]{1.3ex}{0pt}}}}
+\newcommand{\ddbrace}[1]{\left(\left(#1\right)\right)}
+\newcommand{\glHKdekd}[1]{D\left(H, K; #1\right)}
+\newcommand{\glKHdekd}[1]{D\left(K, H; #1\right)}
+%\newenvironment{multieq}{\begin{equation*}\begin{split}
+%	}{\end{split}\end{equation*}}
+%创建一个新的环境，来实现公式内部创建子编号
+%\newcounter{subeq_counter}[equation]
+%\newcommand\thesbeqnumber{(\arabic{section}--\arabic{equation}--\arabic{subeq_counter})}
+%\newcommand\subeq[1]{\stepcounter{equation}\stepcounter{subeq_counter} \[ #1  \] \hfill\text{\thesbeqnumber}}
+
+
+%----------------------------------------------------------------%
+% For the titlepage 标题页，此处可以省略，建议直接使用官方给出的标题页即可
+\usepackage{titling} 
+\title{华中科技大学本科生毕业设计 \break{（论文）参考文献翻译} \vspace{-200em}}
+\author{冯洲}
+\date{}
+
+%\makeatletter % change default title style
+%\renewcommand*\maketitle{%
+%	\begin{center}% 居中标题
+%		\normalfont % 默认粗体
+%		{\sihao \@title \par} % LARGE字号
+%		\vskip -1000pt% %%%  标题下面只有1em的缩进或margin
+%		{\global\let\author\@empty}%
+%		{\global\let\date\@empty}%
+%		\thispagestyle{fancy} %  不设置页面样式
+%	\end{center}%
+%	\setcounter{footnote}{0}%
+%}
+%\makeatother
+
+%\pretitle{\vspace{-10ex} \begin{center}\sihao} 
+%  \posttitle{\par\end{center}\vspace{-8mm}}
+%\preauthor{} 
+%  \postauthor{} 
+%\predate{} 
+%	\postdate{\vspace{-400pt}}
+
+
+\begin{document}
+    %\maketitle %输出标题页
+    
+    \section*{ \centering {\xiaosihao 随机丢番图逼近} \\}
+    \vskip -2em
+	
+	\section{计算一般的期望值\hspace{5pt}(I)}
+	
+	\seccontent  
+	对于在小节 2.2 中介绍的丢番图和如下，
+	\begin{equation}\label{eq6.1}
+		S_{\alpha}\left(n\right) = \sum_{k=1}^{n}\left(\lbrace k \alpha \rbrace - \dfrac{1}{2} \right)
+	\end{equation}
+    当$ n\rightarrow\infty $时，它会变得非常没有规律可循，而对于二次无理数，它的平均值
+    
+\begin{equation}\label{eq6.2}
+	M_{\alpha}\left(N\right)=\dfrac{1}{N}\sum_{n=1}^{N}S_{\alpha}\left(n\right)
+\end{equation}
+会展现特别简单而优美的渐近行为。
+
+下面记连分数$ \alpha $为
+\begin{equation}\label{eq:6.3}
+	\alpha=a_{0}+\dfrac{1}{a_{1}+\dfrac{1}{a_{2}+\ldots}}=\left[a_{0};a_{1},a_{2},a_{3},\ldots\right]\fenhao
+\end{equation}
+利用$ a_{i} $记部分商，并且$ \left[a_{0};a_{1},\ldots,a_{j-1}\right]=p_{j}/q_{j} $ 为第$ j $ 个收敛值。利用\refeq{eq:6.3}，我们有如下命题
+\begin{prop}\label{prop6.1}
+对于由\refeq{eq:6.3} 表达的无理数$ \alpha > 0 $以及整数$ N\geq 1 $,
+\begin{equation}\label{eq6.4}
+	M_{\alpha}\left(N\right)=\dfrac{-a_{1}+a_{2}-a_{3}\pm\ldots+{\left(-1\right)}^{k}a_{k}}{12}+O(\underset{1\leq j\leq k}{\max}a_{j}),
+\end{equation}
+其中，$ k=k\left(\alpha, N\right) $是使得第$ j $个收敛值分母 $ q_{j}\leq N $成立的最后一个指标$ j $, 即，$ q_{k}\leq N \leq q_{k+1}$, 并且在\refeq{eq6.4} 的右端的常数$ k $是绝对的 (小于10)。
+\end{prop}
+
+\refprop{prop6.1}对于二次无理数特别有用。的确，对于一个周期列$ a_{i} $，计算\refeq{eq6.4} 中的交错和就非常容易了。例如，首先考虑
+\begin{equation}\label{eq6.5}
+	\alpha=\sqrt{3}=\left[1;1,2,1,2,1,2,\ldots\right]=\left[1;\overline{1,2}\right]\juhao
+\end{equation}
+Pell方程$ x^{2}-3y^{2}=1 $的最小解为\xysolution{2}{1}， 所以
+\begin{equation}\label{eq6.6}
+	p_{2j}\pm q_{2j}\sqrt{3}={\left(2\pm \sqrt{3}\right)}^{j}, j=1,2,3,\ldots
+\end{equation}
+其中，$ p_{2j}/q_{2j} $是$ \sqrt{3} $的第$ 2j $个收敛值(因为$ \sqrt{3} $ 的周期长度为$ 2 $ (请看\refeq{eq6.5})，所以我们得到\refeq{eq6.6} 中的偶数指标的收敛值。)由\refeq{eq6.6}
+\[ q_{2j}=\dfrac{1}{2\sqrt{2}}\left({\left(2+\sqrt{3}\right)}^{j}-{\left(2-\sqrt{3}\right)}^{j}\right)\comma \]
+所以我们有
+\begin{equation}\label{eq6.7}
+	N=q_{2j}\Rightarrow j=\dfrac{\log N}{\log\left(2+\sqrt{3}\right)}+O\left(1\right)\juhao
+\end{equation}
+结合\refeq{eq6.4} 到\refeq{eq6.7}， 对于$ \alpha=\sqrt{3} $，我们有
+\[ M_{\sqrt{3}}\left(N\right)=\dfrac{-a_{1}+a_{2}-a_{3}\pm\ldots+{\left(-1\right)}^{k}a_{k}}{12}+O\left(1\right)= \]
+\[ =\dfrac{-1+2-1+2\mp\ldots-1+2}{12}+O\left(1\right)=\dfrac{-1+2}{12}\cdot\dfrac{\log N}{\log\left(2+\sqrt{3}\right)}+O\left(1\right)= \]
+\begin{equation}\label{eq6.8}	
+=\dfrac{\log N}{12\log\left(2+\sqrt{3}\right)}+O\left(1\right),
+\end{equation}这就证明了我们在 (2.12)中的断言。
+
+这里我们有另外两个类似\refeq{eq6.8} 的例子：对于$ \sqrt{7}=\left[2;\overline{1,1,1,4}\right] $, Pell方程$x^{2}-7y^{2}=1  $的最小解$ x=8\comma y=3 $来自于$ \sqrt{7} $的第四个收敛值$ \left[2;1,1,1\right]=8/3 $，所以
+\[
+M_{\sqrt{7}}\left(N\right)=\dfrac{-1+1-1+4}{12}\cdot\dfrac{\log N}{\log\left(8+3\sqrt{7}\right)}+O\left(1\right)=\]
+\[=\dfrac{\log N}{4\log\left(8+3\sqrt{7}\right)}+O\left(1\right)\comma
+  \]
+还有对于$ \sqrt{67}=\left[8;\overline{5,2,1,1,7,1,1,2,5,16}\right] $， Pell方程$x^{2}-67y^{2}=1  $的最小解\xysolution{48842}{5967}来自于$ \sqrt{67} $的第四个收敛值$ \left[8;5,2,1,1,7,1,1,2,5\right]=48842/5967 $，所以
+\[
+M_{\sqrt{67}}\left(N\right)=\dfrac{-5+2-1+1-7+1-1+2-5+16}{12}\cdot\dfrac{\log N}{\log\left(48842+5967\sqrt{67}\right)}+O\left(1\right)=\]
+\[=\dfrac{\log N}{4\log\left(48842+5967\sqrt{67}\right)}+O\left(1\right)\comma
+\]
+
+而与之形成鲜明的对比的是，对于$ \alpha=\sqrt{2}=\left[1;\overline{2}\right] $， \refeq{eq6.4} 中的交错和就\textbf{抵消了}，而且$ M_{\sqrt{2}\left(N\right)=O\left(1\right)} $； 这就证明了$ \left(2.11\right) $。
+
+类似地，对于任何一个二次无理数$ \alpha $，若其连分数的周期为奇数，则有平均值为零的性质：$ M_{\sqrt{\alpha}\left(N\right)=O\left(1\right)=O_{\alpha}\left(1\right)} $  (因为\refeq{eq6.4} 中的交错和抵消了)。注意到，在第$ 5 $节中，我们通过冗长而直接的计算证明了，在黄金分割比
+$ \alpha=(\sqrt{5}-1)/2=\left[1,1,1,1,\ldots\right]=\left[\overline{1}\right] $的情况下，$ M_{\sqrt{\alpha}}\left(N\right)=O\left(1\right) $的事实；参看 (5.13) 。在一般的二次无理数的情况下，这种直接的计算会变成一团糟，非常绝望，更别说一般的任意无理数的情况。
+	
+	不幸的是，我们并不能指出哪些二次无理数的周期是奇数或者偶数。然而，如果$ \alpha=\sqrt{p} $，其中$ p $是奇素数，我们有一个完美的判别：如果$ p\equiv1\left(\!\!\mod4\right) $，则周期为奇数；如果$ p\equiv3\left(\!\!\mod4\right) $，则周期为偶数。
+	
+	这个漂亮的判别准则的证明依赖于著名的数论的事实：``负''的Pell方程$ x^{2}-dy^{2}=-1 $ (其中$ d>0 $是一个整数，但并不是完全平方数) 有整数解，当且仅当$ \sqrt{d} $的周期为奇数。如果素数$ p\equiv1\left(\!\!\mod4\right) $，那么我们\textbf{可以}找到方程$ x^{2}-py^{2}=-1 $的整数解，而这将表明$ \sqrt{p} $的周期为奇数。为了找到$ x^{2}-py^{2}=-1 $的解，我们从Pell方程$ x^{2}-py^{2}=1 $的基本解$ \left(x_{1},y_{1}\right) $开始，而后一个Pell方程一定有解。方程$ x^{2}-1=py^{2} $有分解
+	\begin{equation}\label{eq6.9}
+		\left(x_{1}-1\right)\left(x_{1}+1\right)=py_{1}^{2}\juhao
+	\end{equation}
+	如果$ p\equiv1\left(\!\!\mod4\right) $，那么\refeq{eq6.9} 表明$ x_{1} $是奇数，并且由$ p $为素数，对于满足$ y_{1}=2uv $的正整数$ u,v $， 我们有$ \left(1\right) x_{1}-1=2pu^{2} \text{及} x_{1}+1=2v^{2}$，或者$ \left(2\right) x_{1}+1=2pu^{2}  \text{及} x_{1}-1=2v^{2}$成立。因此$ v^{2}-pu^{2}=\pm1 $成立。因为$\left(v,u\right)$是一个比$ \left(x_{1},y_{2}\right) $更小的解，产生矛盾，所以情况$ v^{2}-pu^{2}=1 $不可能成立。由此可得，$ v^{2}-pu^{2}=-1 $，即，负Pell方程\textbf{的确}有解，并且我们有下面的推论。
+	
+	\begin{corol}
+		如果素数$ p\equiv1\left(\!\!\mod4\right) $，则
+		\[  M_{\sqrt{p}}\left(N\right)=O\left(1\right) \juhao \]
+	\end{corol}
+	
+    上面推论的证明是针对素数的：如果$ d\equiv1\left(\!\!\mod4\right) $不是素数，那么$ \sqrt{d} $ 的周期长度可奇可偶。例如，$ \sqrt{21}=\left[4;\overline{1,1,2,1,1,8}\right] $的周期长度为$ 6 $ (偶)，而$ \sqrt{65}=\left[8;\overline{16}\right] $的周期长度为$ 1 $ (奇)。
+    
+    另一方面，如果$ d\equiv3\left(\!\!\mod4\right) $，那么通过简单的$\left(\!\!\mod4\right)  $分析我们有$ x^{2}-dy^{2}\not\equiv-1\left(\!\!\mod4\right) $  (这和$ d $是否为素数无关)，这表明$ \sqrt{d} $的周期长度必须为偶数。
+    
+    实际上，我们有一个更强的结果：如果$ d $有一个素因子$ q\equiv3\left(\!\!\mod4\right) $，则$ \sqrt{d} $的周期长度为偶数。的确，那时由$ x^{2}-dy^{2}\equiv-1\left(\!\!\mod4\right) $导出$ x^{2}\equiv-1\left(\!\!\mod{q}\right)$，这和费马小定理矛盾：
+     \[ 1\equiv x^{q-1}={\left(x^{2}\right)}^{\left(q-1\right)/2}\equiv{\left(-1\right)}^{\left(q-1\right)/2}=-1\left(\!\!\!\!\mod{q}\right)\juhao\]
+     
+     如果我们不仅仅考虑二次无理数，考虑其他的无理数，\refprop{prop6.1} 会怎样呢? 不如考虑自然对数 $ e $：
+      \[ e=\left[2;1,2,1,1,4,1,1,6,1,1,8,1,\ldots,1,2i,1,\ldots\right] \]
+      这样，如果$ i $ 为奇数，那么$\left(-1+2-1\right)+ \left(1-4+1\right)+\left(-1+6-1\right)+\cdots+\left(-1\right)^{i}\left(1-2i+1000\right) $等于$ i-
+       1$；如果$ i $ 为偶数数，等于$ -i $。因此由\refprop{prop6.1} 我们有
+       \begin{equation}\label{eq6.10}
+       	M_{e}\left(N\right)=O\left(\log N/\log\log N\right)\comma
+       \end{equation}这的确是正确的数量级的阶数。
+       
+      注意，\refprop{prop6.1} 也给出了定理 $ 1.1 $在特殊情况$ x=1/2 $下的常因子$ C_{1}\left(\alpha,x\right) $。这是等式
+       \[ \chi_{1/2}\left(y\right)-\dfrac{1}{2}=\left(\lbrace2y\rbrace-\dfrac{1}{2}\right)-2\left(\lbrace y\rbrace-\dfrac{1}{2}\right)\comma\]
+       的结果。其中，$ \lbrace y\rbrace $记$ y $的小数部分，而且如果$ \lbrace y\rbrace<1 $，则$ \chi_{1/2}\left(y\right) $为$ 1 $，否则为$ 0 $。我们将在第7节再次讨论这个问题；请参看\refeq{eq7.26} -\refeq{eq7.27}。
+
+\paragraph{一个重要的遐想：怎样去猜想\refprop{prop6.1} ？} \refprop{prop6.1} 的证明并不简单，但是它和去寻找正确的猜想同样困难。我们猜想\refeq{eq6.4} 的动机是什么？好，这是一个有趣又漫长的故事，其中包含代数数论的理论。为了解释这个故事，我们先大概描述出找到平均数$ M_{\alpha}\left(N\right) $的方法。我们从著名的取小数部分函数的傅里叶展开出发 (注意：它不是绝对收敛的)
+\begin{equation}\label{eq6.11}
+	\lbrace x\rbrace=\dfrac{1}{2}-\sum_{n=1}^{\infty}\dfrac{\sin\left(2\pi nx\right)}{\pi n}\juhao
+\end{equation}
+把它代回到\refeq{eq6.1} -\refeq{eq6.2}中，经过一些冗长但标准的操作，我们最终得到
+\begin{equation}\label{eq6.12}
+	M_{\alpha}\left(N\right)=-\dfrac{1}{2\pi}\sum_{n=1}^{N}\dfrac{1}{n\tan\left(\pi n\alpha\right)}+O\left(1\right)\comma
+\end{equation}
+如果$ a_{i}=O\left(1\right) $，即，$ \alpha $的部分商有界 (这对二次无理数当然成立)。(注意到\refeq{eq6.12} 正是后面的命题 $ 8.1 $。)
+
+令$ \alpha=\sqrt{d}\comma\text{其中} d\equiv3\left(\!\!\mod4\right) $ 是一个正的非完全平方整数。我们显然有 (以$ m $ 记离$ n\sqrt{d} $最近的整数)：
+\begin{equation}\label{eq6.13}
+	\dfrac{1}{\pi}\tan\left(\pi n\sqrt{d}\right)\approx\pm\left\lVert n\sqrt{d}\right\rVert=n\sqrt{d}-m\approx\dfrac{-\left(m^{2}-dn^{2}\right)}{2n\sqrt{d}}.
+\end{equation}
+观察\refeq{eq6.12} 和\refeq{eq6.13}，不难发现下面的等式：
+\begin{equation}\label{eq6.14}
+M_{\sqrt{d}}\left(N\right)=\dfrac{\sqrt{d}}{\pi^{2}}\left(\sum_{\substack{\left(x,y\right)\neq\left(0,0\right):\\\text{主要表示}}}\dfrac{1}{x^{2}-dy^{2}}\right)\dfrac{\log N}{\log \eta_{d}}+O\left({\left(\log\log N\right)}^{3}\right)\comma
+\end{equation}
+其中，$ \eta_{d} $ 为$ \mathbf{Q}\left(\sqrt{d}\right) $的基本元。注意到\refeq{eq6.14} 正是命题 11.1；主要表示的含义将在第11节开头解释---实际上读者现在可以提前跳过内容，然后直接去阅读。
+
+如果$ d\equiv3\left(\!\!\mod4\right) $，则$ x^{2}-dy^{2} $正是代数整数$ x+y\sqrt{d} $在实二次域$ \mathbf{Q}\left(\sqrt{d}\right) $中的模。
+\paragraph{实二次域简介} 令$ D $ 为非完全平方的非零整数，考虑二次域$ \mathbf{Q}\left(\sqrt{D}\right) $。如果$ D\equiv2\text{或}3\left(\!\!\mod4\right) $， 则$ \mathbf{Q}\left(\sqrt{D}\right) $的判别式为$ 4D $；若$ D\equiv1\left(\!\!\mod4\right) $，则为$ D $。二次无理数$ \left(a+b\sqrt{D}\right)/2  $为$ \mathbf{Q}\left(\sqrt{D}\right) $中的\textbf{代数整数}，当且仅当$ a,b\in\mathbb{Z}\text{，且如果}D\equiv2\text{或}3\left(\!\!\mod4\right)\comma\text{则要求}a\equiv b\equiv 0\left(\!\!\mod2\right)\text{；} \text{如果}D\equiv1\left(\!\!\mod4\right)\comma\text{则要求}a\equiv b\left(\!\!\mod2\right) $。所以$ \left(a+b\sqrt{D}\right)/2  $的模
+\[ \dfrac{\left(a+b\sqrt{D}\right)}{2}\cdot\dfrac{\left(a-b\sqrt{D}\right)}{2}=\dfrac{\left(a^{2}-b^{2}D\right)}{4} \]
+总是为整数。模为$ \pm1 $的代数整数为单位元。如果$ D>0 $，则$ \mathbf{Q}\left(\sqrt{D}\right) $中存在单位元$ \eta=\eta_{D} $使得任何单位元都可以表示为$ \pm\eta^{n}$，$ n=0, \pm1, \pm2, \ldots $这个数$ \eta=\eta_{D}  $叫做$ \mathbf{Q}\left(\sqrt{D}\right) $中的基本单位元。
+
+令$ F\left(x,y\right)=ax^{2}+bxy+cy^{2} $是判别式为$ \Delta=b^{2}-4ac\left(a,b,c\in\mathbb{Z}\right) $的整系数二元二次型。如果二次型$F\left(x,y\right)  $被行列式为$ 1 $的正交变换$ x=Ux_{1}+Vy_{1}\comma y=Wx_{1}+Zy_{1} $转化为$  F\left(x_{1},y_{1}\right)  $，则这两个二次型等价。类值$ h\left(D\right)\comma(\Delta=4D\text{或}D) $就是不等价的以$ \Delta  $为判别式的整系数二元二次型的种类数。更确切地说，通过计算类值，尽管某个二次型可能与它的相反形式不等价，但是我们并不把某个二次型与它的相反形式分开 (比如如果$ D>0  $，则$ x^{2}-Dy^{2}=-1 $没有整数解)。例如，令$ D=79  $，则判别式为$  4\cdot79=316 $，此时有$ 6 $种以$ 316 $为行列式的不等价的二次型：$ F_{1}=x^{2}-79y^{2}\comma -F_{1}=-x^{2}+79y^{2}\comma F_{2}=3x^{2}+4xy-25y^{2}\comma -F_{2}=-3x^{2}-4xy+25y^{2}\comma F_{3}=3x^{2}+2xy-26y^{2}\comma -F_{3}=-3x^{2}-2xy+26y^{2} $。所以域\qfield{79}的类值$h\left(79\right) =3 $ (并不是$ 6 $)。如果$ h\left(D\right)=1 $，那么$ \mathbf{Q}\left(\sqrt{D}\right) $中的代数整数可以被唯一分解为代数素数。第一个类值$ >1 $的二次域为$ \mathbf{Q}\left(\sqrt{-5}\right) $。判别式为$ 4\cdot5=-20 $，并且有两个不等价的整系数二次型：$ x^{2}+5y^{2} $和$ 2x^{2}+2xy+3y^{2} $。所以类值$ h\left(-5\right)=2 $。没有唯一质分解的一个反例就是
+ \[ \left(1+\sqrt{-5}\right)\cdot\left(1-\sqrt{-5}\right) =6=2\cdot3\comma\]
+ 其中四个因子$ \left(1+\sqrt{-5}\right)\text{，}\left(1-\sqrt{-5}\right) \text{，}2\text{，}3 $ 全部都是$ \mathbf{Q}\left(\sqrt{-5}\right) $的整环中的素数。
+ 
+ 现在我们回到\refeq{eq6.14}。如果我们额外假设$ d=p\equiv3\left(\!\!\mod4\right) $为素数，且实二次域$ \mathbf{Q}\left(\sqrt{p}\right) $的类值$ h\left(p\right) $为一，那么\refeq{eq6.14} 右端的中间的和变为在$ s=1 $处的特别的L-函数：
+ \begin{equation} \label{eq6.15}
+ 	\sum_{\substack{\left(x,y\right)\neq\left(0,0\right):\\\text{主要表示}}}\dfrac{1}{x^{2}-py^{2}}=L\left(1,\chi^{\ast}\right)\juhao
+ \end{equation}
+ 这里$ \chi^{\ast} $叫做``模符号''变量：一个取值$ \pm1 $的针对$ \mathbf{Q}\left(\sqrt{d}\right) $的代数整数环中所有理想唯一定义的变量 (实际上，$ \chi^{\ast} $只依赖一小类理想)，而且满对于所有主理想$ \left(a\right) $，都有$  \chi^{\ast}\left(\left(a\right)\right)=sign Norm\left(a\right)$。
+ 
+ L-函数
+ \[  L\left(s,\chi^{\ast}\right)=\sum_{A:\text{理想}}\dfrac{\chi^{\ast}}{Norm\left(A\right)^{s}}\]
+ (这里，我们不需要写$ \left \lvert Norm\left(A\right) \right \rvert$，因为理想的模，由定义，为大于等一的整数；相反，一个实域的代数整数的模可正可负)有乘积分解
+ \begin{equation} \label{eq6.16}
+ 	L\left(s,\chi^{\ast}\right)=L\left(s,\chi_{-4}\right)L\left(s,\chi_{-p}\right)
+ \end{equation}
+ 其中
+ \[ L\left(s,\chi_{-4}\right)=\sum_{n=1}^{\infty}\dfrac{\chi_{-4}\left(n\right)}{n^{s}}\comma L\left(s,\chi_{-p}\right)=\sum_{n=1}^{\infty}\dfrac{\chi_{-p}\left(n\right)}{n^{s}} \]
+ 是复二次域$ \mathbf{Q}\left(\sqrt{-4}\right)=\mathbf{Q}\left(\sqrt{-1}\right) $ (``高斯整数'')和\qfield{-p}；变量$ \chi_{-4} $和$ \chi_{-p} $这样定义：如果$ n\equiv\pm1\left(\!\!\mod4\right)  $，则$ \chi_{-4}\left(n\right)=\pm1 $；如果$ n $为偶数，则$ \chi_{-4}\left(n\right)=0$，并且
+\[ \chi_{-p}\left(n\right)=\left(\dfrac{n}{p}\right) \]
+为Legendre符号(译者回忆是关于在某个环中是否为完全平方的)。注意到\refeq{eq6.16} 是一个Euler乘积，并且它可以解释为$ x^{2-py^{2}} $的判别式$ 4p=\left(-4\right)\left(-p\right) $的基本分解；请参看Zagier的书 \cite{Za1}。
+
+在特殊条件$ s=1 $下，\refeq{eq6.16} 得到\stepcounter{equation}
+\begin{align*} \label{eq6.17.1}
+	L\left(1,\chi^{\ast}\right)=L\left(1,\chi_{-4}\right)L\left(1,\chi_{-p}\right)  \tag{\theequation$ ' $}
+\end{align*}
+并且由Dirichlet类值公式，如果$ p>3  $，
+\begin{align*} \label{eq6.17.2}
+L\left(s,\chi_{-4}\right)=\dfrac{\pi}{4}\comma L\left(s,\chi_{-p}\right)=\dfrac{\pi h\left(-p\right)}{\sqrt{p}} \tag{\theequation$ ''$}
+\end{align*}
+现在引入著名的Hirzebruch-Meyer-Zagier公式(HMZ-公式)：$  h\left(-p\right)$可以表示成周期为$ \sqrt{p} $的部分商的交错；请参看Zagier \cite{Za1}
+
+但是在写出HMZ-公式之前，我们要知道所有的二次无理数都具有周期的连分数，并且Pell方程\pelleq{d}{1}的最小解可以由$\sqrt{d}  $的周期导出；最小解就是基本单位元(前面已定义)。更有，周期长度的奇偶性描述了基本单位元的模的符号：奇数长度就是$ +1 $，偶数就是$ -1 $。结合Dirichlet类值公式和低效的Siegel定理，我们有进一步的渐进公式
+\stepcounter{equation}
+\begin{align*} \label{eq6.18.1}
+h\left(d\right)\log\eta_{d}=d^{1/2\pm\epsilon}\comma
+ \tag{\theequation$ ' $}
+\end{align*}
+\vskip -2em
+\begin{align*} \label{eq6.18.2}
+h\left(-d\right)=d^{1/2\pm\epsilon}\comma \tag{\theequation$ ''$}
+\end{align*}
+其中，$ h\left(d\right) $和$ h(-d) $分别为实和复二次域\qfield{d}和\qfield{-d}的类值，$ \eta_{d} $为\qfield{d}的基本单位元，另外，$ \epsilon>0 $为任意小的固定的数。请注意，$ \log\eta_{d} $的数量级的阶数大概为$ \sqrt{d} $的连分数的周期长度。
+
+优美的Hirzebruch-Meyer-Zagier公式(HMZ-公式)在1970s发现。公式表明
+\begin{equation}\label{eq6.19}
+h(-p)=\dfrac{-a_{1}+a_{2}-a_{3}\pm\cdots+a_{2s}}{3}\comma
+\end{equation}
+其中，\mymod{p}{3}{4}为素数且大于$ 3 $，$ h(p)=1 $，$ a_{1},a_{2},\ldots,a_{2s} $构成 $ \sqrt{p} $的周期。(注意，\refeq{eq6.17.1} 和\refeq{eq6.19} 都对$ p=3 $不成立，因为\qfield{-3}有太多自同态了：有6个自同态而不是一般的2个---这是在代数数论里面不喜欢见到的。)
+
+结合HMZ-公式，\refeq{eq6.14} --\refeq{eq6.17.2}，我们得到
+\begin{equation}\label{eq6.20}
+	\begin{split}
+	M_{\sqrt{p}}(N)=\dfrac{h(-p)}{4}\cdot\dfrac{\log{N}}{\log{\eta}}+O((\log\log{N})^{3})=
+	\\=\dfrac{-a_{1}+a_{2}\mp\cdots+a_{2s}}{12}\cdot\dfrac{\log N}{\log\eta}+O((\log\log{N})^{3})=
+	\\=\dfrac{-a_{1}+a_{2}-a_{3}\pm\cdots+(-1)^{l}a_{l}}{12}+O((\log\log{N})^{3})\comma
+	\end{split}
+\end{equation}
+其中，$ l $为使得$ q_{l}<N $成立的最后一个指标，$ \eta $为\qfield{p}的基本单位元。
+
+小结，利用HMZ-公式，我们至少在某些强的条件下，成功证明了\refeq{eq6.20}。然而，从\refeq{eq6.20}， 我们很容易猜出\refprop{prop6.1} 一定对任意的$ \alpha $成立 (不止是二次无理数)。这就是我们怎样找到正确的猜想 \ref{eq6.4}的。
+
+因为我们已经知道了\refprop{prop6.1} 的完整的基本证明，反向观察，我们可以得到一个HMZ-公式的基本证明。之后，我们将给出\refeq{eq6.12} 和\refeq{eq6.14} 的准确证明；\refeq{eq6.12}正是命题 8.1，而\ref{eq6.14} 为命题 11.1。
+
+(感兴趣的读者可以从不错的Zagier\cite{Za4}(德语)或者经典的\textit{Borevich-Safarevich：Number theory} 中，找到所有的细节以及更多关于二次域的内容。)
+
+\paragraph{另外一个遐想：得到一个``正猜想''} \refeq{eq6.20} 的第一行引出了一个非常有趣的问题。如果素数$ p  $满足HMZ-公式的条件，那么期望等于
+\[ M_{\sqrt{p}}(N)=\dfrac{h(-p)}{4}\cdot\dfrac{\log{N}}{\log{\eta}}+\text{可忽略的误差。}\]
+这里，类值平凡地$ \geq1 $和$ \eta\geq\sqrt{p}>1 $, 导出$ \log\eta>0 $；因此，
+\[  M_{\sqrt{p}}(N)=c\cdot\log{N}+\text{可忽略的误差，}\]
+其中，$ c=c(p)>0 $是正常数。由\refprop{prop6.1}，这里的误差项实际是$ O(1) $，一般地，对于任何一个二次无理数$ \alpha $，
+\[  M_{\alpha}(N)=c\cdot\log{N}+O(1)\comma\]
+其中，$ c=c(\alpha)>0 $ (可以由$ \alpha $的周期项表出)是正常数。如果$ \alpha=\sqrt{d} $，相应的常数是否一定非负？ 我们猜测是正确的，并且我把这称作``正猜想''。
+
+如果$ \sqrt{d} $的周期长度为奇数，那么``正猜想''是平凡的。的确，通过\refeq{eq6.4}，相应的交错和都``抵消了''，表明常数为零。因此，非平凡的情况是$ \sqrt{d} $的周期长度为偶数的时侯。我们知道在那种情况下，周期有一个对称的形式，并且具有中心项
+\[ \sqrt{d}=\left[a_{0};\overline{a_{1},a_{2},\ldots,a_{t},a_{t+1},a_{t},\ldots,a_{2},a_{1},2a_{0}}\right] \]
+其中$ a_{0}=\lfloor\sqrt{d} \rfloor $，并以$ a_{t+1} $记中心项。应用\refeq{eq6.4} 的交错和，我们有
+\[ 	M_{\sqrt{d}}=\dfrac{-a_{1}+a_{2}-a_{3}\pm\cdots}{12}+O\left(1\right)= \]
+\[ 	=
+	\left( 2 \left(
+	\sum_{j=1}^{t}
+	{\left(-1\right)}^{j}a_{j}
+	\right)+
+	{\left(-1\right)}^{t+1}a_{t+1}
+	+2a_{0}
+	\right) 
+	\cdot \dfrac{\log N}{\log\eta}+O\left(1\right)\juhao
+ \]
+常数$ c=c\left(d\right) $的正性等价于交错和的正性，这由周期
+\[ 2\sum_{j=0}^{t}(-1)^{j}a_{j}+(-1)^{t+1}a_{t+1}>0\]
+可以得到。
+我们查$ d<100 $的表得到，当周期为偶数时，这个交错和的确是正值。因为``正猜想''对于任意的二次无理数一定不成立，它在情况$ \alpha=\sqrt{d} $情况下的正确性可能与实二次域\qfield{d}的算术紧密相关(或者复域\qfield{-d})。
+
+让我们回到\refprop{prop6.1}。我们介绍一种基本的但是不简单的证明。
+
+\paragraph{\refprop{prop6.1}的证明} 我们利用Dedekind和。为了解释Dedekind和从哪里来，我们重写\refeq{eq6.1} 和\refeq{eq6.2} 成下面的形式：
+\[ 	M_{\alpha}\left(N\right)=\dfrac{1}{N}\sum_{k=1}^{N}\left(N+1-k\right)\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)= \]
+\begin{equation}\label{eq6.21}
+=\left(\dfrac{N+1}{N}-\dfrac{1}{2}\right)\sum_{k=1}^{N}\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)-\sum_{k=1}^{N}\left(\dfrac{k}{N}-\dfrac{1}{2}\right)\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)\comma
+\end{equation}
+其中，最后一个和式
+\[ \sum_{k=1}^{N}\left(\dfrac{k}{N}-\dfrac{1}{2}\right)\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right) \]
+与Dedekind和
+\begin{equation}\label{eq6.22}
+D\left(H,K\right)=\sum_{j=1}^{K-1}\left(\dfrac{j}{K}-\dfrac{1}{2}\right)\left(\dfrac{jH}{K}-\dfrac{1}{2}\right)\comma
+\end{equation}
+非常像。其中，我们一直假设$ H, K\leq 1  $是互质的整数。
+
+Dedekind和 (即\refeq{eq6.22})最先出现在Dedekind关于椭圆函数和$ \theta $-函数的研究中。幸运的是，我们不需要知道关于这些的任何知识；我们只处理定义 \refeq{eq6.22} 即可。关于Dedekind和的关键部分就是下面的自反公式；一个令人震惊的非平凡的结果。
+
+\begin{lemma}{\bfseries 戴德金自反公式}\label{lmm6.1}
+	我们有
+	\begin{equation}\label{eq6.23}
+		D\left(H,K\right)+D\left(K,H\right)=\dfrac{1}{12}\left(\dfrac{H}{K}+\dfrac{K}{H}+\dfrac{1}{HK}\right)-\dfrac{1}{4}\text{。}
+	\end{equation}
+注，$ D\left(H,K\right)  $和$ D\left(K,H\right) $的定义里面自动包含了``$ H, K\leq 1  $是互质的整数''。
+\end{lemma}
+
+关于这个经典结果的证明，请看书\cite{Ra-Gr}
+
+从\reflmm{lmm6.1}，我们将导出
+
+\begin{lemma}\label{lmm6.2}
+	如果$ 1\leq H<K $互质，那么
+	\begin{equation}\label{eq6.24}
+	D\left(H,K\right)=\dfrac{a_{1}-a_{2}+a_{3}\mp\cdots+\left(-1\right)^{l-1}a_{l}}{12}+O\left(1\right),
+	\end{equation}
+	其中
+	\begin{equation}\label{eq6.25}
+\dfrac{H}{K}=\dfrac{1}{a_{1}+\dfrac{1}{a_{2}+\dfrac{1}{a_{3}+\ldots}}}=\left[a_{1},a_{2},a_{3},\ldots,a_{l}\right]\comma
+	\end{equation}
+	注意到\refeq{eq6.24} 中的误差项$ O\left(1\right) $的绝对值$ \leq1/4 $。
+\end{lemma}
+
+\paragraph{证明} 连分数$ \frac{H}{K}=\left[a_{1},a_{2},a_{3},\ldots,a_{l}\right] $等价于欧几里得算法
+\[ K=a_{1}H+H_{1}, H=a_{2}H_{1}+H_{2},H_{1}=a_{3}H_{2}+H_{4},\ldots,H_{l-2}=a_{l}H_{l-1}\]
+其中，$ H_{l-1}=\gcd\left(H,K\right)=1 $。我们利用\reflmm{lmm6.1} 和简短的记号
+\[ g\left(x,y\right)=\dfrac{1}{12}\left(\dfrac{x}{y}+\dfrac{y}{x}+\dfrac{1}{xy}\right)-\dfrac{1}{4} \]
+如此：记$ K=H_{-1}\comma H=H_{0} $，那么
+\begin{equation*}
+\centering
+\begin{split}
+   D\left(H,K\right)=\ddek{0}{-1}=\gdek{-1}{0}-\ddek{-1}{0}=\\=\gdek{-1}{0}-\ddek{1}{0}\fenhao
+\end{split} 
+\end{equation*}
+这里我们利用了欧几里得算法的第一个方程。重复同样的讨论，我们有
+\begin{equation*}
+\centering
+\begin{split}
+\dekd=\gdek{-1}{0}-\ddek{1}{0}=
+\\=\gdek{-1}{0}-\left(\gdek{0}{1}-\ddek{0}{1}\right)=
+\\=\gdek{-1}{0}-\gdek{0}{1}+\ddek{2}{1};
+\end{split} 
+\end{equation*}
+这里我们利用了欧几里得算法的第二个方程。
+
+重复同样的讨论几次，我们有
+\begin{equation*}
+\centering
+\begin{split}
+\dekd=\gdek{-1}{0}-\gdek{0}{1}+\gdek{1}{2}-\gdek{2}{3}\pm\cdots
+\\ \cdots+\left(-1\right)^{l-1}\gdek{l-2}{l-1}+\left(-1\right)^{l}\ddek{l-2}{l-1}\juhao
+\end{split} 
+\end{equation*}
+注：这里的最后一项实际上为零；的确，$ H_{l-1}=\gcd\left(H,K\right)=1 $ 表明$ \ddek{l-2}{l-1}=0 $。
+
+进一步，我们利用记号
+ \[ f\left(x,y\right)=\dfrac{x}{y}+\dfrac{y}{x} \comma\]
+ 我们有
+\[   \sum_{i=0}^{l-1}\myone{i}f\left(H_{i-1},H_{i}\right)=\sum_{i=0}^{l-1}\myone{i}\left(\dfrac{H_{i-1}}{H_{i}}+\dfrac{H_{i}}{H_{i-1}}\right)= \]
+\[ =\dfrac{H_{0}}{H_{1}}+\sum_{i=0}^{l-1}\myone{i}\dfrac{H_{i-1}-H_{i+1}}{H_{i}}= \]
+\[ =\dfrac{H}{K}+\sum_{i=0}^{l-1}\myone{i}\dfrac{a_{i-1}H_{i}}{H_{i}}=\dfrac{H}{K}+\sum_{i=0}^{l-1}\myone{i}a_{i-1}\juhao \]
+ 因为
+ \[ g\left(x,y\right)=\dfrac{1}{12}f\left(x,y\right)+\left(\dfrac{1}{12xy}-\dfrac{1}{4}\right)\comma \]
+ 结合上面所有的结果，我们得到
+ \[ \dekd=\gdek{-1}{0}-\gdek{0}{1}+\gdek{1}{2}-\gdek{2}{3}\pm \cdots+\left(-1\right)^{l-1}\gdek{l-2}{l-1}= \]
+\[  =\dfrac{a_{1}-a_{2}+a_{3}\mp\cdots+\left(-1\right)^{l-1}a_{l}}{12}+ \]
+\[ +\dfrac{H}{12K}-\dfrac{1+\myone{l-1}}{8}+\dfrac{1}{12}\left(\dfrac{1}{KH}-\dfrac{1}{HH_{1}}+\dfrac{H_{1}}{H_{2}}\mp\cdots+\dfrac{\myone{l-1}}{H_{l-2}H_{l-1}}\right)\juhao \]
+最后一个交错和有绝对值$ <2 $，而且因为$ 1\leq H<K $，总的误差最多$ \max\lbrace1/4,1/12+1/12\rbrace=1/4 $，这就完成了从\reflmm{lmm6.1} 到\reflmm{lmm6.2} 的推导。\hfill\QEDopen
+
+下面，我们在特殊条件$ N=q_{r} $，即，当$ N $ 刚好是$ \alpha $的收敛分母的时候，由\reflmm{lmm6.2} 推导出\refprop{prop6.1}；请参看下面的\reflmm{lmm6.3}。但是我们首先介绍简化处理Dedekind和的记号。令
+\[\left(\left(x\right)\right)=\begin{cases}
+
+\lbrace x\rbrace-\dfrac{1}{2}\comma&\text{如果$ x $不是一个整数},\\
+
+0\comma &
+
+\text{否则}\juhao
+
+\end{cases}\]
+注，$ y=\ddbrace{x} $经常称为``看牙函数'' (译者认为是因为函数图像很像牙齿)。利用这个新的记号，我们可以改写\refeq{eq6.22} 成一个更简洁的形式：
+\begin{equation}\label{eq6.26}
+	\dekd=\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}\ddbrace{\dfrac{jH}{K}}\comma
+\end{equation}
+这里，一样地，我们假设$ H, K\leq 1  $是互质的整数。注意到，将\refeq{eq6.26} 中的求和从$ K-1 $变到$ K $并没有变化(只是加个零到和式)。
+
+现在我们准备好去陈述并证明\refprop{prop6.1} 的一个重要的特殊情形了。
+\begin{lemma}\label{lmm6.3}
+	我们有
+	\begin{equation}\label{eq6.27}
+	M_{\alpha}\left(q_{r}\right)=\dfrac{-a_{1}+a_{2}-a_{3}\pm\cdots+\left(-1\right)^{r-1}a_{r-1}}{12}+O\left(1\right)\comma
+	\end{equation}
+	其中，$ \alpha=\left[a_{1},a_{2},a_{3},\ldots\right] $并且$ p_{r}/q_{r}=\left[a_{1},a_{2},\ldots,a_{r-1}\right] $是$ \alpha $的第$ r $个收敛值。对于所有的$ \alpha $和$ r $，隐式的误差项$ O\left(1\right) $都小于$ 5 $。
+\end{lemma}
+
+\paragraph{证明} 我们回忆当$ N=q_{r} $时，\refeq{eq6.21}：
+\begin{equation}\label{eq6.28}
+M_{\alpha}\left(q_{r}\right)=\left(\dfrac{q_{r}+1}{q_{r}}-\dfrac{1}{2}\right)\sum_{k=1}^{q_{r}}\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)-\sum_{k=1}^{q_{r}}\left(\dfrac{k}{q_{r}}-\dfrac{1}{2}\right)\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)\juhao
+\end{equation}
+首先，我们将注意力放到\refeq{eq6.28} 的下面子和式上面来：
+\begin{equation}\label{eq6.29}
+S^{\ast}=\sum_{k=1}^{q_{r}}\left(\dfrac{k}{q_{r}}-\dfrac{1}{2}\right)\left(\lbrace k\alpha\rbrace-\dfrac{1}{2}\right)=\sum_{k=1}^{q_{r}}\ddbrace{\dfrac{k}{q_{r}}}\ddbrace{k\alpha}\comma
+\end{equation}
+我们将$ S^{\ast} $与Dedekind和比较
+\begin{equation}\label{eq6.30}
+D\left(p_{r},q_{r}\right)=\sum_{k=1}^{q_{r}}\ddbrace{\dfrac{k}{q_{r}}}\ddbrace{\dfrac{kp_{r}}{q_{r}}}\comma
+\end{equation}
+其中，$ p_{r}/q_{r} $时$ \alpha $的第$ r $个收敛值。
+
+我们回忆丢番图逼近中著名的不等式
+\[ \left \lvert\alpha-\dfrac{p_{r}}{q_{r}}\right \rvert<\dfrac{1}{q_{r}^{2}}\comma \]
+由此导出不等式
+\begin{equation}\label{eq6.31}
+	\left \lvert k\alpha-\dfrac{k p_{r}}{q_{r}}\right \rvert<\dfrac{k}{q_{r}^{2}}\leq\dfrac{1}{q_{r}}
+\end{equation}
+对所有$ 1\leq k\leq q_{r} $成立。由\refeq{eq6.31}，我们有
+\begin{equation}\label{eq6.32}
+\left \lvert S^{\ast}-D\left(p_{r},q_{r}\right)\right \rvert<1
+\end{equation}
+另一方面，由\reflmm{lmm6.2}，
+\begin{equation}\label{eq6.33}
+\left \lvert D\left(p_{r},q_{r}\right)-\dfrac{a_{1}-a_{2}+a_{3}\mp\cdots+\left(-1\right)^{r}a_{r-1}}{12}\right \rvert\leq\dfrac{1}{4}\juhao
+\end{equation}
+结合\refeq{eq6.32} 和\refeq{eq6.33}，我们有
+\begin{equation}\label{eq6.34}
+\left \lvert S^{\ast}-\dfrac{a_{1}-a_{2}+a_{3}\mp\cdots+\left(-1\right)^{r}a_{r-1}}{12}\right \rvert\leq\dfrac{1}{4}+1=\dfrac{5}{4}\juhao
+\end{equation}
+再次利用\refeq{eq6.31} 得到
+\begin{equation}\label{eq6.35}
+\centering
+\begin{split}
+\left \lvert\sum_{k=1}^{q_{r}-1}\left(\lbrace k\alpha\rbrace-1/2\right)\right \rvert\leq\left \lvert\sum_{j=1}^{q_{r}-1}\left(\dfrac{j}{q_{r}}\pm\dfrac{1}{q_{r}}-\dfrac{1}{2}\right)\right \rvert\leq
+\\\leq\left \lvert\sum_{j=1}^{q_{r}-1}\left(\dfrac{j}{q_{r}}-1/2\right)\right \rvert+q_{r}\dfrac{1}{q_{r}}=0+1=1\juhao
+\end{split} 
+\end{equation}
+应用\refeq{eq6.34} 和\refeq{eq6.35}，到\ref{eq6.28} 中，我们可以得到
+\[ \left \lvert M_{\alpha}\left(q_{r}\right)-\dfrac{a_{1}-a_{2}+a_{3}\mp\cdots+\left(-1\right)^{r}a_{r-1}}{12}\right \rvert\leq \]
+\[ \leq \dfrac{5}{4}+\left \lvert\dfrac{q_{r}+1}{q_{r}}-\dfrac{1}{2}\right \rvert+\left \lvert\dfrac{q_{r}+1}{q_{r}}-\dfrac{1}{2}\right \rvert\left \lvert\lbrace q_{r}\alpha\rbrace-\dfrac{1}{2}\right \rvert
+\leq \dfrac{5}{4}+2\left \lvert\dfrac{q_{r}+1}{q_{r}}-\dfrac{1}{2}\right \rvert<5\comma \]
+最后\reflmm{lmm6.3}得证。\hfill\QEDopen
+
+最后一步就是由特殊情况的\reflmm{lmm6.3} 导出一般情况的\refprop{prop6.1}。这里有很多途径从一般情况导出\reflmm{lmm6.3}；请参看Beck\cite{Be4}。这里，我们遵循Schoissengeier\cite{Scho}的一个好的想法，包括伸缩和，而这似乎是处理一般情形的最好的办法。
+
+令$ N\geq1 $是任意整数。考虑$ N $的Ostrowski展示(参看(2.13))：
+\begin{equation}\label{eq6.36}
+N=\sum_{i=1}^{r}b_{i}q_{i}\comma \text{其中} \quad 0\leq b_{i}\leq a_{i} 
+\end{equation}
+$ b_{i}=a_{i} $导出$ b_{i-1}=0 $ (``超准则'')。这里$ a_{i} $是连分数$ \alpha=\left[a_{1},a_{2},a_{3},\ldots\right]$的第$ i $个部分商，\parquo{i}是$ \alpha $的第$ i $个收敛值。
+
+我们受下面伸缩和的启发:
+\begin{equation}\label{eq6.37}
+\sum_{i=1}^{N}\dfrac{N+1-i}{N}\ddbrace{\dfrac{ip_{r}}{q_{r}}}=
+\end{equation}
+\[ \dfrac{1}{N}\sum_{k=1}^{r}\left(\sum_{i=1}^{N_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}-\sum_{j=1}^{N_{k-1}}\left(N_{k-1}+1-j\right)\ddbrace{\dfrac{jp_{k-1}}{q_{k-1}}}\right) \]
+其中，$ N_{k} $是\refeq{eq6.36} 中的第$ k  $个部分和$ N_{k}=\sum_{i=1}^{k}b_{i}q_{i} $。
+
+我们将分析计算伸缩和\refeq{eq6.37} 的每一项。下面一个由方程\ref{eq6.37} 启发得到的引理可以看作是一种推广，或者是\reflmm{lmm6.3} 的一个新的版本。就像我们证明\reflmm{lmm6.3} 一样，其想法包括Dedekind和$ D\left(p_{k},q_{k}\right) $。
+\begin{lemma}\label{lmm6.4}
+	如果$ N_{j}=\sum_{i=1}^{j}b_{i}q_{i} $，那么
+\[ 	\sum_{i=1}^{N_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}-\sum_{j=1}^{N_{k-1}}\left(N_{k-1}+1-j\right)\ddbrace{\dfrac{jp_{k-1}}{q_{k-1}}}= \]
+\[ =-b_{k}q_{k}D\left(p_{k},q_{k}\right)+\dfrac{b_{k-1}}{4}\left(1+\myone{k}\right)\left(2N_{k-1}+1-\left(b_{k-1}+1\right)q_{k-1}\right)+ \]
+	\begin{equation}\label{eq6.38}
+	+\myone{k+1}\dfrac{N_{k-1}\left(N_{k-1}+1\right)\left(N_{k-1}+2\right)}{6q_{k}q_{k-1}}\juhao
+	\end{equation}
+\end{lemma}
+
+\paragraph{\reflmm{lmm6.4}的证明} 我们基本重复\reflmm{lmm6.3} 的证明。记
+\begin{equation}\label{eq6.39}
+	\sum_{i=1}^{N_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}=\Sigma_{1}+\Sigma_{2}\comma
+\end{equation}
+其中，
+\[ \Sigma_{1}=\sum_{i=1}^{b_{k}q_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}\]
+以及
+\[ \Sigma_{2}=\sum_{i=b_{k}q_{k}+1}^{N_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}\juhao\]
+
+我们首先分析计算$ \Sigma_{1} $。因为如果$ x $为整数，则$ \ddbrace{x}=0 $，我们提取出能够被$ q_{k} $整除的$ i $：
+\[ \Sigma_{1}=\sum_{t=0}^{b_{k}-1}\sum_{i=tq_{k}+1}^{\left(t+1\right)q_{k}-1}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}= \]
+\[ =\sum_{t=0}^{b_{k}-1}\sum_{j=1}^{q_{k}-1}\left(N_{k}+1-tq_{k}-j\right)\ddbrace{\dfrac{jp_{k}}{q_{k}}}= \]
+\begin{equation}\label{eq6.40}
+=-b_{k}\sum_{j=1}^{q_{k}-1}j\ddbrace{\dfrac{jp_{k}}{q_{k}}}\comma
+\end{equation}
+因为
+\[ \sum_{j=1}^{K-1}\ddbrace{\dfrac{jH}{K}}=0\juhao \]
+因此，由\refeq{eq6.40}，
+\begin{equation} \label{eq6.41}
+	\Sigma_{1}=-b_{k}q_{k}\sum_{j=1}^{q_{k}-1}\left(\dfrac{j}{q_{k}}-\dfrac{1}{2}\right)\ddbrace{\dfrac{jp_{k}}{q_{k}}}=-b_{k}q_{k}D\left(p_{k},q_{k}\right)\comma
+\end{equation}
+导出\refeq{eq6.38} 的右边第一项。
+
+下面我们分析计算$ \Sigma_{2}-\Sigma_{3} $，其中$ \Sigma_{2} $为\refeq{eq6.39} 的第二项，$ \Sigma_{3} $为\refeq{eq6.38} 的左端负项：
+\begin{equation}\label{eq6.42}
+	\Sigma_{3}=\sum_{j=1}^{N_{k-1}}\left(N_{k-1}+1-j\right)\ddbrace{\dfrac{ip_{k-1}}{q_{k-1}}}\juhao
+\end{equation}
+我们回忆连分数理论的著名结果：
+\begin{equation}\label{eq6.43}
+	\dfrac{p_{k}}{q_{k}}=\dfrac{p_{k-1}}{q_{k-1}}+\dfrac{\myone{k-1}}{q_{k-1}q_{k}}\comma
+\end{equation}
+所以，如果$ j\leq N_{k-1} $，那么当$ j $不能被$ q_{k-1} $整除时，有
+\begin{equation}\label{eq6.44}
+	\ddbrace{\dfrac{jp_{k}}{q_{k}}}=\ddbrace{\dfrac{jp_{k-1}}{q_{k-1}}+\dfrac{\myone{k-1}j}{q_{k-1}q_{k}}}=\ddbrace{\dfrac{ip_{k-1}}{q_{k-1}}}+\dfrac{\myone{k-1}j}{q_{k-1}q_{k}}\comma
+\end{equation}
+而当$ j $能被$ q_{k-1} $整除时，有
+\begin{equation}\label{eq6.45}
+\ddbrace{\dfrac{jp_{k}}{q_{k}}}=\ddbrace{\dfrac{ip_{k-1}}{q_{k-1}}}+\dfrac{\myone{k-1}j}{q_{k-1}q_{k}}+\dfrac{1+\myone{k-1}}{2}\juhao
+\end{equation}
+因此，我们可以改写$ \Sigma_{2} $ (参看\refeq{eq6.39})成
+\[ \sum_{i=b_{k}q_{k}+1}^{N_{k}}\left(N_{k}+1-i\right)\ddbrace{\dfrac{ip_{k}}{q_{k}}}= \]
+\[ =\sum_{j=1}^{N_{k-1}}\left(N_{k}-b_{k}q_{k}+1-j\right)\ddbrace{\dfrac{jp_{k-1}}{q_{k-1}}}= \]
+\[ =\sum_{j=1}^{N_{k-1}}\left(N_{k}+1-j\right)\ddbrace{\dfrac{jp_{k-1}}{q_{k-1}}}\comma \]
+然后应用\refeq{eq6.44} 和\refeq{eq6.45}，我们有
+\[ \Sigma_{2}=\Sigma_{3}+\dfrac{\myone{k-1}j}{q_{k-1}q_{k}}\sum_{j=1}^{N_{k-1}}\left(N_{k}+1-j\right)j+ \]
+\begin{equation}\label{eq6.46}
++b_{k-1}\dfrac{1+\myone{k-1}}{2}\left(N_{k-1}+1-\dfrac{\left(b_{k-1}+1\right)q_{k-1}}{2}\right)\juhao
+\end{equation}
+结合\refeq{eq6.41}，\refeq{eq6.42} 和 \refeq{eq6.46}，\reflmm{lmm6.4} 得证。\hfill\QEDopen
+
+利用\reflmm{lmm6.4}，我们准备好完成\refprop{prop6.1} 的证明。让我们回到 \refeq{eq6.36}。首先，我们以一个平凡的方式将$ N_{k}=\sum_{i=1}^{k}b_{k}q_{k} $的定义延申到所有的$ k>r$：对$ i>r $，$b_{i}=0 $。我们令$ k=1,2,3,\ldots $，相加\reflmm{lmm6.4} 的两端；\refeq{eq6.38} 的左端得到
+\begin{equation}\label{eq6.47}
+	\sum_{k=1}^{r}\left(N+1k\right)\ddbrace{k\alpha},
+\end{equation}
+然后 \refeq{eq6.38} 的右端得到
+\begin{equation}\label{eq6.48}
+\Sigma_{1}^{\ast}+\Sigma_{2}^{\ast}+\Sigma_{3}^{\ast}\comma\text{其中}
+\end{equation}
+\[ \Sigma_{1}^{\ast}=-\sum_{i=1}^{r}b_{i}q_{i}D\left(p_{i},q_{i}\right)\comma \]
+\[ \Sigma_{2}^{\ast}=\sum_{j=1}^{r}\dfrac{b_{i}}{4}\left(1+\myone{j+1}\right)\left(2N_{j}+1-\left(b_{j}+1\right)q_{j}\right)\comma \]
+\[ \Sigma_{3}^{\ast}=\sum_{j=1}^{\infty}\myone{j}\dfrac{N_{j}\left(N_{j}+1\right)\left(N_{j}+2\right)}{6q_{j}q_{j+1}} \]
+\[ =\sum_{j=1}^{r}\myone{j}\dfrac{N_{j}\left(N_{j}+1\right)\left(N_{j}+2\right)}{6q_{j}q_{j+1}}+\dfrac{N\left(N+1\right)\left(N+2\right)}{6}\left(\alpha-\dfrac{p_{r+1}}{q_{r+1}}\right)\comma \]
+其中，最后一步我们用到了\refeq{eq6.43} 以及$ p_{i}/q_{i}\rightarrow\alpha\comma i\rightarrow\infty $。
+
+首先，我们计算$\Sigma_{1}^{\ast}  $。由\reflmm{lmm6.2}，
+\[ \sum_{i=1}^{r}b_{i}q_{i}D\left(p_{i},q_{i}\right)=\sum_{i=1}^{r}b_{i}q_{i}\left(\dfrac{a_{1}-a_{2}\pm\cdots+\myone{i}a_{i-1}}{12}+\dfrac{\theta}{4}\right)= \]
+\[ =
+\sum_{j=1}^{r}\dfrac{\myone{j}a_{j-1}}{12}\left(N-N_{j-1}\right)+\dfrac{\theta N}{4}= \]
+\begin{equation}\label{eq6.49}=
+N\left(\sum_{j=1}^{r}\dfrac{\myone{j}a_{j-1}}{12}+\sum_{j=1}^{r}\dfrac{\myone{j-1}a_{j-1}}{12}\cdot\dfrac{N_{j-1}}{N}+\dfrac{\theta}{4}\right)\comma
+\end{equation}
+其中，$ \lvert\theta_{i}\rvert <1$和$ \lvert\theta\rvert<1 $ 为适当的常数。因为$ N_{j}=\sum_{i=1}^{j}b_{i}q_{i} $ 至少指数型增长，下面这个上界是平凡的
+\begin{equation}\label{eq6.50}
+	\sum_{i=1}^{k}\leq4N_{k+1}\juhao
+\end{equation}
+结合\refeq{eq6.49} 和\refeq{eq6.50}，
+\begin{equation}\label{eq6.51}
+	\sum_{i=1}^{r}b_{i}q_{i}D\left(p_{i},q_{i}\right)=N\left(\dfrac{a_{1}-a_{2}\pm\cdots+\myone{r}a_{r-1}}{12}+\theta'\left(\underset{1\leq j\leq r}{\max}a_{j}\right)+\theta''\right)\comma
+\end{equation}
+其中，$ \lvert\theta'\leq4\rvert $和$ \lvert\theta''\rvert\leq1/4 $。
+
+其次，我们从上面估计$ \Sigma_{2}^{\ast} $：
+\begin{equation}\label{eq6.52}
+	\Sigma_{2}^{\ast}\leq\dfrac{1}{2}\sum_{i=1}^{r}b_{i}N_{i}\leq\left(\underset{1\leq j\leq r}{\max}a_{j}\right)\sum_{i=1}^{r}N_{i}\leq3N\left(\underset{1\leq j\leq r}{\max}a_{j}\right)\comma
+\end{equation}
+其中，最后一个步利用了\refeq{eq6.50}。
+
+最后，我们从上面估计$ \Sigma_{3}^{\ast} $。因为
+\[ N_{j}=\sum_{i=1}^{j}b_{i}q_{i}\comma q_{j+1}\geq a_{j}q_{j} \geq b_{j}q_{j}\comma \]
+我们有
+\begin{equation}\label{eq6.53}
+\left \lvert\sum_{j=1}^{r}\myone{j}\dfrac{N_{j}\left(N_{j}+1\right)\left(N_{j}+2\right)}{6q_{j}q_{j+1}}\right \rvert\leq\sum_{j=1}^{r}\left(b_{j}+1\right)^{2}q_{j}\leq2N\left(\underset{1\leq j\leq r}{\max}a_{j}\right)\juhao
+\end{equation}
+我们也有
+\begin{equation}\label{eq6.54}
+	\dfrac{N\left(N+1\right)\left(N+2\right)}{6}\cdot\left \lvert\alpha-\dfrac{p_{r+1}}{q_{r+1}}\right \rvert\leq\dfrac{N^{3}}{3q_{r+1}^{2}}\leq\dfrac{N}{3}\juhao
+\end{equation}
+结合\refeq{eq6.47}，\refeq{eq6.48}，\refeq{eq6.51} --\refeq{eq6.54}，我们得到
+\[ M_{\alpha}\left(N\right)=\dfrac{1}{N}\sum_{k=1}^{r}\left(N+1-k\right)\ddbrace{k\alpha}= \]
+\begin{equation}\label{eq6.55}
+=\dfrac{a_{1}-a_{2}\pm\cdots+\myone{r}a_{r-1}}{12}+\theta\left(\underset{1\leq j\leq r}{\max}a_{j}\right)\comma
+\end{equation}
+其中，$ \lvert\theta\rvert<10 $。\refeq{eq6.55} 完成了对\refprop{prop6.1}  的证明。\hfill\QEDopen
+
+需要指出的是，我们原始的对\refprop{prop6.1} 的证明是由Ostrowski公式 (2.14) 导出来的，相对特别长，而且是暴力地推导得出的。后来，Schoissengeier\cite{Scho} 指出了Dedekind和与Knuth\cite{Kn1}的相关结果的联系。这使得证明获得了本质性的缩短。上述证明遵循Schoissengeier-Knuth的方法。
+
+\paragraph{\refprop{prop6.1} 和Hardy以及Littlewood的一些工作} 有趣的是，在我们完成\refprop{prop6.1} 的证明(95年十一月)的几周前，我们偶然地注意到下面在Hardy-Littlewood\cite{Ha-Li2}中的技术性的引理。
+
+``引理 14:'' \qquad 如果\conalpha，那么
+\begin{equation}\label{eq6.56}
+	M_{\alpha}\left(N\right)=\dfrac{1}{12}\sum_{i=1}^{l}\myone{k}\left(\alpha_{i}+\dfrac{1}{\alpha_{i}}\right)+O\left((\underset{1\leq j\leq l}{\max}a_{j})^{2}\right)\comma
+\end{equation}
+其中，$ l $ 是使得$ q_{l}\geq N $的最后一个指标，还有
+\begin{equation*}
+\alpha_{i}=a_{i}+\dfrac{1}{a_{i+1}+\dfrac{1}{a_{i+2}+\ldots}}=\left[a_{i};a_{i+1},a_{i+2},\ldots\right]\juhao
+\end{equation*}
+
+利用平凡的性质$ \alpha_{i}=a_{i}+\dfrac{1}{\alpha_{i+1}} $，``引理 14''中的交错和变为
+\[ -\left(\alpha_{1}+\dfrac{1}{\alpha_{1}}\right)+\left(\alpha_{2}+\dfrac{1}{\alpha_{2}}\right)-\left(\alpha_{3}+\dfrac{1}{\alpha_{3}}\right)\pm\cdots \]
+\begin{equation}\label{eq6.57}
+=-a_{1}+a_{2}-a_{3}\pm\cdots+\myone{i}a_{i}\pm\cdots\comma
+\end{equation}
+令人震惊的是从``引理 14''，我们可以仅用一行推导到就可以得到从某种程度上相对\refprop{prop6.1} 较弱的版本。注\refeq{eq6.56} 相对较弱，因为误差项$ O\left((\underset{1\leq j\leq l}{\max}a_{j})^{2}\right) $ 是\refprop{prop6.1} 中的线性误差项$ O\left((\underset{1\leq j\leq l}{\max}a_{j})\right) $ 的平方。
+
+注，Hardy和Littlewood证明他们的``引理 14''是利用的一个不同的自反公式(即，$\theta-$函数的自反公式)。
+
+在1930年，大概十年之后，有一个相关的进展就是，Hardy和Littlewood\cite{Ha-Li3}研究了下面的(丢番图)级数
+\begin{equation}\label{eq6.58}
+	\sum_{n=1}^{\infty}\dfrac{1}{n\sin\left(\pi n\alpha\right)}\comma
+\end{equation}
+并且找到了一个有趣的发现。尽管级数\ref{eq6.58} 的项对于任何$ \alpha $都不趋于零，但是Hardy和Littlewood成功证明了第二棒的事情；即，对于特殊的$ \alpha=\sqrt{2} $，级数\ref{eq6.58} 的部分和一致有界，也即，
+\begin{equation}\label{eq6.59}
+\sum_{n=1}^{N}\dfrac{1}{n\sin\left(\pi n\alpha\right)}=O\left(1\right)\juhao 
+\end{equation}
+一般地，如果$ \alpha=\sqrt{a^{2}+1}\comma a $为奇数，那么部分和同样有$ O\left(1\right) $。
+
+另一方面，Hardy和Littlewood注意到对于$ \alpha=\sqrt{6}/2-1 $，$ N^{th} $部分和为$ c\log N+ O\left(1\right)\comma c\neq0$。
+
+现在是发生了什么? 对于$ \alpha=\sqrt{a^{2}+1}\comma a $为奇数，``$ O\left(1\right)-$定理''的证明是那么复杂而神秘，而且特别地，在\textit{Introduction to the Collected Papers of G.H. Hardy, Vol.1} 中，Davenport列出了对于这篇论文的``真正的理解''，并且当作丢番图逼近中的主要研究问题。
+
+现在这是我们的``真正的理解''：Hardy和Littlewood的 ``$ O\left(1\right)-$定理''是\refprop{prop6.1} 的一个简单推论。的确，我们所需的仅仅是下面这个简单的性质
+\begin{equation}\label{eq6.60}
+\sum_{n=1}^{N}\dfrac{1}{n\sin\left(\pi n\alpha\right)}=4\pi M_{\alpha/2}\left(N\right)-2\pi M_{\alpha}\left(N\right)+O\left(\underset{1\leq j\leq l}{\max}a_{j}\right)\comma
+\end{equation}
+其中，$ l $ 是使得$ q_{l}\leq N $的最后一个指标。
+
+方程 \ref{eq6.60} 是以下两个事实的一个简单的结果：第一个就是\refeq{eq6.12}：
+\begin{equation*}
+M_{\alpha}\left(N\right)=-\dfrac{1}{2\pi}\sum_{n=1}^{N}\dfrac{1}{n\tan\left(\pi n\alpha\right)}+O\left(\underset{1\leq i\leq k}{\max}a_{i}\right)
+\end{equation*}
+其中，$ k $ 是使得$ q_{k}\leq N $的最后一个指标，然后第二个事实就是三角函数的性质：
+\begin{equation*}
+\dfrac{1}{\tan\left(\beta\right)}-\dfrac{1}{\tan\left(2\beta\right)}=\dfrac{2\cos^{2}(\beta)-\cos(2\beta)}{2\sin(\beta)\cos(\beta)}=\dfrac{1}{\sin(2\beta)}\juhao 
+\end{equation*}
+
+似乎很有可能，Hardy和Littlewood忽略了通过\refeq{eq6.60}  对\refprop{prop6.1} 的简单应用(\refeq{eq6.56} 的更弱的误差项在这里也够用)。这就是为什么他们必须在\cite{Ha-Li3}中去创建一种复杂的特别的方法。
+
+我们之后将在第8节回到Hardy-Littlewood级数$ \sum_{n}1/n\sin(\pi n\alpha) $。
+
+\section{计算一般的期望值\hspace{5pt}(II)}
+\seccontent
+\paragraph{定理 1.1 中的期望} 下面，我们从看牙函数$ \ddbrace{x} $ 转到示性函数
+\begin{equation}\label{eq7.1}
+\chi_{\rho}\left(x\right)=
+\begin{cases}
+	
+	1\comma&\text{如果$ 0\leq x < \rho $；}\\
+	
+	0\comma &\text{如果$  \rho\leq x < 1 $；}\comma
+	
+\end{cases}
+\end{equation}
+其定义在区间$ \left[0, \rho\right)\comma 0<\rho<1  $上，然后以周期为$ 1 $ 延拓。接着，我们得到简单的方程
+\begin{equation}\label{eq7.2}
+	\chi_{\rho}\left(x\right)-\rho=\ddbrace{x-\rho}-\ddbrace{x}\juhao
+\end{equation}
+和式
+\[ \sum_{k=1}^{n}\chi_{\rho}\left(k\alpha\right) \]
+是无理旋转的计数函数：它记录在模 $ 1 $意义下，整数$ k\comma 1\leq k\leq n $使得$ k\alpha\in \left[0, \rho\right)$ 成立的个数。定理 1.1 就是关于这个计数函数的。因此，为了证明定理 1.1，我们确定相应的期望：由\refeq{eq7.2}，我们需要计算广义的Dedekind和
+\begin{equation}\label{eq7.3}
+	\glHKdekd{c}=\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}\ddbrace{\dfrac{jH+c}{K}}\comma
+\end{equation}
+其中，$ c $是``滑动常数''，是任意一个实数(由\refeq{eq7.2}，我们用$ c=-\rho $ 或者$ c=1-\rho $；不管用哪个都可以)。
+
+下面的引理，属于U.Dieter\cite{Di}的自反律，描述了常义的Dedekind和与其推广形式 \ref{eq7.3} 之间的关系。为了下面的应用，我们必须要引入一个证明。
+\begin{lemma}\label{lmm7.1}
+	令$ 1\leq H<k $ 为互质的整数，$ 0<c<K $ 为一个实数。那么
+\begin{equation}\label{eq7.4}
+\begin{split}
+	\glHKdekd{c}+\glKHdekd{c}&=\dekd+\dekdKH+
+	\\ \dfrac{\lfloor c\rfloor\lceil c\rceil}{2HK}&-\dfrac{1}{2}\lfloor c/H\rfloor+\dfrac{1}{4}E\left(H,c\right)\comma
+\end{split}
+\end{equation}
+其中，
+
+\begin{equation*}\label{eq7.4.1}
+E\left(H,c\right)=
+\left\lbrace  
+\begin{array}{ll}
+0\comma&\text{如果$c$ 不是$ H $的整数倍；}\\
+
+1\comma &\text{如果$c$ 是$ H $的整数倍}\juhao
+
+\end{array} 
+\right.
+\eqno(\text{\theequation$ ' $})
+\end{equation*}
+
+\end{lemma}
+
+\paragraph{注：} 我们可以把\theequation$ ' $写成更简洁的形式
+
+\begin{equation*}
+E\left(H,c\right)=
+\left\lbrace  
+\begin{array}{ll}
+0\comma&\text{如果$\mathnotmod{c}{0}{H}$ ；}\\
+
+1\comma &\text{如果$\mathmod{c}{0}{H}$}\juhao
+
+\end{array} 
+\right.
+\end{equation*}
+
+\paragraph{证明} \seccontent 首先我们假设$ c $ 为自然数；我们通过对$ c $的归纳来证明\refeq{eq7.4}。明显有
+\begin{equation}\label{eq7.5}
+\ddbrace{\dfrac{jH+c+1}{K}}=\ddbrace{\dfrac{jH+c}{K}}+\dfrac{1}{K}-\dfrac{1}{2}\delta\left(\dfrac{jH+c}{K}\right)+\dfrac{1}{2}\delta\left(\dfrac{jH+c+1}{K}\right)\comma
+\end{equation}
+在本节，我们使用$ \delta\left(x\right) $ (``Kronecker $ \delta $记号'')来判断是否为整数。由\refeq{eq7.3} 和\refeq{eq7.5}，
+\[ \glHKdekd{c+1}=\sum_{j=1}^{K_{1}}\ddbrace{\dfrac{j}{K}}\ddbrace{\dfrac{jH+c}{K}}+\dfrac{1}{K}\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}  \]
+\begin{equation}\label{eq7.6}
+-\dfrac{1}{2}\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}\left(\delta\left(\dfrac{jH+c}{K}\right)+\delta\left(\dfrac{jH+c+1}{K}\right)\right)
+\end{equation}
+因为$ 1\leq H < K $ 互质，所以存在连个整数$ h'\comma k' $ 使得
+\begin{equation}\label{eq7.7}
+	Hh'+Kk'=1
+\end{equation}
+如果
+\[ \mathmod{j}{-h'c}{K} \comma\text{那么} \:\mathmod{jH+c}{0}{K} \]
+而且因为看牙函数$ \ddbrace{x} $ 为奇函数，我们可以改写\refeq{eq7.6} 为：
+\[ \glHKdekd{c+1}=\glHKdekd{c}+\dfrac{1}{2}\ddbrace{\dfrac{h'c}{K}}+\dfrac{1}{2}\ddbrace{\dfrac{h'\left(c+1\right)}{K}}\juhao \]
+通过对$ c $ 的归纳，
+\begin{equation}\label{eq7.8}
+	\glHKdekd{c}=\glHKdekd{0}+\sum_{j=1}^{c-1}\ddbrace{\dfrac{h'j}{K}}+\dfrac{1}{2}\ddbrace{\dfrac{h'c}{K}}\juhao
+\end{equation}  
+对于任何$ j\comma 1\leq j \leq K-1 $ (参看\refeq{eq7.7})，
+\[ 	\ddbrace{\dfrac{h'j}{K}}=\ddbrace{\dfrac{j-k'Kj}{HK}}=-\ddbrace{\dfrac{k'Kj-j}{HK}}= \]
+\begin{equation}\label{eq7.9}
+	=-\ddbrace{\dfrac{k'j}{H}}+\dfrac{j}{HK}-\dfrac{1}{2}\delta\left(\dfrac{k'j}{H}\right)\juhao
+\end{equation}
+将$ H $ 和 $ K $ 调换，然后与\refeq{eq7.8} 相加，再利用\refeq{eq7.9}，我们有
+\[ \glHKdekd{c}+\glKHdekd{c}=\dekd+\dekdKH+S\comma \]
+其中
+\begin{equation}\label{eq7.10}
+S=\sum_{j=1}^{i-1}\left(\dfrac{j}{HK}-\dfrac{1}{2}\delta\left(\dfrac{k'j}{H}\right)\right)+\dfrac{c}{2HK}-\dfrac{1}{4}\delta\left(\dfrac{c}{H}\right)\juhao
+\end{equation}
+\refeq{eq7.10} 最后一行的计算简单：我们有
+\begin{equation}\label{eq7.11}
+	S=\dfrac{c^{2}}{2HK}-\dfrac{1}{2}\left\lfloor\dfrac{c}{H}\right\rfloor+\dfrac{1}{4}\delta\left(\dfrac{c}{H}\right)\juhao
+\end{equation}
+\refeq{eq7.10} 和\refeq{eq7.11} 完成了当$ c $ 为任何整数时的证明。
+
+对于任意实数$ c $，我们利用性质
+\begin{equation}\label{eq7.12}
+	\glHKdekd{c+\theta}=\glHKdekd{c}+\dfrac{1}{2}\ddbrace{\dfrac{h'c}{K}}\comma
+\end{equation}
+其中，$ c\geq 0 $ 为整数，$ 0<\theta<1\: $ ($ h' $ 由\refeq{eq7.7} 定义)。\refeq{eq7.12} 的证明简单：
+\[ 	\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}\ddbrace{\dfrac{jH+c+\theta}{K}}= \]
+\[ =\sum_{j=1}^{K-1}\ddbrace{\dfrac{j}{K}}\left(\ddbrace{\dfrac{jH+c}{K}}+\dfrac{\theta}{K}-\dfrac{1}{2}\delta\left(\dfrac{jK+c}{K}\right)\right)= \]
+\[ =\glHKdekd{c}+0-\dfrac{1}{2}\ddbrace{\dfrac{-h'c}{K}}\comma \]
+因为$\mathmod{-h'Hc+c+c}{0}{K} $，\refeq{eq7.12} 得证。
+
+当$ 0<\theta<1 $时，\refeq{eq7.12} 和\refeq{eq7.9} 导出
+\begin{equation*}
+\begin{split}
+	\glHKdekd{c+\theta}+\glKHdekd{c+\theta}&=\glHKdekd{c}+\glKHdekd{c}+
+	\\&+\dfrac{c}{2HK}-\dfrac{1}{4}\delta\left(\dfrac{c}{H}\right)\juhao
+	\end{split}
+\end{equation*}
+这就完成了对\reflmm{lmm7.1} 的证明。\hfill\QEDopen
+
+\reflmm{lmm7.1} 引出下面的一个对\reflmm{lmm6.2} 的类比；请参看 D.E.Knuth\cite{Kn1}。再一次，我们需要证明。
+\begin{lemma}\label{lmm7.2}
+	令$ 1 \leq H < K $ 为互质的整数，$ 0<c<K $ 为实数。令
+\[ 	\dfrac{H}{K}=a_{0}+\dfrac{1}{a_{1}+\dfrac{1}{a_{2}+\ldots}}=\left[a_{1},a_{2},a_{3},\ldots,a_{l}\right]\comma \]
+那么
+\begin{equation}\label{eq7.13}
+	\begin{split}
+	\glHKdekd{c}-\dekd&=\dfrac{-b_{1}+b_{2}-b_{3}\pm\cdots+\myone{l}b_{l}}{2}+
+	\\+\dfrac{c_{0}^{2}}{2KH}-\dfrac{c_{1}^{2}}{2HH_{1}}+\dfrac{c_{2}^{2}}{2H_{1}H_{2}}&\mp\cdots+\myone{l-1}\dfrac{c_{l-1}^{2}}{2H_{l-2}H_{l-1}}+O(1)\comma
+	\end{split}
+\end{equation}
+其中，$ b_{i}\comma c_{i}\comma H_{i} $ 由下面的欧几里得算法决定。
+令$ H_{-1}=K\comma H_{0}=H $，然后由第一个欧几里得算法决定$ H_{i} $
+\begin{equation}\label{eq7.14}
+K=a_{1}H+H_{1}\comma H=a_{2}H_{1}+H_{2}\comma H_{1}=a_{2}H_{2}+H_{4}\comma\ldots\comma H_{l-2}=a_{l}H_{l-1}\comma
+\end{equation}
+其中，$ H_{l-1}=\gcd\left(H,K\right)=1 $；然后利用\refeq{eq7.14}，我们通过第二个欧几里得算法定义整数$ b_{i} $ 和实数 $ c_{i} $
+\begin{equation}\label{eq7.15}
+	c=c_{0}=b_{1}H_{0}+c_{1}\comma c_{1}=b_{2}H_{1}+c_{2}\comma c_{2}=b_{3}H_{2}+c_{3}\comma
+	\ldots\comma c_{l-1}=b_{l}H_{l-1}+c_{l}\comma
+\end{equation}
+其中，$ 0\leq c_{1}<H_{0}\comma 0\leq c_{2}<H_{1}\comma \ldots\comma 0\leq c_{l}<1\comma$ (注 $ H_{l}=0 $)。\refeq{eq7.13}的误差项$ O(1) $ 有绝对值$ \leq1 $。
+\end{lemma} 
+
+\paragraph{证明} 首先假设$ c $ 是一个整数；那么$ c_{l}=0 $。记
+\[ \Delta\left(h,k;c\right)=D\left(h,k;c\right)-D\left(h,k\right) \]
+以及
+\[ F\left(h,k;c\right)=\dfrac{c^{2}}{2hk}-\dfrac{1}{2}\left \lfloor\dfrac{c}{h} \right\rfloor+\dfrac{1}{4}\left(\dfrac{c}{h}\right)\comma \]
+然后由\reflmm{lmm7.1}，
+\begin{equation}\label{eq7.16}
+\begin{split}
+	\Delta\left(h,k;c\right)&=F\left(h,k;c\right)-	\Delta\left(k,h;c\right)=
+	\\&=F\left(h,k;c\right)-\Delta\left(k\left(\!\!\!\mod h\right),h;c\left(\!\!\!\mod h\right)\right)\juhao
+	\end{split}
+\end{equation}
+结合欧几里得算法\refeq{eq7.14} 和\refeq{eq7.15} 到\refeq{eq7.16}，对于$ j=0,1,2,\ldots,l-1 $，我们有
+\begin{equation}\label{eq7.17}
+\Delta\left(H_{j},H_{j-1};c_{j}\right)=F\left(H_{j},H_{j-1};c_{j}\right)-\Delta\left(H_{j+1},H_{j};c_{j+1}\right)\juhao
+\end{equation}
+记
+\[ F_{j}=F\left(H_{j},H_{j-1};c_{j}\right)\comma \]
+那么，通过重复应用\refeq{eq7.17}，我们有
+\[ \Delta\left(H,K;c\right)=F_{0}-F_{1}+F_{2}-F_{3}\pm\ldots+\myone{l-1}F_{l-1}= \]
+\[ =\sum_{j=0}^{l-1}\myone{j}\left(\dfrac{c_{j}^{2}}{2hk}-\dfrac{1}{2}b_{j+1}+\dfrac{1}{4}\delta\left(\dfrac{c_{j}}{H_{j}}\right)\right)= \]
+\begin{equation}\label{eq7.18}
+=\dfrac{-b_{1}+b_{2}-b_{3}\pm\cdots+\myone{l}b_{l}}{2}+\sum_{j=0}^{l-1}\myone{j}\dfrac{c_{j}^{2}}{2H_{j-1}H_{j}}+\dfrac{\myone{l-1}}{4}\juhao
+\end{equation}
+方程 \ref{eq7.18} 在$ c $ 为整数的情况下证明了\reflmm{lmm7.2}。
+
+如果$ c $ 不为整数，那么我们只用应用\refeq{eq7.12}即可。\hfill\QEDopen
+
+\paragraph{\refprop{prop6.1} 的一个类比} 令$ 0<\alpha<1 $为任何无理数，让$ 0<\rho<1 $为任何有理数。为了证明关于无理旋转的定理 1.1，首先，我们需要知道平均(``期望'')
+\begin{equation}\label{eq7.19}
+	M_{\alpha}\left(\rho; N\right)=\dfrac{1}{N}\sum_{n=1}^{N}S_{\alpha}\left(\rho;n\right)\comma
+\end{equation}
+其中
+\begin{equation}\label{eq7.20}
+S_{\alpha}\left(\rho;n\right)=\sum_{k=1}^{n}\left(\chi_{\rho}\left(k\alpha\right)-\rho\right)
+\end{equation}
+其中，示性函数$ \chi_{\rho}\left(x\right) $ 在\refeq{eq7.1} 中定义。
+
+通过利用\refeq{eq7.2}，我们有
+\[ S_{\alpha}\left(\rho;n\right)=\sum_{k=1}^{n}\left(\ddbrace{k\alpha-\rho}-\ddbrace{k\alpha}\right)\comma \]
+并且
+\[ M_{\alpha}\left(\rho; N\right)=\dfrac{1}{N}\sum_{n=1}^{N}\left(N+1+k\right)\left(\ddbrace{k\alpha-\rho}-\ddbrace{k\alpha}\right)\juhao \] 
+重复对\refprop{prop6.1} 证明再加上一些自然的修改，我们下面类比的结果。
+
+\begin{prop}\label{prop7.1}
+	对于任何无理数$ \alpha>0 $，任何实数$ 0<\rho<1 $，以及任何整数$ N\geq1 $，
+	\begin{equation}\label{eq7.21}
+	\begin{split}
+	M_{\alpha}\left(\rho; N\right)&=\dfrac{-b_{1}+b_{2}-b_{3}\pm\cdots+\myone{l}b_{l}}{2}
+	\\-\dfrac{c_{0}^{2}}{2KH}-\dfrac{c_{1}^{2}}{2HH_{1}}&+\dfrac{c_{2}^{2}}{2H_{1}H_{2}}\mp\cdots+\myone{l-1}\dfrac{c_{l-1}^{2}}{2H_{l-2}H_{l-1}}+\theta\cdot\underset{1\leq j\leq l}{\max}b_{j}\comma
+	\end{split}
+	\end{equation}
+	其中，$ \lvert\theta\rvert<10  $，\conalpha，指标$ l=l\left(\alpha,N\right) $ 定义为使得$ q_{j}\leq N $成立的最后一个指标$ j $，$ p_{j}/q_{j} $ 是$ \alpha $ 的第$ j $个收敛值，最后，$ b_{i}\comma c_{i}\comma H_{i} $ 由\refeq{eq7.14} 和\refeq{eq7.15} 在$ c=c_{0}=\left(1-\rho\right)K\comma K=q_{l}\comma H=p_{l} $ (即，$ H/K=p_{l}/q_{l} $)的条件下决定。 \hfill\QEDopen
+\end{prop}
+
+下面我们给出一些解释。
+\paragraph{例子 1}
+首先令$ \rho=1/2 $。我们以$ \alpha=\sqrt{2} $开始，并计算$M_{\sqrt{2}}\left(1/2;N\right) $，即定理 1.1 中的相应期望。连分数$ \sqrt{2}-1=\left[2,2,2,\ldots\right]=\left[\overline{2}\right] $ 给出\refeq{eq7.14} 中的数 $ 2=a_{1}=a_{2}=a_{3}=\cdots $ 然后，我们计算\refeq{eq7.15} 中的$ b_{i}\comma c_{i}\comma H_{i} $：
+  \[ c=c_{0}=\left(1-\rho\right)K=\dfrac{1}{2}\left(2H+H_{1}\right)=H+\dfrac{1}{2}H_{1}\comma \]
+ 表明$ b_{1}=1 $，并且 
+ \[ c_{1}=\erfenzy H_{1}=0\cdot H+\erfenzy H_{1}\comma\text{表明} b_{2}=0\comma\text{以及} \]
+ \[ c_{2}=\erfenzy H_{1}=\erfenzy\left(2H_{2}H+H_{3}\right)=H_{2}+\erfenzy H_{3}\comma\text{表明} b_{3}=1\comma\]
+ 然后依次类推。因此我们得到周期列
+ \[ b_{0}=1\comma b_{2}=0\comma b_{3}=4\comma b_{4}=0\comma\ldots\comma b_{i}=\erfenzy\left(1+\myone{i-1}\right)\fenhao\]
+ \[ c_{0}=\erfenzy K\comma c_{1}=c_{2}=\erfenzy H_{1}\comma c_{3}=c_{4}=\erfenzy H_{3}\comma c_{5}=c_{6}=\erfenzy H_{5}\comma\ldots \]
+因此，我们有
+\begin{equation}\label{eq7.22}
+\dfrac{b_{1}-b_{2}+b_{3}-b_{4}\pm\cdots}{2}=\dfrac{1-0+1-0+1-0+\cdots}{2}
+\end{equation}
+和
+\[ -\dfrac{c_{0}^{2}}{2KH}+\dfrac{c_{1}^{2}}{2HH_{1}}+\dfrac{c_{2}^{2}}{2H_{1}H_{2}}\pm\cdots= \]
+\begin{equation}\label{eq7.23}
+=-\dfrac{K}{8H}-\dfrac{H_{1}}{8}\left(\dfrac{1}{H_{2}}-\dfrac{1}{H}\right)-\dfrac{H_{3}}{8}\left(\dfrac{1}{H_{4}}-\dfrac{1}{H_{2}}\right)-\dfrac{H_{5}}{8}\left(\dfrac{1}{H_{6}}-\dfrac{1}{H_{4}}\right)-\cdots
+\end{equation}
+因为
+\[ \dfrac{H_{2i+1}}{8}\left(\dfrac{1}{H_{2i+2}}-\dfrac{1}{H_{2i}}\right)=\dfrac{H_{2i+1}}{8}\cdot\dfrac{H_{2i}-H_{2i+2}}{H_{2i+2}H_{2i}}=\dfrac{H_{2i+1}}{8}\cdot\dfrac{2H_{2i+1}}{H_{2i+2}H_{2i}}= \]
+\begin{equation}\label{eq7.24}
+=\dfrac{{H_{2i+1}}^{2}}{4H_{2i+2}H_{2i}}=\dfrac{1}{4}+\text{指数型小量}\comma
+\end{equation}
+应用\refprop{prop7.1} 中的\refeq{eq7.22} --\refeq{eq7.24}，由\refeq{eq7.21}，我们有
+\[ M_{\sqrt{2}}\left(\erfenzy;N\right)=\left(\dfrac{1-0}{2}-\dfrac{1}{4}\right)\cdot\erfenzy\cdot\dfrac{\log N}{\log\left(1+\sqrt{2}\right)}+O(1)\comma \]
+其中，在最后一步我们利用了下面事实(请参看\refeq{eq7.18})
+\[ q_{l}=\dfrac{(1+\sqrt{2})^{2}-(1-\sqrt{2})^{2}}{2\sqrt{2}}=N\quad \text{表明} \quad l=\dfrac{\log N}{\log\left(1+\sqrt{2}\right)}+O(1)\juhao \]
+因此，我们得到
+\begin{equation}\label{eq7.25}
+M_{\sqrt{2}}\left(\erfenzy;N\right)=\dfrac{1}{8}\dfrac{\log N}{\log\left(1+\sqrt{2}\right)}+O(1)\comma
+\end{equation}
+这就证明了 (1.32)。
+
+特别地，当$ \rho=1/2 $时，我们有下面特殊性质
+\begin{equation}\label{eq7.26}
+\chi_{1/2}(x)-\erfenzy=\ddbrace{2x}-2\ddbrace{x}\comma
+\end{equation}
+由此得到方程
+\begin{equation}\label{eq7.27}
+M_{\alpha}\left(\erfenzy;N\right)=M_{2\alpha}\left(N\right)-2M_{\alpha}\left(N\right)\juhao
+\end{equation}
+利用\refeq{eq7.27}，我们可以简单地双重检查\refeq{eq7.25}。意思就是我们两种情况下应用\refprop{prop6.1}：$ \alpha=\sqrt{2}=\left[\overline{2}\right] $ 和
+\[ 2\alpha=2\sqrt{2}=\sqrt{8}=\left[2;1,4,1,4,1,4,\ldots\right]=\left[2;\overline{1,4}\right]\juhao \]
+$ \alpha=\sqrt{2} $ 的周期长度为奇数，所以相应的\refprop{prop6.1} 中的交错和抵消了。因此，我们有
+\[ M_{\sqrt{2}}\left(\erfenzy;N\right)=M_{2\sqrt{2}}\left(N\right)=\dfrac{-1+4-1+4-1+4\mp\cdots}{12}+O(1)= \]
+\begin{equation}\label{eq7.28}
+=\dfrac{1}{12}\cdot\dfrac{-1+4}{2}\cdot\dfrac{\log N}{\log\left(1+\sqrt{2}\right)}+O(1)=\dfrac{1}{8}\dfrac{\log N}{\log\left(1+\sqrt{2}\right)}+O(1)\comma
+\end{equation}
+这又给出了\refeq{eq7.25}。在\refeq{eq7.28} 中，我们利用了事实：$ \sqrt{8} $的$ (2i)-th $个收敛值$ p_{2i}/q_{2i} $ 满足方程
+\[ p_{2i}\pm q_{2i}\sqrt{8}=\left(3\pm\sqrt{8}\right)^{i}\comma \]
+这表明
+\[ q_{2i}=\dfrac{1}{2\sqrt{8}}\left(\left(3+\sqrt{8}\right)^{i}-\left(3-\sqrt{8}\right)^{i}\right)\approx\left(3+\sqrt{8}\right)^{i}=\left(1+\sqrt{2}\right)^{2i}\juhao \]
+特殊方程 \ref{eq7.27} 给出了对于任何二次无理数$ \alpha $，$ \rho=1/2 $的一种捷近。
+比如，如果$ \alpha =\sqrt{3}=\left[1;\overline{1,2}\right] $，那么
+\[ 2\alpha=2\sqrt{3}=\sqrt{12}=\left[3;\overline{2,6}\right] \juhao\]
+因此由\refeq{eq7.27} 和\refprop{prop6.1}，
+\[ M_{\sqrt{3}}\left(\erfenzy;N\right)=M_{2\sqrt{3}}\left(N\right)-2M_{\sqrt{3}}\left(N\right)= \]
+\begin{equation}\label{eq7.29}
+=\dfrac{1}{12}\left(\dfrac{-2+6}{2}\cdot\dfrac{\log N}{\log\left(2+\sqrt{3}\right)}-2\cdot\dfrac{-1+2}{2}\cdot\dfrac{2\log N}{\log\left(2+\sqrt{3}\right)}\right)+O(1)=O(1)\comma
+\end{equation}
+因为$ \sqrt{3} $的$ (2i)-th $个收敛值$ p_{2i}/q_{2i} $ 满足方程
+\[ p_{2i}\pm q_{2i}\sqrt{3}=\left(2\pm\sqrt{3}\right)^{i}\comma \]
+\[ q_{2i}=\dfrac{1}{2\sqrt{3}}\left(\left(2+\sqrt{3}\right)^{i}-\left(2-\sqrt{3}\right)^{i}\right)\approx\left(2+\sqrt{3}\right)^{i}\fenhao \]
+类似地，$ 2\sqrt{3} $的$i-th $个收敛值的分母大约为$ \left(2+\sqrt{3}\right)^{i} $ (因为\pelleq{12}{\pm1}的最小正解是$ x=7\comma y=2 $，并且$ 7+2\sqrt{12}=\left(2+\sqrt{3}\right)^{2} $)。
+
+然后考虑黄金分割比$ \alpha=(\sqrt{5}+1)/2 $。那么$ \alpha=\left[1;\overline{1}\right] $ 和 $ 2\alpha=\left[3;\overline{4}\right] $。因为这两个连分数的周期长度都为奇数，由\refeq{eq7.27} 和\refprop{prop6.1}，
+\begin{equation}\label{eq7.30}
+M_{(\sqrt{5}+1)/2 }\left(\erfenzy;N\right)=O(1)\juhao
+\end{equation}
+
+本节最后一个例子是$ \alpha=\sqrt{7}\comma\left(\rho=1/2\right) $。我们需要以下事实：\periodrep{7}{2}{1,1,1,4}，\periodrep{28}{5}{3,2,3,10}，方程\pelleq{7}{\pmone}和\pelleq{28}{\pmone} 的最小正解分别为\xysolution{8}{3} 和 \xysolution{127}{24}，其联系为$ 127+24\sqrt{28}=(8+3\sqrt{7})^{2} $。结合这些事实，由\refeq{eq7.27} 和\refprop{prop6.1}，我们有
+\[ M_{\sqrt{7}}\left(\erfenzy;N\right)=M_{2\sqrt{7}}\left(N\right)-2M_{\sqrt{7}}\left(N\right)= \]
+\begin{equation}\label{eq7.31}
+=\dfrac{\log N}{12}\left(\dfrac{-3+2-3+10}{\log(127+24\sqrt{28})}-2t\dfrac{-1+1-1+4}{log(8+3\sqrt{7})}\right)+O(1)=-\dfrac{\log N}{4log(8+3\sqrt{7})}O(1)\juhao
+\end{equation}  
+
+下面我们讨论$ \rho\neq1/2 $的例子。
+
+\paragraph{例子 2} 下面令$ \rho=1/3\comma\alpha=\sqrt{2} $。那么\periodrep{2}{1}{2}导出\refeq{eq7.14} 中的$ 2=a_{1}=a_{2}=a_{3}=\cdots $。我们计算\refeq{eq7.15} 中的$ b_{i}\comma c_{i}\comma H_{i} $：
+ \[ c=c_{0}=\left(1-\rho\right)K=\dfrac{2}{3}K=\dfrac{2}{3}\left(2H+H_{1}\right)=H+\dfrac{1}{3}H+\dfrac{2}{3}H_{1}\comma \]
+ 得到$ b_{1}=1 $，然后类似地，
+ \begin{equation*}
+ 	\begin{split}
+ 	c_{1}&=\dfrac{1}{3}H+\dfrac{2}{3}H_{1}=\dfrac{1}{3}\left(2H_{1}+H_{2}\right)+\dfrac{2}{3}H_{1}=H_{1}+\dfrac{1}{3}H_{1}+\dfrac{1}{3}H_{2} \Rightarrow b_{2}=1\comma
+ 	\\	c_{2}&=\dfrac{1}{3}H_{1}+\dfrac{2}{3}H_{2}=\dfrac{1}{3}\left(2H_{2}+H_{3}\right)+\dfrac{1}{3}H_{3}=H_{2}+\dfrac{1}{3}H_{3} \Rightarrow b_{3}=1\comma
+   	\\	c_{3}&=\dfrac{1}{3}H_{3}=0\cdot H_{3}+\dfrac{1}{3}H_{3} \Rightarrow b_{4}=0\comma
+	\\	c_{4}&=\dfrac{1}{3}H_{3}=\dfrac{1}{3}\left(2H_{4}+H_{5}\right)=0\cdot H_{4}+\dfrac{2}{3}H_{4}+\dfrac{1}{3}H_{5} \Rightarrow b_{5}=0\comma
+	\\	c_{5}&=\dfrac{2}{3}H_{4}+\dfrac{1}{3}H_{5}=\dfrac{2}{3}\left(2H_{5}+H_{6}\right)+\dfrac{1}{3}H_{5}=H_{5}+\dfrac{2}{3}H_{5}+\dfrac{2}{3}H_{6} \Rightarrow b_{6}=1\comma
+	\\	c_{6}&=\dfrac{2}{3}H_{5}+\dfrac{2}{3}H_{5}=\dfrac{2}{3}\left(2H_{6}+H_{7}\right)+\dfrac{2}{3}H_{6}=2H_{6}+\dfrac{2}{3}H_{7} \Rightarrow b_{7}=2\comma
+	\\	
+	c_{7}&=\dfrac{3}{3}H_{7}=0\cdot H_{7}+\dfrac{2}{3}H_{7} \Rightarrow b_{8}=0\comma
+	\\	c_{8}&=\dfrac{2}{3}H_{7}=\dfrac{2}{3}\left(2H_{6}+H_{9}\right)=H_{8}+\dfrac{1}{3}H_{8}+\dfrac{2}{3}H_{9} \Rightarrow b_{9}=1\comma\text{以此类推}
+ 	\end{split}
+ \end{equation*}
+ 回到最开始。因此我们得到了$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$的周期列：
+ \[ 1,1,1,0,0,1,2,0,\quad1,1,1,0,0,1,2,0,\quad1,1,1,0,0,1,2,0,\quad\ldots \]
+ 因此，我们得到了
+ \[ \dfrac{b_{1}- b_{2}+b_{3}-b_{4}\pm\cdots}{2}= \]
+ \begin{equation}\label{eq7.32}
+ =\erfenzy\cdot\dfrac{1-1+1-0+0-1+2-0}{8}\cdot\dfrac{\log N}{\log(1+\sqrt{2})}+O(1)\comma
+ \end{equation}
+ 以及
+ \[ -\dfrac{c_{0}^{2}}{2KH}+\dfrac{c_{1}^{2}}{2HH_{1}}+\dfrac{c_{2}^{2}}{2H_{1}H_{2}}\pm\cdots= \]
+ \[ =\dfrac{1}{18}\left(-\dfrac{(2K)^{2}}{KH}+\dfrac{(H+2H_{1})^{2}}{HH_{1}}-\dfrac{(H_{1}+H_{2})^{2}}{H_{1}H_{2}}+\dfrac{H_{3}^{2}}{H_{2}H_{3}}\right)\dfrac{\log N}{8\log(1+\sqrt{2})}+ \]
+ \begin{equation}\label{eq7.33}
+ +\dfrac{1}{18}\left(-\dfrac{H_{3}^{2}}{H_{3}H_{4}}+\dfrac{(2H_{4}+H_{5})^{2}}{H_{4}H_{5}}-\dfrac{(2H_{5}+2H_{6})^{2}}{H_{5}H_{6}}+\dfrac{H_{7}^{2}}{H_{6}H_{7}}\right)\dfrac{\log N}{8\log(1+\sqrt{2})}+O(1)\juhao
+ \end{equation}
+ 因为由\refeq{eq7.14}
+ \[ \dfrac{H_{i}-H_{i-2}}{H_{2i+1}}=a_{i+2}=2\comma \]
+ 我们可以改写\refeq{eq7.33} 成下面这样：
+ \[ sum(7-33)=\dfrac{1}{18}\left(-\dfrac{4(K-H_{1})}{H}+4+\dfrac{H-H_{1}}{H_{1}}-2-\dfrac{H_{1}-H_{3}}{H_{2}}-\dfrac{H_{3}-H_{5}}{H_{4}}+\right. \]
+ \[ \left.+\dfrac{4(H_{4}-H_{6})}{H_{5}}-8-\dfrac{4(H_{4}-H_{7})}{H_{6}}\right)= \]
+ \[ =\dfrac{1}{18}(-8+4+2-2-2-2+4+8-8-8)=-\dfrac{2}{3}\comma \]
+ 表明
+ \begin{equation}\label{eq7.34}
+sum(7-33)=-\dfrac{\log N}{12\log(1+\sqrt{2})}+O(1)\juhao
+ \end{equation}
+ 应用\refeq{eq7.32} --\refeq{eq7.34} 到\refeq{eq7.21} 中，我们有
+ \[ M_{\sqrt{2}}\left(\dfrac{1}{3};N\right)=\left(\dfrac{1}{8}-\dfrac{1}{12}\right)\dfrac{\log N}{\log(1+\sqrt{2})}+O(1) =\]
+ \begin{equation}\label{eq7.35}
+ =\dfrac{\log N}{24\log(1+\sqrt{2})}+O(1)\juhao
+ \end{equation}
+ 然后令$ \rho=2/3\comma\alpha=\sqrt{2} $；通过相似的计算得到同样的答案：
+ \begin{equation}\label{eq7.36}
+ M_{\sqrt{2}}\left(\dfrac{2}{3};N\right)=\dfrac{\log N}{24\log(1+\sqrt{2})}+O(1)\juhao
+ \end{equation}
+ 我们可以很容易利用下面特殊性质检查\refeq{eq7.35} 和\refeq{eq7.36}：
+ \begin{equation}\label{eq7.37}
+ \left(\chi_{1/3}-\dfrac{1}{3}\right)+ \left(\chi_{2/3}-\dfrac{2}{3}\right)=\ddbrace{3x}-3\ddbrace{x}\comma
+ \end{equation}
+ 由此导出(参看\refeq{eq7.2} 和\refeq{eq7.19})
+ \begin{equation}\label{eq7.38}
+ M_{\alpha}\left(\dfrac{1}{3};N\right)
++ M_{\alpha}\left(\dfrac{2}{3};N\right)=
+M_{3\alpha}\left(N\right)-3M_{\alpha}\left(N\right)\juhao
+\end{equation}
+ 注意到\refeq{eq7.37} --\refeq{eq7.38} 是\refeq{eq7.26} --\refeq{eq7.27} 的一个类比。
+
+我们有$ 3\sqrt{2}=\sqrt{18}=\left[4;\overline{4,8}\right] $，然后由\refprop{prop6.1}，
+\begin{equation}\label{eq7.39}
+M_{3\sqrt{2}}\left(N\right)=\dfrac{1}{12}\cdot\dfrac{-4+8}{2}\cdot\dfrac{\log N}{2\log(1+\sqrt{2})}+O(1)\comma
+\end{equation}  
+因为\pelleq{18}{\pmone}的最小正解为\xysolution{17}{4}，所以$ \sqrt{18} $的$ (2i)-th $个收敛值$ p_{2i}/q_{2i} $ 满足方程
+\[ p_{2i}\pm q_{2i}\sqrt{18}=\left(17\pm4\sqrt{18}\right)^{i}\comma \]
+\[ q_{2i}\approx\left(17+4\sqrt{18}\right)^{i}=(1+\sqrt{2})^{4i}\juhao \]
+因为$ \sqrt{2} $的周期长度为奇数，由\refeq{eq7.38} 和\refeq{eq7.39}，
+
+\[ M_{\sqrt{2}}\left(\dfrac{1}{3};N\right)
++ M_{\sqrt{2}}\left(\dfrac{2}{3};N\right)=
+M_{3\sqrt{2}}\left(N\right)-3M_{\sqrt{2}}\left(N\right)= \]
+\[ =\dfrac{\log N}{12\log(1+\sqrt{2})}+O(1)\comma\]
+这和\refeq{eq7.35} --\refeq{eq7.36} 相符合。
+
+\paragraph{例子 3}
+令$ \rho=1/4\comma\alpha=(\sqrt{5}+1)/2=\left[1;\overline{1}\right] $。那么\refeq{eq7.14}中的$ 1=a_{1}=a_{2}=a_{3}=\cdots $，
+\begin{equation}\label{eq7.40}
+ c=c_{0}=\left(1-\rho\right)K=\dfrac{3}{4}K=\dfrac{3}{4}\left(H+H_{1}\right)=H+\dfrac{1}{4}\left(3H_{1}-H\right)\comma 
+\end{equation}
+得到$ b_{1}=1 $。注意因为$ H/H_{1} $离黄金分割比$ \alpha=(\sqrt{5}+1)/2<3 $特别近，所以$ 3H_{1}>H $。我们有
+\begin{equation}\label{eq7.41}
+3H_{1}-H=3H_{1}-\left(H_{1}+H_{2}\right)=2H_{1}-H_{2}=2\left(H_{2}+H_{3}\right)-H_{2}=H_{2}+2H_{3}\comma
+\end{equation}
+所以
+\begin{equation*}
+ \begin{split}
+ c_{1}&=\dfrac{1}{4}H_{1}+\dfrac{1}{2}H_{3}=0\cdot H_{1}+c_{2}=0\cdot H_{2}+c_{3} \Rightarrow b_{2}=b_{3}=0\comma
+ \\	c_{3}&=\dfrac{1}{4}H_{1}+\dfrac{1}{2}H_{3}=\dfrac{1}{4}\left(H_{3}+H_{4}\right)+\dfrac{1}{2}H_{3}=\dfrac{3}{4}H_{3}+\dfrac{1}{4}H_{4}<H_{3} \Rightarrow b_{4}=0\comma
+ \\	c_{4}&=\dfrac{3}{4}H_{3}+\dfrac{1}{4}H_{4}=\dfrac{3}{4}\left(H_{4}+H_{5}\right)+\dfrac{1}{4}H_{4}=H_{4}+\dfrac{3}{4}H_{5} \Rightarrow b_{5}=1\comma
+ \\	c_{5}&=\dfrac{3}{4}H_{5}=0\cdot H_{5}+\dfrac{3}{4}H_{5} \Rightarrow b_{6}=0\comma
+ \\	c_{6}&=\dfrac{3}{4}H_{5}=\dfrac{3}{4}\left(H_{6}+H_{7}\right)=H_{6}+\dfrac{1}{4}\left(3H_{7}-H_{6}\right) \comma
+ \end{split}
+ \end{equation*} 
+ 这和一开始是一样的。因此我们得到了$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$的周期列：
+ \[ 1,0,0,0,1,0,\quad1,0,0,0,1,0,\quad1,0,0,0,1,0,\quad\ldots\comma \]
+ 因此，我们得到了
+ \[ \dfrac{b_{1}- b_{2}+b_{3}-b_{4}\pm\cdots}{2}= \]
+ \begin{equation}\label{eq7.42}
+ =\erfenzy\cdot\dfrac{1-0+0-0+1-0}{6}\cdot\dfrac{\log N}{\log\dfrac{\sqrt{5}+1}{2}}+O(1)\comma
+ \end{equation}
+ 并且
+ \begin{equation}\label{eq7.43}
+ -\dfrac{c_{0}^{2}}{2KH}+\dfrac{c_{1}^{2}}{2HH_{1}}+\dfrac{c_{2}^{2}}{2H_{1}H_{2}}\pm\cdots=\dfrac{1}{32}\cdot S_{0}\cdot\dfrac{\log N}{6\log\dfrac{\sqrt{5}+1}{2}}+O(1)\juhao
+ \end{equation}
+  其中
+  \[ S_{0}=-\dfrac{9K^{2}}{KH}+(H_{2}+2H_{3})^{2}\left(\dfrac{1}{HH_{1}}-\dfrac{1}{H_{1}H_{2}}+\dfrac{1}{H_{2}H_{3}}\right)-\dfrac{(3H_{3}+H_{4})^{2}}{H_{3}H_{4}}+\dfrac{9H_{5}^{2}}{H_{4}H_{5}}\juhao\]
+  \refeq{eq7.43} 中间关键的和$ S_{0} $ 等于($ \alpha=(\sqrt{5}+1)/2 $)
+  \begin{equation}\label{eq7.44}
+  S_{0}=-9\alpha+(\alpha+2)^{2}\left(\alpha^{-5}-\alpha^{-3}+\alpha^{-1}\right)-\dfrac{(3\alpha+1)^{2}}{\alpha}+9\alpha^{-1}
+  \end{equation}
+  然后利用简单的事实$ \alpha^{2}=1+\alpha $ 和 $ \alpha^{-2}=1-\alpha^{-1} $，很容易可以算出\refeq{eq7.44}： $ S_{0}=-24 $。回到\refeq{eq7.43}，我们有
+  \begin{equation}\label{eq7.45}
+  sum(7-43)=\dfrac{1}{32}\cdot(-24)\cdot\dfrac{\log N}{6\log\dfrac{\sqrt{5}+1}{2}}+O(1)\juhao
+  \end{equation}
+  应用\refeq{eq7.42} --\refeq{eq7.45}，我们有
+  \[ M_{(\sqrt{5}+1)/2}\left(\dfrac{1}{4};N\right)=\left(1-\dfrac{24}{32}\right)\dfrac{\log N}{6\log\dfrac{\sqrt{5}+1}{2}}+O(1)= \]
+  \begin{equation}\label{eq7.46}
+  =\dfrac{\log N}{24\log\dfrac{\sqrt{5}+1}{2}}+O(1)\juhao 
+  \end{equation}
+  
+ \paragraph{\refprop{prop7.1} 中的周期性}
+ 让我们回到\refprop{prop7.1} 和方程 \ref{eq7.21}。例子中，$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$的周期性绝非偶然：我们证明如果数列$ a_{1}\comma a_{2}\comma a_{3}\comma\ldots$ 是周期的且$ c/K $为有理数，那么$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$也是周期的 (但是周期长度不一定相同)。
+ 
+ 的确，记$ c/K=s/t $， 其中$ 1\leq s<t $为互质的整数。那么，由\refeq{eq7.14} --\refeq{eq7.15}，
+ \[ c=c_{0}=\dfrac{s}{t}K=\dfrac{s}{t}\left(a_{1}H+H_{1}\right)=b_{1}H+c_{1}\comma \]
+ 其中($ \lfloor x\rfloor $和$ \lbrace x\rbrace $记为$ x $的整数部分和小数部分)
+ \[ b_{1}=\left\lfloor \dfrac{sa_{1}}{t}\right\rfloor\quad \text{和}\quad c_{1}=\left\lbrace\dfrac{sa_{1}}{t} \right\rbrace H+\dfrac{s}{t}H_{1}= \dfrac{s_{1}}{t}H+\dfrac{s}{t}H_{1}\comma \]
+ 这里，我们\textbf{假设}$ c_{1}<H $。
+ 
+ 类似地，
+ \[ c_{1}=\dfrac{s_{1}}{t}H+\dfrac{s}{t}H_{1}=\dfrac{s_{1}}{t}\left(a_{2}H_{1}+H_{2}\right)+\dfrac{s}{t}H_{1}=b_{2}H_{1}+c_{2}\comma \]
+ 其中
+ \[ b_{2}=\left\lfloor \dfrac{s_{1}a_{2}+s}{t}\right\rfloor\quad \text{和}\quad c_{2}=\left\lbrace\dfrac{s_{1}a_{2}+s}{t} \right\rbrace H+\dfrac{s_{1}}{t}H_{2}= \dfrac{s_{2}H_{1}+s_{1}+H_{2}}{t}\comma \]
+ 又一次，我们\textbf{假设}$ c_{2}<H_{1} $。
+ 
+ 重复这个讨论，对于任意$ i\geq0 $，我们有
+ \begin{equation}\label{eq7.47}
+ c_{i}=\dfrac{s_{i}H_{i-1}+s_{i-1}H_{i}}{t}\comma
+ \end{equation}
+ 其中，$ 0\leq s_{i},s_{i-1}<t $ 为整数，而且我们一直假设$ c_{i}<H_{i-1} $。
+ 
+ $ a_{i} $ 的周期性意思是
+ \begin{equation}\label{eq7.48}
+ a_{i}=a_{i+L} \comma\text{对于 $ M_{1}
+ 	\leq i\leq M_{2} $ 成立}\comma
+ \end{equation}
+ 这里，我们假设$ (M_{1}-M_{2})/L $ 是一个非常大的整数。考虑下面间隔为$ L $的数列：
+ \[ c_{M_{1}},c_{M_{1}+L},c_{M_{1}+2L},c_{M_{1}+3L},\cdots c_{M_{2}}\fenhao \]
+ 由\refeq{eq7.47}，我们有
+ \begin{equation}\label{eq7.49}
+ c_{M_{1}+jL}=\dfrac{s'_{j}H_{M_{1}+jL-1}+s''_{j}H_{M_{1}+jL}}{t}<H_{M_{1}+jL-1}\comma
+ \end{equation}
+ 其中$ 0\leq s'_{j},s''_{j} <t $为整数。如果$ \left(M_{2}-M_{1}\right)/L $ 比$ t^{2} $大，那么由鸽子洞原理，一定存在重复的数对$ \left(s'_{j},s''_{j}\right)\comma j=0,1,2,\ldots$，而且第一个重复的出现表明了在区间 $ M_{1}
+ \leq i\leq M_{2} $ (参看\refeq{eq7.48}) 剩下的部分，数列$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$具有周期性。当然，我们不能预测周期的长度，但是它一定小于$ L\left(t^{2}+1\right) $。
+ 
+\textbf{ 警告!} 我们在\refeq{eq7.47} 中的假设条件
+ \[  c_{i}=\dfrac{s_{i}H_{i-1}+s_{i}H_{i}}{t}<H_{i-1}\comma 0\leq s_{i},s_{i-1} <t \]
+ 有可能无法满足；比如，参看上面例子 3 中的\refeq{eq7.40} ($ \alpha=(\sqrt{5}+1)/2\comma\rho=1/4 $)：
+ \[ c_{0}=\dfrac{3}{4}\left(H+H_{1}\right)>H \comma\]   
+ 因为$ H/H_{1} $离黄金分割比$ \alpha=(\sqrt{5}+1)/2<3 $特别近。这就是为社么我们不能写
+ \[ c_{0}=0\cdot H+c_{1} \comma\text{其中}\quad c_{1}=\dfrac{3}{4}\left(H+H_{1}\right)  \]
+ 而我们必须写
+ \[ c_{0}=H+\dfrac{3H_{1}-H}{4}=H+c_{1}\comma \]
+ 其中在$ c_{1} $，我们面对了一个负(!)的系数：
+ \begin{equation}\label{eq7.50}
+ 0<c_{1}=\left(-\dfrac{1}{4}\right)H+\dfrac{3}{4}H_{1}<H\juhao
+ \end{equation}
+ 对于$  \alpha=(\sqrt{5}+1)/2<3 $，我们可以用特殊的性质(参看\refeq{eq7.41})
+ \begin{equation}\label{eq7.51}
+ 3H_{1}-H=H_{2}+2H_{3}\comma
+ \end{equation}
+ 这轻松地解决了\refeq{eq7.50} 中的``负性问题''。
+ 
+ 下面我们说明这个技巧总是可以用的；我们总是可以解决``负性问题''。为了证明这个，假设对于某个$ i $，我们有---就像\refeq{eq7.49} 一样---\refeq{eq7.47}的反面：
+ \begin{equation}\label{eq7.52}
+ c_{i}=\dfrac{s_{i}H_{i-1}+s_{i}H_{i}}{t}>H_{i-1}\comma 0\leq s_{i},s_{i-1} <t\juhao
+ \end{equation}
+ 然后我们改写\refeq{eq7.52} 成形式
+ \[ c_{i}=H_{i-1}+c'_{i}\comma\text{其中}\quad  c'_{i}=\dfrac{s_{i-1}H_{i}-(t-s_{i})H_{i-1}}{t} \]
+ 和$ 0\leq c'_{i}<H_{i-1} $。在\refeq{eq7.14}中，我们有递推公式$ H_{i-1}=a_{i+1}H_{i}+H_{i+1} $，所以，$ r_{i}=t-s $，
+ \[ s_{i-1}H_{i}-r_{i}H_{i-1}=s_{i-1}H_{i}-r_{i}\left(a_{i+1}H_{i}+H_{i+1}\right)=s_{i-1}^{\ast}H_{i}-r_{i}H_{i+1}\comma \]
+ 其中，$ s_{i-1}^{\ast}=s_{i-1}-r_{i}a_{i+1}\geq1 $。
+ 
+ \textbf{情况 1：} $ s_{i-1}^{\ast}\geq r_{i} $
+
+  \noindent 利用$ H_{i}=a_{i+2}H_{i+1}+H_{i+2} $，我们有下面对\refeq{eq7.51} 的类比：
+  \[ s_{i-1}^{\ast}H_{i}-r_{i}H_{i+1}=s_{i-1}^{\ast}\left(a_{i+2}H_{i+1}+H_{i+2}\right)-r_{i}H_{i+1}= \]
+  \begin{equation}\label{eq7.53}
+  =\left(s_{i-1}^{\ast}a_{i+2}-r_{i}\right)H_{i+1}+s_{i-1}^{\ast}H_{i+2}\comma
+  \end{equation}
+  这就解决了``负性问题''。
+ 		
+\textbf{ 情况 2：} $ s_{i-1}^{\ast}< r_{i} $
+\noindent 下面我们再次利用\refeq{eq7.53}：
+\begin{equation}\label{eq7.54}
+s_{i-1}^{\ast}H_{i}-r_{i}H_{i+1}=\left(s_{i-1}^{\ast}a_{i+2}-r_{i}\right)H_{i+1}+s_{i-1}^{\ast}H_{i+2}\juhao
+\end{equation}
+如果$ \left(s_{i-1}^{\ast}a_{i+2}-r_{i}\right)  $为正，那我们就完成了证明；如果它是负的，那么显然$ r_{i+2}=\left \lvert s_{i-1}^{\ast}a_{i+2}-r_{i} \right \rvert<s_{i-1}^{\ast} $，然后我们可以改写\refeq{eq7.54} 成
+\begin{equation}\label{eq7.55}
+s_{i-1}^{\ast}H_{i}-r_{i}H_{i+1}=s_{i-1}^{\ast}H_{i+2}-r_{i+2}H_{i+1} \quad\text{其中}\quad r_{i}>r_{i+2}\geq0\juhao
+\end{equation}
+\refeq{eq7.55} 中下降的性质保证了，重复此过程小于$ t $次，那个负的系数最终会消失(即，变成像\refeq{eq7.51} 那样的正的系数)。换句话说，在上面两种情况下，我们都能解决``负性问题''。
+
+通过去除``负性问题''，我们可以安心地说，上面鸽子洞原理的讨论总是成立的。最终，我们获得了$ b_{1}\comma b_{2}\comma b_{3}\comma\ldots$的\textbf{周期性}。结合这个周期性与\reflmm{lmm7.1} 和\refprop{prop7.1}，我们有
+\begin{prop}
+	如果$ \alpha $为一个二次无理数，$ 0<\rho<1 $是一个有理数，那么存在一个常数$ c=c\left(\alpha,\rho\right) $使得
+	\begin{equation}\label{eq7.56}
+	M_{\alpha}\left(\rho,N\right)=c\cdot N+O(1)
+	\end{equation}
+	对所有的$ N\geq2 $成立。\hfill\QEDopen
+\end{prop}
+
+
+
+
+
+	\appendix
+    
+    \bibliographystyle{plain}	
+	\begin{thebibliography}{2}
+	\label{thereferes}		
+	 \seccontent
+	 \bibitem[Bec1]{Bec1}
+	 Beck, J\'ozsef.: Probabilistic Diophantine Approximation, Randomness in lattice point counting. Springer 2015.
+	  
+	 \bibitem[Be4]{Be4}
+	 Beck, J.: Randomness in lattice point problems, Discrete Mahtematics \textbf{229} (2001), pp. 29-45
+	 
+	 \bibitem[Di]{Di}
+	 Dieter, U.: Das Verhaltender Kleischen Functionen gegen\"uber Modultransformationen und verallgemeinerte Dedekindsche Summen, Journ. Reine Angew. Math. \textbf{201} (1959), 37-70.
+	 
+	 \bibitem[Ha-Li2]{Ha-Li2}
+	 Hardy, G.H. and Littlewood, J.: The lattice-points of a right-angled triangle. II, Abh. Math. Sem. Hamburg \textbf{1} (1922), 212-249.
+	 
+	  \bibitem[Ha-Li3]{Ha-Li3}
+	 Hardy, G.H. and Littlewood, J.: Some problems of Diophantine approximation: A series of cosecants, Bull. Calcutta Math. Soc. \textbf{20} (1930), 251-266
+	 
+	 \bibitem[Kn1]{Kn1}
+	 Knuth, D.E.: Notes on generalized Dedekind sums, Acta Arithmetica \textbf{33} (1977), 297-325.
+	 
+	 \bibitem[Ra-Gr]{Ra-Gr}
+	 Rademacher, H. and Grosswald, E.: \textit{Dedekind Sums}, Math. Assoc. Amer., Carus Monograph No.16(1972).
+	 
+	 \bibitem[Scho]{Scho}
+	 Schoissengeier, J.: Another proof of a theorem of J. Beck, Monatshefte f\"ur Mathematik \textbf{129} (2000), 147-151.
+	 
+	 \bibitem[Za1]{Za1} Zagier, D.B.: Nombres de classes at fractions continues, Journ. Arithmetiques de Bordeaux, Asterisque \textbf{24-25} (1975), 81-97.
+	 
+	 \bibitem[Za4]{Za4} Zagier, D.B.: \textit{Zeta-funktionen und quadradische K\"orper}, Hochschultext, Springer 1981.
+
+	\end{thebibliography}
+%	
+\end{document}
