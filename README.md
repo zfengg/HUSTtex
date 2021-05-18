@@ -19,7 +19,7 @@ The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou 
 在中文Windows系统中，模板中所需字体应该已经安装在系统里了。😄 
 
 If the fonts are not installed in you system, then you may find the fonts (`.ttf`) in the directory [`fonts/`](fonts/). There are several scripts to install fonts quickly:
-- Windows: Simply running Powerscript [`InstallFonts.ps1`](InstallFonts.ps1). (Note the [excution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).)
+- Windows: Simply running the Powerscript [`InstallFonts.ps1`](InstallFonts.ps1). (Note the [excution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).)
 - Linux: to be updated.
 - MacOS: to be updated.
 
