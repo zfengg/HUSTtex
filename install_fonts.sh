@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 
 ## install fonts
-pathUsrFonts="$HOME/.fonts"
+if [[ `uname` == 'Darwin' ]]; then
+	# MacOS
+	pathUsrFonts="$HOME/Library/Fonts"
+else
+	# Linux
+	pathUsrFonts="$HOME/.fonts"
+fi
+
 pathfonts='./fonts'
 if [ ! -d $pathUsrFonts ]; then
+	echo "default user fonts dir doesn't exist & create it..."
 	mkdir $pathUsrFonts
 	cp -r "$pathfonts"/* $pathUsrFonts
 else
+	echo "default user fonts dir exist & check and install fonts..."
 	fontsToInstall=$(ls $pathfonts | xargs basename -a)
 	fontsInstalled=$(ls $pathUsrFonts | xargs basename -a )
 	for file in $fontsToInstall
@@ -27,5 +36,7 @@ else
 	done
 fi
 
+echo 'Fonts installation finished~~~'
+echo 'Refeshing font cache:'
 fc-cache -f -v
 
