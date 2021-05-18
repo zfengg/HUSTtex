@@ -1,17 +1,16 @@
 # HUSTtex
 华中科技大学本科毕业论文一系列TeX模板
+> 请使用 [**XeLaTeX**](https://en.wikipedia.org/wiki/XeTeX) 编译！！！（正常默认是 `pdflatex`？）
 
 A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology. 
 
 The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou and be sure to set the compiler as **XeLaTeX**. 
 
-> 请使用 [**XeLaTeX**](https://en.wikipedia.org/wiki/XeTeX) 编译！！！（正常默认是 `pdflatex`？）
-
 ## `.tex` 模板 `.tex` files
 - 开题报告(thesis proposal): [`HUSTproposal.tex`](HUSTproposal\HUSTproposal.tex)
 - 开题答辩(thesis opening report): [`HUSTopening.tex`](HUSTopening\HUSTopening.tex)
 - 外文翻译(foreign literature translation): [`HUSTtrans.tex`](HUSTtrans/HUSTtrans.tex)
-- 论文(thesis): [`HUSTthesis`](HUSTthesis/HUSTthesis.tex)
+- 论文(thesis): [`HUSTthesis.tex`](HUSTthesis/HUSTthesis.tex)
   
 示例及说明详见相应文件夹中的`.pdf`文档。
 
