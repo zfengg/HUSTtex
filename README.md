@@ -24,7 +24,7 @@ The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou 
 
 If the fonts are not installed in you system, then you may find the fonts (`.ttf`) in the directory [`fonts/`](fonts/). There are several scripts to install fonts quickly:
 - Windows: Simply running the Powerscript [`InstallFonts.ps1`](InstallFonts.ps1). (Note the [excution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).)
-- Linux & MacOS: [`install_fonts`](install_fonts.sh).
+- Linux & MacOS: [`install_fonts.sh`](install_fonts.sh).
 ---
 I hope this repository can help you finish your job more effectively and elegantly. Please feel free to open an issue if you have any question or suggestion. 
 
