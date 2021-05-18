@@ -234,13 +234,13 @@
 \begin{document}
 
 \begin{frame}
-	\titlepage % Print the title page as the first slide
+\titlepage % Print the title page as the first slide
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{目录} % Table of contents slide, comment this block out to remove it
-	\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\frametitle{目录} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -254,27 +254,27 @@
 %\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-	\frametitle{Bernoulli卷积简介}\small
-	Bernoulli卷积是一类简单而有趣的自相似测度。令$ \nu_{\lambda} $为随机级数$ \sum_{0}^{\infty} \pmone\lambda^{n} $分布，其中的符号以概率$ \frac{1}{2} $独立地取得。这正是测度$ \frac{1}{2}(\delta_{-\lambda^{n}}+\delta_{\lambda^{n}}) $的无穷卷积，因此叫``Bernoulli卷积''。关于这类测度的研究可以追溯到1930年，Bernoulli卷积与调和分析，代数数理论，动力系统，以及Hausdorff维数的估计等领域有紧密的联系。
+\frametitle{Bernoulli卷积简介}\small
+Bernoulli卷积是一类简单而有趣的自相似测度。令$ \nu_{\lambda} $为随机级数$ \sum_{0}^{\infty} \pmone\lambda^{n} $分布，其中的符号以概率$ \frac{1}{2} $独立地取得。这正是测度$ \frac{1}{2}(\delta_{-\lambda^{n}}+\delta_{\lambda^{n}}) $的无穷卷积，因此叫``Bernoulli卷积''。关于这类测度的研究可以追溯到1930年，Bernoulli卷积与调和分析，代数数理论，动力系统，以及Hausdorff维数的估计等领域有紧密的联系。
 
 
-	根据不同的研究领域，Bernoulli卷积有不同的表示形式。\cite{Sixtyyears}
+根据不同的研究领域，Bernoulli卷积有不同的表示形式。\cite{Sixtyyears}
 
 \end{frame}
 
 \begin{frame}
 
-	\frametitle{Bernoulli卷积基本问题}\small
-	根据\cite{DJFeng1}，对$ \beta\in(1,2) $，Bernoulli卷积$ \nu_{\beta} $可以定义为下面一族测度$ \nu_{\beta}^{n} $的weak-star极限
-	\[ \nu_{\beta}^{n}:= \dfrac{1}{2}\sum_{a_{1}\cdots a_{n}\in \lbrace0,1\rbrace}\delta_{\sum_{i=1}^{n}a_{i}\beta^{-i}}\quad\juhao \]
+\frametitle{Bernoulli卷积基本问题}\small
+根据\cite{DJFeng1}，对$ \beta\in(1,2) $，Bernoulli卷积$ \nu_{\beta} $可以定义为下面一族测度$ \nu_{\beta}^{n} $的weak-star极限
+\[ \nu_{\beta}^{n}:= \dfrac{1}{2}\sum_{a_{1}\cdots a_{n}\in \lbrace0,1\rbrace}\delta_{\sum_{i=1}^{n}a_{i}\beta^{-i}}\quad\juhao \]
 
-	关于Bernoulli卷积基本问题是：对于哪些$ \beta $，这个测度是绝对连续的，哪些是奇异的(singular)。如果密度(关于Lebesgue测度的Radon-Nikodym导数)存在，那么它的光滑性如何($ L^{p?}$)? 然后就是Bernoulli
-	卷积的Hausdorff维数如何，是否等于1，怎样去估计Hausdorff维数。
+关于Bernoulli卷积基本问题是：对于哪些$ \beta $，这个测度是绝对连续的，哪些是奇异的(singular)。如果密度(关于Lebesgue测度的Radon-Nikodym导数)存在，那么它的光滑性如何($ L^{p?}$)? 然后就是Bernoulli
+卷积的Hausdorff维数如何，是否等于1，怎样去估计Hausdorff维数。
 
-	其中有一个非常重要的结果就是，Erd\"os证明如果$ \beta $为Pisot数，那么相应的Bernoulli卷积的维数一定小于1。
-	\begin{block}{一个open的问题}
-		如果$ \nu_{\beta} $奇异，那么是否一定有$ \beta $为Pisot数?
-	\end{block}
+其中有一个非常重要的结果就是，Erd\"os证明如果$ \beta $为Pisot数，那么相应的Bernoulli卷积的维数一定小于1。
+\begin{block}{一个open的问题}
+	如果$ \nu_{\beta} $奇异，那么是否一定有$ \beta $为Pisot数?
+\end{block}
 \end{frame}
 
 
@@ -283,39 +283,39 @@
 %------------------------------------------------
 \appendix
 \begin{frame}
-	\frametitle{参考文献}\small
-	\footnotesize{
-		%	\bibliographystyle{plain}
-		%	\bibliography{openingref}
-		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-			\bibitem[SixtyYears]{Sixtyyears}  Peres Y., Schlag W., Solomyak B. (2000) Sixty Years of Bernoulli Convolutions. In: Bandt C., Graf S., Zähle M. (eds) Fractal Geometry and Stochastics II. Progress in Probability, vol 46. Birkhäuser, Basel
-			\bibitem[DJFeng1]{DJFeng1} Shigeki Akiyama, De-Jun Feng, Tom Kempton, Tomas Persson; On the Hausdorff Dimension of Bernoulli Convolutions, International Mathematics Research Notices, , rny209, https://doi.org/10.1093/imrn/rny209
-			\bibitem[DJFeng2]{DJFeng2} FENG, DE-JUN. “SMOOTHNESS OF THE $L^{q}$-SPECTRUM OF SELF-SIMILAR MEASURES WITH OVERLAPS.” Journal of the London Mathematical Society, vol. 68, no. 1, 2003, pp. 102–118., doi:10.1112/S002461070300437X.
-			\bibitem[DJFeng3]{DJFeng3} De-Jun Feng, Yang Wang, 2004, 'Bernoulli convolutions associated with certain non-Pisot numbers', Advances in Mathematics, vol. 187, no. 1, pp. 173-194
+\frametitle{参考文献}\small
+\footnotesize{
+%	\bibliographystyle{plain}
+%	\bibliography{openingref}
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[SixtyYears]{Sixtyyears}  Peres Y., Schlag W., Solomyak B. (2000) Sixty Years of Bernoulli Convolutions. In: Bandt C., Graf S., Zähle M. (eds) Fractal Geometry and Stochastics II. Progress in Probability, vol 46. Birkhäuser, Basel
+\bibitem[DJFeng1]{DJFeng1} Shigeki Akiyama, De-Jun Feng, Tom Kempton, Tomas Persson; On the Hausdorff Dimension of Bernoulli Convolutions, International Mathematics Research Notices, , rny209, https://doi.org/10.1093/imrn/rny209
+\bibitem[DJFeng2]{DJFeng2} FENG, DE-JUN. “SMOOTHNESS OF THE $L^{q}$-SPECTRUM OF SELF-SIMILAR MEASURES WITH OVERLAPS.” Journal of the London Mathematical Society, vol. 68, no. 1, 2003, pp. 102–118., doi:10.1112/S002461070300437X.
+\bibitem[DJFeng3]{DJFeng3} De-Jun Feng, Yang Wang, 2004, 'Bernoulli convolutions associated with certain non-Pisot numbers', Advances in Mathematics, vol. 187, no. 1, pp. 173-194
 
-		\end{thebibliography}
-	}
+\end{thebibliography}
+}
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{参考文献}\small
-	\footnotesize{
-		%	\bibliographystyle{plain}
-		%	\bibliography{openingref}
-		\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-
-			\bibitem[Niki1]{Niki1}  Kevin G. Hare \& Nikita Sidorov (2018) A Lower Bound for the Dimension of Bernoulli Convolutions, Experimental Mathematics, 27:4, 414-418, DOI: 10.1080/10586458.2017.1301841
-			\bibitem[Falconer]{Falconer} Falconer, K. J. Fractal Geometry. Wiley, 1990.
-			\bibitem[Mattila]{Mattila} Mattila, Pertti. Geometry of Sets and Measures in Euclidean Spaces: Fractals and Rectifiability. Cambridge University Press, 1995.
-
-		\end{thebibliography}
-	}
+\frametitle{参考文献}\small
+\footnotesize{
+	%	\bibliographystyle{plain}
+	%	\bibliography{openingref}
+	\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+	
+		\bibitem[Niki1]{Niki1}  Kevin G. Hare \& Nikita Sidorov (2018) A Lower Bound for the Dimension of Bernoulli Convolutions, Experimental Mathematics, 27:4, 414-418, DOI: 10.1080/10586458.2017.1301841 
+		\bibitem[Falconer]{Falconer} Falconer, K. J. Fractal Geometry. Wiley, 1990.
+		\bibitem[Mattila]{Mattila} Mattila, Pertti. Geometry of Sets and Measures in Euclidean Spaces: Fractals and Rectifiability. Cambridge University Press, 1995.
+		
+	\end{thebibliography}
+}
 \end{frame}
 %------------------------------------------------
 
 \begin{frame}
-	\Huge{\centerline{谢谢！}}
+\Huge{\centerline{谢谢！}}
 \end{frame}
 
 %----------------------------------------------------------------------------------------

@@ -337,47 +337,47 @@
 
 
 \begin{document}
-%\maketitle %输出标题页
-
-
-
-
-
-
-
+    %\maketitle %输出标题页
+	
+	
+	
+	
+	
+	
+	
 %----------------------------------------------------------------%   	
-\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
-
-{\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
-
-
-
-
-
-
-
-
-
-
-
-%----------------------------------------------------------------%      
-\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
-
-{\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
+	\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+	$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+	
+	{\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+	
+    \hspace{15em} \ldots\ldots\ldots
+    
+   \hspace{15em} \ldots\ldots\ldots
+   
+    \hspace{15em} \ldots\ldots\ldots
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ %----------------------------------------------------------------%      
+   \section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+    $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+    
+    {\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
 
 
 
@@ -396,48 +396,48 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 
 %----------------------------------------------------------------%       
-\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
-
-{\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
-
-\hspace{15em} \ldots\ldots\ldots
-
-
-
-
-
-
-
-
-
-
-%----------------------------------------------------------------%   
-\section{课题研究进度安排 {\wuhao  \textcolor{red}{(可参考如下表格式)}}}
-
-\begin{table}[htpb]
-	\seccontent
-	\centering
-	\caption{课题研究进度安排表}
-
-	\begin{tabular}{ccp{18em}<{\centering}}
-		\hline
-		学期                                       & 周次                                     & 工作任务                                                                                      \\\hline
-		\multirow{2}{5em}{2014-2015第一学期}       & $ \times\times $周-- --$\times\times $周 & $\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $ \\
-		\cline{2-3}
-		                                           & \ldots\ldots\ldots                       & \ldots\ldots\ldots                                                                            \\
-		\hline\multirow{2}{5em}{2014-2015第二学期} & $ \times\times $周-- --$\times\times $周 & $\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $ \\
-		\cline{2-3}
-		                                           & \ldots\ldots\ldots                       & \ldots\ldots\ldots                                                                            \\
-		\hline
-	\end{tabular}
-\end{table}
-{\wuhao\textcolor{red}{(``\fbox{\phantom{x}}''表示空格)}}
-
+    	\section{$\times\times\times\times\times\times\times${\wuhao  \textcolor{red}{(宋体4号加粗，字母、阿拉伯数字为Times New Roman 4 号 加粗)}}}	\seccontent  
+    $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
+    
+    {\wuhao  \textcolor{red}{(宋体小4号加粗，行间距固定1.5倍行距，字符间距为标准)}}
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+    
+    \hspace{15em} \ldots\ldots\ldots
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ %----------------------------------------------------------------%   
+    \section{课题研究进度安排 {\wuhao  \textcolor{red}{(可参考如下表格式)}}}
+    
+    \begin{table}[htpb]
+    	\seccontent
+    	\centering
+        \caption{课题研究进度安排表}	
+    
+    	\begin{tabular}{ccp{18em}<{\centering}}
+    		\hline
+    		学期&周次&工作任务\\\hline
+    		\multirow{2}{5em}{2014-2015第一学期}& $ \times\times $周-- --$\times\times $周&$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $\\
+    		\cline{2-3}
+    		&\ldots\ldots\ldots&\ldots\ldots\ldots\\
+    		\hline\multirow{2}{5em}{2014-2015第二学期}& $ \times\times $周-- --$\times\times $周&$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $\\
+    		\cline{2-3}
+    		&\ldots\ldots\ldots&\ldots\ldots\ldots\\
+    		\hline
+    	\end{tabular}
+    \end{table}
+     {\wuhao\textcolor{red}{(``\fbox{\phantom{x}}''表示空格)}}
+    
 
 
 
@@ -450,33 +450,33 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 %----------------------------------------------------------------%   
 %	\appendix
-\stepcounter{section}
-\bibliographystyle{plain}
-\begin{thebibliography}{2}
-	\seccontent
-	\bibitem{Bec1}
-	Beck, J\'ozsef.: Probabilistic Diophantine Approximation, Randomness in lattice point counting. Springer 2015.
+    \stepcounter{section}
+    \bibliographystyle{plain}	
+	\begin{thebibliography}{2}		
+	 \seccontent
+	 \bibitem{Bec1}
+	 Beck, J\'ozsef.: Probabilistic Diophantine Approximation, Randomness in lattice point counting. Springer 2015.
+	  
+	 \bibitem{Be4}
+	 Beck, J.: Randomness in lattice point problems, Discrete Mahtematics \textbf{229} (2001), pp. 29-45
+	 
+	 \bibitem{Di}
+	 Dieter, U.: Das Verhaltender Kleischen Functionen gegen\"uber Modultransformationen und verallgemeinerte Dedekindsche Summen, Journ. Reine Angew. Math. \textbf{201} (1959), 37-70.
+	 
+	 \bibitem{Ha-Li2}
+	 Hardy, G.H. and Littlewood, J.: The lattice-points of a right-angled triangle. II, Abh. Math. Sem. Hamburg \textbf{1} (1922), 212-249.
+	 
+	  \bibitem{Ha-Li3}
+	 Hardy, G.H. and Littlewood, J.: Some problems of Diophantine approximation: A series of cosecants, Bull. Calcutta Math. Soc. \textbf{20} (1930), 251-266 
 
-	\bibitem{Be4}
-	Beck, J.: Randomness in lattice point problems, Discrete Mahtematics \textbf{229} (2001), pp. 29-45
-
-	\bibitem{Di}
-	Dieter, U.: Das Verhaltender Kleischen Functionen gegen\"uber Modultransformationen und verallgemeinerte Dedekindsche Summen, Journ. Reine Angew. Math. \textbf{201} (1959), 37-70.
-
-	\bibitem{Ha-Li2}
-	Hardy, G.H. and Littlewood, J.: The lattice-points of a right-angled triangle. II, Abh. Math. Sem. Hamburg \textbf{1} (1922), 212-249.
-
-	\bibitem{Ha-Li3}
-	Hardy, G.H. and Littlewood, J.: Some problems of Diophantine approximation: A series of cosecants, Bull. Calcutta Math. Soc. \textbf{20} (1930), 251-266
-
-\end{thebibliography}
+	\end{thebibliography}
 %	
 
-\hspace{15em} \ldots\ldots\ldots
-
-{\wuhao\textcolor{red}{(宋体小4号)}}
-\\
-\\
-\\
-{\wuhao\textcolor{red}{(可加页，A4纸双面打印)}}
+      \hspace{15em} \ldots\ldots\ldots
+      
+      {\wuhao\textcolor{red}{(宋体小4号)}}
+      \\
+      \\
+      \\
+      {\wuhao\textcolor{red}{(可加页，A4纸双面打印)}}
 \end{document}

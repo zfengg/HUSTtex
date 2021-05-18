@@ -264,66 +264,66 @@
 
 
 \begin{document}
-%\maketitle
+    %\maketitle
+    
+    \section*{\centering  {\xiaosihao 中文} {\wuhao Abc123} \\ \centering \textcolor{red}{(宋体小4号, 字母、阿拉伯数字为 Times New Romanc5号加粗, 居中)}}
+    \vskip -1em
+	\section{前言}
+	\seccontent \textcolor{red}{(宋体5号, 字母、阿拉伯数字为 Times New Romanc5号加粗)}
+	
+	 Leslie  Lamport \textbf{Leslie  Lamport}开发的\textbf{\LaTeX}是当今世界上最流行和使用最为广泛的TeX宏集。它构筑在\textbf{Plain \TeX}的基础之上，并加进了很多的功能以使得使用者可以更为方便的利用\textbf{\TeX}的强大功能。使用\textbf{\LaTeX}基本上不需要使用者自己设计命令和宏等，因为\textbf{\LaTeX}已经替你做好了。因此，即使使用者并不是很了解\textbf{\TeX}，也可以在短短的时间内生成高质量的文档。对于生成复杂的数学公式，\textbf{\LaTeX}表现的更为出色\textbf{x}。\textbf{ \LaTeX}自从八十年代初问世以来，也在不断的发展.最初的正式版本为\textbf{2.09}，在经过几年的发展之后，许多新的功能，机制被引入到\textbf{\LaTeX}中。在享受这些新功能带来的便利的同时，它所伴随的副作用也开始显现,这就是不兼容性。
+ 
+   	\song 
+    标准的\textbf{\LaTeX 2.09} 引入了“新字体选择框架”(\textbf{NFSS})的\textbf{\LaTeX、SLiTEX，AMS-\LaTeX}等等，相互之间并不兼容.这给使用者和维护者都带来很大的麻烦。为结束这种糟糕的状况，\textbf{FrankMittelbach} 等人成立了\textbf{ATeX3}项目小组，目标是建立一个最优的，有效的，统一的，标准的命令集合。即得到\textbf{\LaTeX}的一个新版本\textbf{3}.这是一个长期目标，向这个目标迈出第一步就是在\textbf{1994}年发布的\textbf{\LaTeXe}
+    
+  
+  
+    \textcolor{red}{(宋体5号, 行间距固定1.5倍行距，字符间距为标准)}
+	
+	\subsection{字体风格} \seccontent
+	\noindent 我是\LaTeX{}中的11pt大小的宋体. 我 
+	{\wuhao 我是五号宋体}\textbf{3156}416 AaBc 
+	\subsection{字体颜色} \seccontent
+	\textcolor{MSBlue}{微软蓝色}
+	\subsubsection{第三级标题}
+	
+	
 
-\section*{\centering  {\xiaosihao 中文} {\wuhao Abc123} \\ \centering \textcolor{red}{(宋体小4号, 字母、阿拉伯数字为 Times New Romanc5号加粗, 居中)}}
-\vskip -1em
-\section{前言}
-\seccontent \textcolor{red}{(宋体5号, 字母、阿拉伯数字为 Times New Romanc5号加粗)}
-
-Leslie  Lamport \textbf{Leslie  Lamport}开发的\textbf{\LaTeX}是当今世界上最流行和使用最为广泛的TeX宏集。它构筑在\textbf{Plain \TeX}的基础之上，并加进了很多的功能以使得使用者可以更为方便的利用\textbf{\TeX}的强大功能。使用\textbf{\LaTeX}基本上不需要使用者自己设计命令和宏等，因为\textbf{\LaTeX}已经替你做好了。因此，即使使用者并不是很了解\textbf{\TeX}，也可以在短短的时间内生成高质量的文档。对于生成复杂的数学公式，\textbf{\LaTeX}表现的更为出色\textbf{x}。\textbf{ \LaTeX}自从八十年代初问世以来，也在不断的发展.最初的正式版本为\textbf{2.09}，在经过几年的发展之后，许多新的功能，机制被引入到\textbf{\LaTeX}中。在享受这些新功能带来的便利的同时，它所伴随的副作用也开始显现,这就是不兼容性。
-
-\song
-标准的\textbf{\LaTeX 2.09} 引入了“新字体选择框架”(\textbf{NFSS})的\textbf{\LaTeX、SLiTEX，AMS-\LaTeX}等等，相互之间并不兼容.这给使用者和维护者都带来很大的麻烦。为结束这种糟糕的状况，\textbf{FrankMittelbach} 等人成立了\textbf{ATeX3}项目小组，目标是建立一个最优的，有效的，统一的，标准的命令集合。即得到\textbf{\LaTeX}的一个新版本\textbf{3}.这是一个长期目标，向这个目标迈出第一步就是在\textbf{1994}年发布的\textbf{\LaTeXe}
-
-
-
-\textcolor{red}{(宋体5号, 行间距固定1.5倍行距，字符间距为标准)}
-
-\subsection{字体风格} \seccontent
-\noindent 我是\LaTeX{}中的11pt大小的宋体. 我
-{\wuhao 我是五号宋体}\textbf{3156}416 AaBc
-\subsection{字体颜色} \seccontent
-\textcolor{MSBlue}{微软蓝色}
-\subsubsection{第三级标题}
-
-
-
-\section{方程及图表}
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $，其 $ \times\times\times\times\times$可表示如下：
-\begin{equation}
-	E_{1}=A_{1}sin\!\left(2\pi f_{1}t+\varphi_{01}+\varphi_{path1} \right)
-\end{equation}
-\begin{equation}
+	\section{方程及图表}
+	 $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $，其 $ \times\times\times\times\times$可表示如下：
+	\begin{equation}
+		E_{1}=A_{1}sin\!\left(2\pi f_{1}t+\varphi_{01}+\varphi_{path1} \right)
+	\end{equation}
+	\begin{equation}
 	E_{2}=A_{2}sin\!\left(2\pi f_{2}t+\varphi_{02}+\varphi_{path2} \right)
-\end{equation}
+	\end{equation}
+    
+     $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reftab{table1}所示)
 
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reftab{table1}所示)
-
-\begin{table}[htpb]
-	\centering
-	\caption{样表}
-	\label{table1}
-	\begin{tabular}{cccc}
-		\toprule
-		$ \times\times\times\times\times $ & $ \times\times\times $ & $ \times\times\times $ & $ \times\times\times $ \\
-		\hline
-		$ \times\times\times\times\times $ & $ \times\times $       & $ \times\times $       & $ \times\times $       \\
-		$ \times\times\times\times\times $ & $ \times\times $       & $ \times\times $       & $ \times\times $       \\
-		$ \times\times\times\times\times $ & $ \times\times $       & $ \times\times $       & $ \times\times $       \\ 	    	\cline{2-4}
-		$ \times\times\times\times\times $ & $ \times\times $       & $ \times\times $       & $ \times\times $       \\
-		\bottomrule
-	\end{tabular}
-\end{table}
-\textcolor{red}{（表标题：位于表格上方，宋体5号，字母、阿拉伯数字为Time New Roman 5号，表内容：宋体5号，字母、阿拉伯数字为Time New Roman 5号）\\ ``\fbox{\phantom{a}}''表示空格}
+     \begin{table}[htpb]
+		\centering
+		\caption{样表}
+		\label{table1}
+	    \begin{tabular}{cccc}
+	    	\toprule
+	    	$ \times\times\times\times\times $ & $ \times\times\times $ & $ \times\times\times $ & $ \times\times\times $ \\ 
+	    	\hline
+	 	    $ \times\times\times\times\times $ & $ \times\times $ & $ \times\times $ & $ \times\times $ \\ 
+	    	$ \times\times\times\times\times $ & $ \times\times $ & $ \times\times $ & $ \times\times $ \\ 	
+	    	$ \times\times\times\times\times $ & $ \times\times $ & $ \times\times $ & $ \times\times $ \\ 	    	\cline{2-4}
+	    	$ \times\times\times\times\times $ & $ \times\times $ & $ \times\times $ & $ \times\times $ \\
+	    	\bottomrule
+	    \end{tabular}
+	\end{table}
+ \textcolor{red}{（表标题：位于表格上方，宋体5号，字母、阿拉伯数字为Time New Roman 5号，表内容：宋体5号，字母、阿拉伯数字为Time New Roman 5号）\\ ``\fbox{\phantom{a}}''表示空格}
 
 $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reffig{testfig}所示)
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=\textwidth]{testmindmap}
-	\caption{测试图片, 因为学校模板给的word中的图片就是从这上面截取的部分，所以另存为PNG之后就是这个样子}
-	\label{testfig}
-\end{figure}
+   	\begin{figure}[htbp]
+   	\centering
+   	\includegraphics[width=\textwidth]{testmindmap}
+   	\caption{测试图片, 因为学校模板给的word中的图片就是从这上面截取的部分，所以另存为PNG之后就是这个样子}
+   	\label{testfig}
+   \end{figure}
 
 $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reffig{E8}所示)
 
@@ -335,33 +335,33 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 \end{figure}
 
 \textcolor{red}{(图标题：位于图下方，宋体5号，字母、阿拉伯数字为Time New Roman 5号)}
-
-
+ 
+	
 \section{列举环境} \seccontent
-\begin{description}
-	\seccontent
-	\item[列表]
-	\item[枚举] \begin{enumerate}
+	\begin{description}
+		\seccontent
+		\item[列表] 
+		\item[枚举] \begin{enumerate}
 			\item 图
 			\item 表
 		\end{enumerate}
-	\item[列举] \begin{itemize}
-			\item hello，world!
-			\item 你好!
-		\end{itemize}
-\end{description}
-华中科技大学本科生毕业设计(论文)参考文献译文
+	    \item[列举] \begin{itemize}
+	    	\item hello，world!
+	    	\item 你好!
+	    \end{itemize}
+	\end{description}
+    华中科技大学本科生毕业设计(论文)参考文献译文 
 \sectionbreak
 \section{为什么写这个tex文件}\seccontent
-\subsection{背景} 每年大家都在抱怨数学公式难敲，而且敲出来不好看！确实，word的宏, 如MathType, AxMath等, 可以通过点点点来勉强解决问题，但是生成出来的公式都是一块块的，间距和大小都不好控制，更别谈交叉引用了，想起来就烦！(可能文献翻译不会有交叉引用的烦恼)。 在不考虑学习成本的情况下，\LaTeX 可以轻松搞定特别复杂的公式，而且排版特别漂亮。跟Word所见即所得(WYSIWYG: what you see is what you get)不同，\LaTeX 是所想即所得(WYWIWYG: what you want is what you get), 利用代码告诉计算机你想要什么就行了。想必大家在做文档的时候，肯定有类似的烦恼：欸? 我这里怎么忘了啥啥啥了， 那里怎么看起来有点不对劲? 这些对于\LaTeX 来说都不是问题，你只需关注内容就够了，深受科研工作者的喜爱。更何况现在基本上每个学科的主流期刊论文都是 \LaTeX 编写，而且基本都提供\LaTeX 模板。(其实很多国外大学的毕业论文都提供官方的\LaTeX 模板的，可怜的我们还要自己敲非官方的，担惊受怕的，哈哈哈！)
+\subsection{背景} 每年大家都在抱怨数学公式难敲，而且敲出来不好看！确实，word的宏, 如MathType, AxMath等, 可以通过点点点来勉强解决问题，但是生成出来的公式都是一块块的，间距和大小都不好控制，更别谈交叉引用了，想起来就烦！(可能文献翻译不会有交叉引用的烦恼)。 在不考虑学习成本的情况下，\LaTeX 可以轻松搞定特别复杂的公式，而且排版特别漂亮。跟Word所见即所得(WYSIWYG: what you see is what you get)不同，\LaTeX 是所想即所得(WYWIWYG: what you want is what you get), 利用代码告诉计算机你想要什么就行了。想必大家在做文档的时候，肯定有类似的烦恼：欸? 我这里怎么忘了啥啥啥了， 那里怎么看起来有点不对劲? 这些对于\LaTeX 来说都不是问题，你只需关注内容就够了，深受科研工作者的喜爱。更何况现在基本上每个学科的主流期刊论文都是 \LaTeX 编写，而且基本都提供\LaTeX 模板。(其实很多国外大学的毕业论文都提供官方的\LaTeX 模板的，可怜的我们还要自己敲非官方的，担惊受怕的，哈哈哈！) 
 
 作为一个优秀的排版软件，\LaTeX 远不止敲公式这点儿实力，刚刚提到的方便的交叉引用，优秀的参考文献管理BiB\TeX(\url{http://www.bibtex.org/})，各种各样的格式控制，甚至可以加入编程语句来控制等等\ldots 还有，CV, 信件，学术展示(Academical Presentation, Lecture, Report...)等都可以通过\LaTeX 来变得更加优美~(反正我上次去的数学联会上的幻灯片都是\LaTeX Beamer做的，没人用PPT！) 上次用\LaTeX 写报告的体验极佳!
-哎\~{}说到这儿，我更加嫌弃Word了，哈哈哈\~{}
+哎\~{}说到这儿，我更加嫌弃Word了，哈哈哈\~{} 
 \subsection{前期} 起初, 大概几个月前，我在网上搜现成的华科\LaTeX 参考文献翻译模板，我还真找到了一个02级学长发布在github上的套装(\url{https://hust-latex.github.io/})，然后fork到了自己的账户里面(\url{https://github.com/frenzy666/husttrans})。就在前天，我准备用的时候(我们课题组说可以拖到下学期hhh, 而且前段时间也挺忙的。)，我方了。不仅它的格式要求和现在完全不一样了，而且这个模板文件搞得特别麻烦。麻烦在它给的是ins和dtx文件(理解成生成sty和cls文件的前期材料就可以啦)，编译他们的时候，还要l3docstrip.tex文件(另外一个包里面用来分离ins中文本的tex文件)。好，这些都搞定之后，我得到了最终的tex文件，编译出了pdf，但是不仅缺字体，而且格式不符合要求。于是，我开始着手直接敲tex头文件，而且对前提条件的要求不能太高，要简单粗暴，要最后直接修改样本就可以使用。然后就是这个tex文件了。
 
 后来，我也找到了一个17年的学长的研究生毕业论文cls文件(\url{https://github.com/skinaze/HUSTPaperTemp})，但是也是不好编译，容易出问题，而且cls文件的修改的语法要比tex文件麻烦，更何况这个的其他格式不符合我科论文翻译的要求。
 
-\subsection{优缺点}
+\subsection{优缺点} 
 \begin{description}
 	\seccontent
 	\item[优点1] Tex文件简单粗暴，想要修改什么直接在头文件里面改就行了, 不需要再编译ins或者dtx之类的。而且我的注释写得还比较详细的，参数的含义也好懂。根据不同要求可以再进行改进，完全定制化。
@@ -379,28 +379,28 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 	\item[章节内部及其他环境内部的格式] 请在每个环境或章节后添加 $\backslash$seccontent (5号宋体，1.5倍行距)。 例如：\begin{verbatim} 
 	 \section \seccontent
 	 \end{verbatim}\vskip -3em
-		还有就是根据要求，正文中的数字和字母要加粗，ctrl+B即可, 也比Word手动点要好。目前没找到直接设置默认加粗的办法，有方法也请联系啦~
-	\item[图表引用] 图标的编号及题注已设计符合要求，如要引用, 请使用$\backslash$reffig$\lbrace\rbrace$ 引用图，$\backslash$reftab$\lbrace\rbrace$引用表格，以达到要求样式。
-	\item[公式交叉引用] 方程的编号已调好，但是引用的格式我没有另外设计，因为引用的地方可能把公式叫法不同，引用请使用自带的$\backslash$ref$\lbrace\rbrace$
-	\item[距离控制] 这个tex文件的距离控制可能不太精细，如果有具体的标准数值请联系，作者来完善！
-	\item[页眉页脚] 页眉页脚的样式已经调好，距页边缘的应该也没错。如果知道精确的距离请邮件通知我，我马上调整，谢谢！
-	\item[超链接及书签] 利用hyperref包，每个link, cite, url已调整成超链接，点击即可到达相应位置。pdf书签及链接的样式请在头文件处根据自己的喜好修改。
-	\item[参考文献] 其实论文翻译这块给的模板并没有要求参考文献，可自行删除，但是这里提供了两种参考文献的样式：第一种BiB\TeX(\url{http://www.bibtex.org/}), 第二种直接利用环境$\backslash$thebibliography.
-	\item[其他] 如脚标，目录，图表目录之类的，参考文献翻译没有要求，所以我就没设计，应该不会用。如果有什么特别的需要，就直接修改头文件相应内容即可。之后我也会自己敲华科毕业论文的tex, 到时候每个细节都要改进的。
-	\item[注] 这个文献翻译只包含正文部分，学校给的封面按照要求打印即可。还有参考文献原文，一般收到的是pdf，在生成pdf之后，利用Adobe Acrobat组合一下就好啦！
-\end{description}
+	 还有就是根据要求，正文中的数字和字母要加粗，ctrl+B即可, 也比Word手动点要好。目前没找到直接设置默认加粗的办法，有方法也请联系啦~
+	 \item[图表引用] 图标的编号及题注已设计符合要求，如要引用, 请使用$\backslash$reffig$\lbrace\rbrace$ 引用图，$\backslash$reftab$\lbrace\rbrace$引用表格，以达到要求样式。
+	 \item[公式交叉引用] 方程的编号已调好，但是引用的格式我没有另外设计，因为引用的地方可能把公式叫法不同，引用请使用自带的$\backslash$ref$\lbrace\rbrace$
+	 \item[距离控制] 这个tex文件的距离控制可能不太精细，如果有具体的标准数值请联系，作者来完善！
+	 \item[页眉页脚] 页眉页脚的样式已经调好，距页边缘的应该也没错。如果知道精确的距离请邮件通知我，我马上调整，谢谢！
+     \item[超链接及书签] 利用hyperref包，每个link, cite, url已调整成超链接，点击即可到达相应位置。pdf书签及链接的样式请在头文件处根据自己的喜好修改。
+     \item[参考文献] 其实论文翻译这块给的模板并没有要求参考文献，可自行删除，但是这里提供了两种参考文献的样式：第一种BiB\TeX(\url{http://www.bibtex.org/}), 第二种直接利用环境$\backslash$thebibliography. 
+     \item[其他] 如脚标，目录，图表目录之类的，参考文献翻译没有要求，所以我就没设计，应该不会用。如果有什么特别的需要，就直接修改头文件相应内容即可。之后我也会自己敲华科毕业论文的tex, 到时候每个细节都要改进的。
+     \item[注] 这个文献翻译只包含正文部分，学校给的封面按照要求打印即可。还有参考文献原文，一般收到的是pdf，在生成pdf之后，利用Adobe Acrobat组合一下就好啦！
+\end{description}   
+    
+	\appendix
+    \phantom{\cite{eXGuru1999,DonaldKnuth1984,Rudin}}
+    \bibliographystyle{plain}\label{bibtexref}
+	\bibliography{HUSTtrans}	
+	\begin{thebibliography}{1}
+		\label{latexref}		
+	  \seccontent
+	  \bibitem{rudin} 王静康,张凤宝,夏淑倩等.论化工本科专业国际认证与国内认证的“实质性”.高等工程教育研究,2014,5:1-4
+		
+		\bibitem{stone} Stone J A, Howard L P. A simple technique for observing periodic nonlinearities in Michelson interferometers. Precision Engineering,1998,22(4):220-232
 
-\appendix
-\phantom{\cite{eXGuru1999,DonaldKnuth1984,Rudin}}
-\bibliographystyle{plain}\label{bibtexref}
-\bibliography{HUSTtrans}
-\begin{thebibliography}{1}
-	\label{latexref}
-	\seccontent
-	\bibitem{rudin} 王静康,张凤宝,夏淑倩等.论化工本科专业国际认证与国内认证的“实质性”.高等工程教育研究,2014,5:1-4
-
-	\bibitem{stone} Stone J A, Howard L P. A simple technique for observing periodic nonlinearities in Michelson interferometers. Precision Engineering,1998,22(4):220-232
-
-\end{thebibliography}
+	\end{thebibliography}
 %	
 \end{document}

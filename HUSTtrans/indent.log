@@ -1,0 +1,27 @@
+INFO:  latexindent.exe version 3.9.2, 2021-04-06, a script to indent .tex files
+       latexindent.exe lives here: D:/PortableSoftwares/Softwares/latexindent/
+       Tue May 18 20:25:19 2021
+       Filename: HUSTtrans.tex
+INFO:  Processing switches:
+       -s|--silent: Silent mode active (you have used either -s or --silent)
+       -w|--overwrite: Overwrite mode active, will make a back up of HUSTtrans.tex first
+INFO:  Directory for backup files and indent.log: .
+INFO:  YAML settings read: defaultSettings.yaml
+        Reading defaultSettings.yaml from D:/PortableSoftwares/Softwares/latexindent/defaultSettings.yaml
+INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
+       Home directory is C:\Users\zfeng (didn't find either indentconfig.yaml or .indentconfig.yaml)
+       To specify user settings you would put indentconfig.yaml here: C:\Users\zfeng/indentconfig.yaml
+       Alternatively, you can use the hidden file .indentconfig.yaml as: C:\Users\zfeng/.indentconfig.yaml
+INFO:  Backup procedure (-w flag active):
+       copying HUSTtrans.tex to ./HUSTtrans.bak0
+       Backup file: ./HUSTtrans.bak0
+       HUSTtrans.tex will be overwritten after indentation
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Overwriting file HUSTtrans.tex
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
