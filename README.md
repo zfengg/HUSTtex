@@ -1,8 +1,11 @@
-# HUSTtex
-华中科技大学本科毕业论文一系列TeX模板
+# HUSTtex-华中科技大学本科毕业论文一系列TeX模板
+A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology.
+
+## 说明
+编译相应`.tex`文件就行咯~ :rocket:
 > 请使用 [**XeLaTeX**](https://en.wikipedia.org/wiki/XeTeX) 编译！！！（正常默认是 `pdflatex`？）
 
-A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology. 
+推荐使用编辑器 [TeXstudio](https://www.texstudio.org/)。
 
 The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou and be sure to set the compiler as **XeLaTeX**. 
 
@@ -11,8 +14,10 @@ The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou 
 - 开题答辩(thesis opening report): [`HUSTopening.tex`](HUSTopening\HUSTopening.tex)
 - 外文翻译(foreign literature translation): [`HUSTtrans.tex`](HUSTtrans/HUSTtrans.tex)
 - 论文(thesis): [`HUSTthesis.tex`](HUSTthesis/HUSTthesis.tex)
-  
-示例及说明详见相应文件夹中的`.pdf`文档。
+
+以上所有`tex`文件下载即可在**XeLaTeX**编译通过（只需原生`texlive` `Miktex` `mactex`等主流tex环境）。
+
+基本没有任何其他依赖（除了很少出现的字体缺失，见下文）。示例及说明可以参考相应文件夹中的`.pdf`文档。
 
 ## 字体 fonts
 在中文Windows系统中，模板中所需字体应该已经安装在系统里了。😄 
