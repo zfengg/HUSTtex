@@ -1,4 +1,4 @@
-# HUSTtex-华中科技大学本科毕业论文一系列TeX模板
+# HUSTtex-华中科技大学本科毕业论文系列TeX模板
 A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology.
 
 ## 说明
