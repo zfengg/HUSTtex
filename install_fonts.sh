@@ -3,9 +3,11 @@
 ## install fonts
 if [[ `uname` == 'Darwin' ]]; then
 	# MacOS
+	echo "We are in MacOS."
 	pathUsrFonts="$HOME/Library/Fonts"
 else
 	# Linux
+	echo "We are in Linux."
 	pathUsrFonts="$HOME/.fonts"
 fi
 
@@ -31,7 +33,7 @@ else
 		if $try; then
 			cp "$pathfonts/$file" $pathUsrFonts
 		else
-			echo "$file is already installed!"
+			echo "$file has been installed!"
 		fi
 	done
 fi
@@ -39,4 +41,3 @@ fi
 echo 'Fonts installation finished~~~'
 echo 'Refeshing font cache:'
 fc-cache -f -v
-
