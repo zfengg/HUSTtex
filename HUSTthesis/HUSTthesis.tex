@@ -398,7 +398,7 @@
 % 下面填写自己相应的信息就可以了
 \title{毕业论文题目}  		  % 论文题目
 \def\school{数学与统计学院}   % 院系
-\def\classnum{1501班} 		 % 专业班级
+\def\classnum{应数拔尖1501班} 		 % 专业班级
 \author{学生姓名}			 % 姓名
 \def\stunum{U201512345} 	 % 学号
 \def\instructor{导师姓名}	 % 指导老师
@@ -572,7 +572,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 	\item[列举] \begin{itemize}
 			\item hello，world!
 
-			\item 你好!
+			\item 你好! \cite{Varju2018}
 		\end{itemize}
 \end{description}
 
@@ -601,10 +601,13 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 % ----------------------------------- 参考文献 ----------------------------------- %
 \clearpage
+\phantomsection
 \addcontentsline{toc}{section}{参考文献}
+
 \bibliographystyle{plain}
 \bibliography{HUSTthesis}\label{bibtexref}
-\hongzifuzhu{第一个参考文献为Bibtex使用fzHUSTthesisRef生成，如果不使用Bibtex可删除，然后只用后一个参考文献。}
+\hongzifuzhu{第一个参考文献为使用 Bib\TeX 基于$ \mathtt{HUSTthesis.bib} $生成。 如果不使用 Bib\TeX 可删除，然后只用后一个参考文献。}
+
 
 \begin{thebibliography}{3}
 	\label{latexref}
@@ -618,6 +621,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 % ------------------------------------ 附录 ------------------------------------ %
 \clearpage
 \appendix
+\phantomsection
 \addcontentsline{toc}{section}{附录}
 \section*{附录}
 
