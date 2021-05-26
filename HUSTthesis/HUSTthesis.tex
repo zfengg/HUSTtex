@@ -1,42 +1,41 @@
-%% 
-%% This is the file `HUSTthesis.tex' designed for the undergraduate thesis at Huazhong University of Science and Technology. 
-%% 
-%% 
+%%
+%% This is the file `HUSTthesis.tex' designed for the undergraduate thesis at Huazhong University of Science and Technology.
+%%
+%%
 %% Copyright (C) 2019~ by Zhou Feng 冯洲 <https://github.com/zfengg>
-%% 
+%%
 %% Annoucement:
 %% Since this work is created by Zhou Feng in 2019 to help finish the undergraduate thesis at HUST more efficiently and elegantly, it can only serve for educational and academical purpose while should never be used for commercial or profitable business.
-%% ONLY for the undergratuate thesis at HUST. 
+%% ONLY for the undergratuate thesis at HUST.
 %% This work has no LPPL maintenance or any other public liscenses like MIT Liscense or General Public Liscenses(GPL). Hence the author take no responsibilites for any loss of the user using this template.
-%% 
+%%
 %% The Current Maintainer of this work is Zhou Feng. All the advice is welcomed by sending an e-mail to the mailbox fengzhou1113@gmail.com
-%% 
+%%
 %% Aiming to reach more friends, this work directly and only contains the HUSTthesis.tex. And I have carefully included all the settings according to the offical documents and explaination after each command line.
 
 %% This file should compiled with XeLaTex. The edit sorftware TexStudio is recommended by zhou.
 
-%% Btw: Be aware that my purpose is to provide a friendly latex template for myself or maybe other HUSTers, so the only thing you need to do before you start your own work is to imitate the example tex file, fzHUSTtrans.tex. Good luck!
+%% BTW: Be aware that my purpose is to provide a friendly latex template for myself or maybe other HUSTers, so the only thing you need to do before you start your own work is to imitate the example tex file, fzHUSTtrans.tex. Good luck!
 
 \documentclass[a4paper]{article}
-% 10.5pt equals 5 hao font. 
+% 10.5pt equals 5 hao font.
 
-%----------------------------------------------------------------%
-%% For the layout of paper
+% ---------------------------------- layout ---------------------------------- %
 %\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \usepackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry}
 \geometry{headsep=1em,footskip=2em}
 \geometry{headheight=14pt}
 
-%----------------------------------------------------------------%
-%% For Math Symbols, 载入常用的数学包, 符号包
+% ------------------------------- math symbols ------------------------------- %
+% 载入常用的数学包, 符号包
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 
 %----------------------------------------------------------------%
-%% For the linespace 行间距，段间距等等
-\usepackage{setspace} 
+%% linespace 行间距，段间距等等
+\usepackage{setspace}
 % \usepackage{indentfirst} % then the first line of each title should start with a indent.
 % 定义标题和段落样式
 % 定义1.5倍行距
@@ -47,33 +46,33 @@
 \setlength{\parindent}{0pt}
 
 %----------------------------------------------------------------%
-%% for the fonts (style, color, size).字体的大小，颜色，以及定义常用的字号
+% fonts (style, color, size). 字体的大小，颜色，以及定义常用的字号
 \usepackage{ctex}		 	% If you are lazy, the CTEX suit is enough.
-% Chinese Font
+% Chinese font
 \usepackage{xeCJK}		 	% For the Chinese through XeLaTex
-\setCJKmainfont{SimSun} 	% set the mainfont of Chinese as songti. (serif) for  
+\setCJKmainfont{SimSun} 	% set the mainfont of Chinese as songti. (serif) for
 \setCJKsansfont{SimSun} 	% sans serif font for \textsf
 \setCJKmonofont{SimSun} 	% monospace font for \texttt
 % \punctstyle{kaiming}  	% Remove the space used by symbols like comma. Special for the mainland students like us HUSTers.
-\setCJKfamilyfont{song}{SimSun}                       %宋体 song
-\newcommand{\song}{\CJKfamily{song}}                        
-\setCJKfamilyfont{kai}{KaiTi}                         %楷体  kai
-\newcommand{\kai}{\CJKfamily{kai}}  
-\setCJKfamilyfont{hwzs}{STZhongsong}                  %华文中宋  hwzs
+\setCJKfamilyfont{song}{SimSun}                       % 宋体 song
+\newcommand{\song}{\CJKfamily{song}}
+\setCJKfamilyfont{kai}{KaiTi}                         % 楷体  kai
+\newcommand{\kai}{\CJKfamily{kai}}
+\setCJKfamilyfont{hwzs}{STZhongsong}                  % 华文中宋  hwzs
 \newcommand{\hwzs}{\CJKfamily{hwzs}}
-\setCJKfamilyfont{hei}{SimHei}                        %黑体  hei
+\setCJKfamilyfont{hei}{SimHei}                        % 黑体  hei
 \newcommand{\hei}{\CJKfamily{hei}}
 % English font
-\usepackage{fontspec}% Then you can use the fonts installed at your device. 
+\usepackage{fontspec}% Then you can use the fonts installed at your device.
 \setmainfont{Times New Roman}
 \setsansfont{Times New Roman}
 \setmonofont{Times New Roman}
 %\setsansfont{[foo.ttf]} % for the fonts at this default path.
-% Font Color 利用definecolor自己可以定义颜色
+% font Color 利用definecolor自己可以定义颜色
 \usepackage{xcolor}
 \definecolor{MSBlue}{rgb}{.204,.353,.541}
 \definecolor{MSLightBlue}{rgb}{.31,.506,.741}
-% Font Size (I use pinyin represents the corresponding size in Microsorft Word)
+% font Size (I use pinyin represents the corresponding size in Microsorft Word)
 % \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
 % \newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
@@ -87,59 +86,59 @@
 % \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 % \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
 
-%----------------------------------------------------------------%
-%% For the header and footer. 页眉，页脚
- \usepackage{fancyhdr} % Then you can specialize the header and footer for your own use.
- % 设置页眉样式
- \newcommand{\headstyle}{
- 	\fancyhead[C]{ \hwzs\wuhao 华\hspace{0.5em}中\hspace{0.5em}科\hspace{0.5em}技\hspace{0.5em}大\hspace{0.5em}学\hspace{0.5em}毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计\hspace{0.5em}(论\hspace{0.5em}文)}
- }
- % 设置页脚样式
- \newcommand{\footstyle}{\fancyfoot[C]{\wuhao\thepage}
- 	\fancyfoot[L]{\rule[5pt]{6.7cm}{0.4pt}}
- 	\fancyfoot[R]{\rule[5pt]{6.7cm}{0.4pt}}
- }
- \pagestyle{fancy}
+% ---------------------------------------------------------------------------- %
+%% header and footer. 页眉，页脚
+\usepackage{fancyhdr} % Then you can specialize the header and footer for your own use.
+% 设置页眉样式
+\newcommand{\headstyle}{
+ \fancyhead[C]{ \hwzs\wuhao 华\hspace{0.5em}中\hspace{0.5em}科\hspace{0.5em}技\hspace{0.5em}大\hspace{0.5em}学\hspace{0.5em}毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计\hspace{0.5em}(论\hspace{0.5em}文)}
+}
+% 设置页脚样式
+\newcommand{\footstyle}{\fancyfoot[C]{\wuhao\thepage}
+ \fancyfoot[L]{\rule[5pt]{6.7cm}{0.4pt}}
+ \fancyfoot[R]{\rule[5pt]{6.7cm}{0.4pt}}
+}
+\pagestyle{fancy}
+\fancyhf{} % 清空原有样式
+\headstyle
+\footstyle
+% 定义一种新的格式叫做main
+\fancypagestyle{main}{%
  \fancyhf{} % 清空原有样式
  \headstyle
  \footstyle
- % 定义一种新的格式叫做main
- \fancypagestyle{main}{%
- 	\fancyhf{} % 清空原有样式
- 	\headstyle
- 	\footstyle
- }
- \renewcommand{\headrulewidth}{0.4pt}
+}
+\renewcommand{\headrulewidth}{0.4pt}
 % \renewcommand{\footrulewidth}{0.4pt}
-%\renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
+% \renewcommand{\headrule}{\rule{\textwidth}{0.4pt}}
 
-%----------------------------------------------------------------%
-%% set the styles of sections at all levels
- %设置各个标题样式
- %不需要使用part和chapter层级
- \usepackage{titlesec}
- \usepackage{titletoc}
- \titleformat{\section}{\centering \hei \bfseries\xiaoerhao}{\thesection}{1em}{} % 在section标题编号后面加个点
+% ---------------------------------------------------------------------------- %
+% set the styles of sections at all levels
+% 设置各个标题样式
+% 不需要使用part和chapter层级
+\usepackage{titlesec}
+\usepackage{titletoc}
+\titleformat{\section}{\centering \hei \bfseries\xiaoerhao}{\thesection}{1em}{} % 在section标题编号后面加个点
 % \titlelabel{\thetitle.\quad} % add a dot after the counter for all levels of sections
 % \titleformat*{\section}{\wuhao\bfseries} % 设置标签的形式，5号加粗
- \titleformat*{\subsection}{\raggedright \hei \bfseries \sihao}
- \titleformat*{\subsubsection}{\raggedright \hei \bfseries \xiaosihao}
- \titleformat{\paragraph}[hang]{\raggedright \hei \bfseries \xiaosihao}{\theparagraph}{1em}{}[]
- 
- % Manual
-%\titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
-%\titlespacing{command}{left}{before-sep}{after-sep}
-% %设置新的层级subsubsubsection
+\titleformat*{\subsection}{\raggedright \hei \bfseries \sihao}
+\titleformat*{\subsubsection}{\raggedright \hei \bfseries \xiaosihao}
+\titleformat{\paragraph}[hang]{\raggedright \hei \bfseries \xiaosihao}{\theparagraph}{1em}{}[]
+
+% manual
+% \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
+% \titlespacing{command}{left}{before-sep}{after-sep}
+% 设置新的层级subsubsubsection
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 
-\newcommand{\sectionbreak}{\clearpage} %小节从新的一页开始
-%根据学校要求设置新的section, subsection, subsection,  paragraph
+\newcommand{\sectionbreak}{\clearpage} % 小节从新的一页开始
+% 根据学校要求设置新的section, subsection, subsection,  paragraph
 
 % set the content of section and so on
 \newcommand\seccontent{
 	\song
-	\xiaosihao %默认五号字体, 行间距为1.5*\baselineskip
+	\xiaosihao % 默认五号字体, 行间距为1.5*\baselineskip
     \setlength{\parindent}{2em} % 首段缩进两个M字符
     \setlength{\parskip}{0pt}
     }
@@ -151,46 +150,46 @@
 }
 
 
-%----------------------------------------------------------------%
-%% For the style of theorems, definitions, proofs and remarks 定义数学里面一些常用的环境
+% ---------------------------------------------------------------------------- %
+% for the style of theorems, definitions, proofs and remarks 定义数学里面一些常用的环境
 \usepackage{amsthm}
 \newtheorem{thm}{\textbf{定理}}[section]
- %The section in [] can be replaced by chapter or subsection
- \theoremstyle{definition} \newtheorem{law}[thm]{Law}
- \theoremstyle{plain} \newtheorem{jury}[thm]{Jury}
- \theoremstyle{remark} \newtheorem*{marg}{Margaret}
+% The section in [] can be replaced by chapter or subsection
+\theoremstyle{definition} \newtheorem{law}[thm]{Law}
+\theoremstyle{plain} \newtheorem{jury}[thm]{Jury}
+\theoremstyle{remark} \newtheorem*{marg}{Margaret}
 
-%----------------------------------------------------------------%
-%% For the caption and reference 图表及公式的编号规范
+% ---------------------------------------------------------------------------- %
+% for the caption and reference 图表及公式的编号规范
 \usepackage{float} 		 		  	% table figure positioning
 \usepackage{caption}
 \captionsetup[figure]{labelformat=default, labelsep=quad,name={图}}
 \captionsetup[table]{labelformat=default,labelsep=quad,name={表}}
-%设置图表标题的计数方式
-\renewcommand{\thefigure}{\ifnum \thesection>0 \thesection-\fi \arabic{figure}} % set caption label style to 2-1 
-\renewcommand{\thetable}{\ifnum \thesection>0 \thesection-\fi \arabic{table}} % set caption label style to 2-1 
+% 设置图表标题的计数方式
+\renewcommand{\thefigure}{\ifnum \thesection>0 \thesection-\fi \arabic{figure}} % set caption label style to 2-1
+\renewcommand{\thetable}{\ifnum \thesection>0 \thesection-\fi \arabic{table}} % set caption label style to 2-1
 \DeclareCaptionFont{mylabelfont}{\hei\xiaosihao}
-\captionsetup[figure]{font=mylabelfont} 
-\captionsetup[table]{font=mylabelfont} 
+\captionsetup[figure]{font=mylabelfont}
+\captionsetup[table]{font=mylabelfont}
 
-%设置图表的autoref的格式
+% 设置图表的autoref的格式
 \newcommand{\reffig}[1]{图 \ref{#1}}
 \newcommand{\reftab}[1]{表 \ref{#1}}
-%公式的编号格式
+% 公式的编号格式
 \renewcommand\theequation{\arabic{section}-\arabic{equation}}
 
 \usepackage{graphicx} % To include graphixs 添加图所需的包
 \usepackage{booktabs} % To create three line table including the commands toprule, bottomrule, and midrule
-%\usepackage{colortbl} % 
-%使用tabularx库并定义新的左右中格式
+% \usepackage{colortbl} %
+% 使用tabularx库并定义新的左右中格式
 \usepackage{tabularx}
 \usepackage{makecell}
 \newcolumntype{L}{X}
 \newcolumntype{C}{>{\centering \arraybackslash}X}
 \newcolumntype{R}{>{\raggedright \arraybackslash}X}
 
-%----------------------------------------------------------------%
-%set the style of counters设置计数器
+% ---------------------------------------------------------------------------- %
+% set the style of counters设置计数器
 % 设置重新计数的位置
 \makeatletter
 \@addtoreset{footnote}{page}
@@ -199,10 +198,10 @@
 \@addtoreset{equation}{section}
 \makeatother
 
-%----------------------------------------------------------------%
-%% For the tableofcontents, listoftables and listoffigures, 目录 
+% ---------------------------------------------------------------------------- %
+% tableofcontents, listoftables and listoffigures, 目录
 %\renewcommand\listfigurename{插图列表}
-%\renewcommand\listtablename{表格列表} 
+%\renewcommand\listtablename{表格列表}
 %\titlecontents{标题名}[左间距]{标题格式}{标题标志}{无序号标题}{指引线与页码}[下间距]
 %\dottedcontents{section}[2.55em]{\song \xiaosihao \bfseries}{2.5em}{1em}
 \usepackage{tocloft}
@@ -212,23 +211,23 @@
 \titlecontents{subsubsection}[4em]{\song\xiaosihao}{\contentslabel{4em}}{\hspace*{-4em}}{\titlerule*[8pt]{.}\contentspage}
 \titlecontents{paragraph}[5em]{\song\xiaosihao}{\contentslabel{5em}}{\hspace*{-5em}}{\titlerule*[8pt]{.}\contentspage}
 
-%----------------------------------------------------------------%
-%% For the bibiliograph or reference and citation 参考文献
+% ---------------------------------------------------------------------------- %
+% reference and citation 参考文献
 \usepackage{natbib}
 \renewcommand{\refname}{\centerline{\hei \xiaoerhao 参考文献}}
 \bibsep=0pt % 用来设置每个\bibitem之间的间距
-%\renewcommand{\bibname}{参考文献} % For the document class 参考文献
-%\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} % If you want the citation label to show at the uperscript position.
+% \renewcommand{\bibname}{参考文献} % For the document class 参考文献
+% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} % If you want the citation label to show at the uperscript position.
 
-%----------------------------------------------------------------%
-%设置声明页
-%使用特殊符号
+% ---------------------------------------------------------------------------- %
+% 设置声明页
+% 使用特殊符号
 \usepackage{amssymb}
 \usepackage{wasysym}
-%制作tatement中的符号
+% 制作tatement中的符号
 \def\HUSTcheckedbox{$\Square\!\!\!\!\checkmark$}
 \def\HUSTbox{$\Square$}
-%设置命令
+% 设置命令
 \newcommand{\statement}[2]{
 	\def\yearofconfidentiality{\hspace{2em}}
 
@@ -250,39 +249,39 @@
 
 
     本人郑重声明：所呈交的论文是本人在导师的指导下独立进行研究所取得的研究成果。除了文中特别加以标注引用的内容外，本论文不包括任何其他个人或集体已经发表或撰写的成果作品。本人完全意识到本声明的法律后果由本人承担。
-	
+
 	\begin{flushright}
 		作者签名：\hspace{6em} 年 \hspace{2em} 月 \hspace{2em} 日
 	\end{flushright}
 	\vspace{4em}
-	
+
 	\begin{center}
 		\heiti \zihao{-2} \bfseries
 		学位论文版权使用授权书
 	\end{center}
-	
-	
+
+
     本学位论文作者完全了解学校有关保障、使用学位论文的规定，同意学校保留并向有关学位论文管理部门或机构送交论文的复印件和电子版，允许论文被查阅和借阅。本人授权省级优秀学士论文评选机构将本学位论文的全部或部分内容编入有关数据进行检索，可以采用影印、缩印或扫描等复制手段保存和汇编本学位论文。
 
     本学位论文属于 1、保密 \HUSTconfidential ，在 \yearofconfidentiality 年解密后适用本授权书。
-			
+
 		    \hspace{7em} 2、不保密 \HUSTnotconfidential \hspace{1em}
 			。
-			
+
 			\hspace{7em} (请在以上相应方框内打``$\checkmark$'')
 
 
-	
+
 	\begin{flushright}
 	作者签名：\hspace{6em} 年 \hspace{2em} 月 \hspace{2em} 日
-	
+
     导师签名：\hspace{6em} 年 \hspace{2em} 月 \hspace{2em} 日
-    \end{flushright}	
+    \end{flushright}
 	\clearpage
 }
 \newcommand{\makestatement}[2]{\statement{#1}{#2}}
 
-%-------------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 % 定义中英文摘要和致谢环境
 %
 % 中文摘要环境
@@ -292,11 +291,11 @@
 	\phantomsection
 	\addcontentsline{toc}{section}{摘要}
 	\vspace*{-20pt}
-	\begin{center} 
-		\heiti \bfseries \xiaoerhao 摘 \hspace{2em} 要 
+	\begin{center}
+		\heiti \bfseries \xiaoerhao 摘 \hspace{2em} 要
 	\end{center}
 	\seccontent
-}{  
+}{
 	\vspace{1em}
 	\par\noindent {\hei\sihao \bfseries 关键词：} {\song\xiaosihao\cnkeyword}
 
@@ -305,12 +304,12 @@
 % 英文摘要环境
 \newenvironment{enabstract}[1]{
 	\def \enkeyword {#1}
-	\clearpage 
+	\clearpage
 	\phantomsection
 	\addcontentsline{toc}{section}{Abstract}
 	\vspace*{-20pt}
-	\begin{center} 
-		\bfseries \xiaoerhao Abstract 
+	\begin{center}
+		\bfseries \xiaoerhao Abstract
 	\end{center}
 	\seccontent
 }{
@@ -330,49 +329,49 @@
 }
 
 
-%---------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 %	---	定义列表项，列举的样式
 \usepackage{enumitem}
 \setlist{noitemsep}
 
-%----------------------------------------------------------------%
-%\usepackage{makeindex} For the index 索引
+% ---------------------------------------------------------------------------- %
+% \usepackage{makeindex} For the index 索引
 \usepackage{listings} % For the code. 代码
 
-%---------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 % 设置脚注
 
-%----------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 %% For the hyperlink and bookmark 超链接及书签，(这样生成的pdf中的引用直接点击链接即可到达目的地)
 \usepackage[bookmarks=true,colorlinks,linkcolor=black,citecolor=black,urlcolor=purple]{hyperref}% 设置超链接并修改风格
 
 
-%----------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 %% For the appendix, 附录
 % 设置附录
 \usepackage{appendix}
 \renewcommand{\appendixname}{附录}
 
-%----------------------------------------------------------------%
-% For the titlepage 标题页，此处可以省略，建议直接使用官方给出的标题页即可
-\usepackage{titling} 
-%重置命令maketitle
+% ---------------------------------------------------------------------------- %
+% for the titlepage 标题页，此处可以省略，建议直接使用官方给出的标题页即可
+\usepackage{titling}
+% 重置命令 maketitle
 \renewcommand{\maketitle}{
 	\def\HUSTtitlelength{12em}
  	\begin{titlepage}
 		\begin{center}
 			\vspace*{0em}
 			\includegraphics[height=1.61cm]{HUSTlogo.eps}\\
-%			
+%
 			\vspace*{4em}
-%			
+%
 			{\xiaochuhao \hwzs \bfseries 本科生毕业设计[论文]}\\
-%			
+%
 			\vspace*{6em}
 			{\erhao \hei \bfseries \thetitle}
-			
+
 			\vspace*{6em}
-			{\sanhao \hwzs 
+			{\sanhao \hwzs
 				\renewcommand\arraystretch{2.7}
 				\begin{tabular}{lc}
 					\makebox[4em][s]{院 \hfill 系} &
@@ -387,25 +386,25 @@
 					\underline{\makebox[\HUSTtitlelength]{\instructor}} \\
 			  \end{tabular}
 		    }
-	    
+
 			\vspace{4em}
 			{\sanhao \hwzs \thedate}
-			
+
 		\end{center}
 	\end{titlepage}
 }
 
-% ------------titlepage-----------------%
+% ------------------------------------ 标题页 ----------------------------------- %
 % 下面填写自己相应的信息就可以了
 \title{毕业论文题目}  		  % 论文题目
-\def\school{数学与统计学院}  	 % 院系
-\def\classnum{应数拔尖1501班}  % 专业班级
-\author{冯洲}					% 姓名
-\def\stunum{U201510104} 	  % 学号
-\def\instructor{谭波}			% 指导老师
-\date{\today}   			  % 日期，自己填就可以了
+\def\school{数学与统计学院}   % 院系
+\def\classnum{1501班} 		 % 专业班级
+\author{学生姓名}			 % 姓名
+\def\stunum{U201512345} 	 % 学号
+\def\instructor{导师姓名}	 % 指导老师
+\date{\today}   			 % 日期，自己填就可以了
 
-%-------------quickinput----------------%
+% -------------------------------- quickinput -------------------------------- %
 % 利用\newcommand{cmd}{def} 设置一些常用的代码，提高效率，这里可以自行删除，下面是我敲翻译时候打的一些command。
 \newcommand{\hongzifuzhu}[1]{\textcolor{red}{\kai \wuhao(#1)}}
 
@@ -415,12 +414,12 @@
 \maketitle % 生成标题页，个人建议直接使用学校给的word转成pdf与这里生成的pdf第一页合并，再去打印封皮。
 
 % \thispagestyle{empty}% 标题页不参与编号
-%-------------------------------------声明页--------------------------------%    
+% ------------------------------------ 声明页 ----------------------------------- %
 \setcounter{page}{1}
 \renewcommand{\thepage}{\Roman{page}}
 \makestatement{2}{2019} % 生成声明页, 第一个参数选择1则加上保密的时间，此处为2019，如果选择2则选择不保密。
 
-%---------------------------------------中文摘要----------------------------%
+% ----------------------------------- 中文摘要 ----------------------------------- %
 \setcounter{page}{1}
 \renewcommand{\thepage}{\Roman{page}}
 \begin{cnabstract}{$ \times\times\times\times $；$ \times\times\times\times $；$ \times\times\times\times $；$ \times\times\times\times $}
@@ -429,7 +428,7 @@
 	$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
 \end{cnabstract}
 
-%---------------------------------------英文摘要----------------------------%
+% ----------------------------------- 英文摘要 ----------------------------------- %
 \begin{enabstract}{$ \times\times\times\times $;$ \times\times\times\times $;$ \times\times\times\times $;$ \times\times\times\times $}
 
 	$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
@@ -447,8 +446,7 @@
 \setcounter{page}{1}
 \renewcommand{\thepage}{\arabic{page}}
 
-
-%------------------------------------主体内容--------------------%   
+% ----------------------------------- 主体内容 ----------------------------------- %
 \seccontent
 \section{绪论}
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
@@ -482,7 +480,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \sectionbreak
 
-%---------------------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 \section{一级标题}
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
 
@@ -508,7 +506,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \sectionbreak
 
-%---------------------------------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 \section{方程及图表}
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
 
@@ -580,9 +578,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \sectionbreak
 
-
-
-%---------------------------------------------------%
+% ---------------------------------------------------------------------------- %
 \section{使用说明}\seccontent
 \begin{description}
 	\seccontent
@@ -598,19 +594,17 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 	\item[注] 这个tex包含正文部分和封面部分，如果觉得这个封面不太好，那么把学校给的封面打印即可。
 \end{description}
 
-%-----------------------致谢---------------------------------------%
+% ------------------------------------ 致谢 ------------------------------------ %
 \begin{thankpage}
 
 \end{thankpage}
 
-
-%-------------------------参考文献----------------------------------%
+% ----------------------------------- 参考文献 ----------------------------------- %
 \clearpage
 \addcontentsline{toc}{section}{参考文献}
 \bibliographystyle{plain}
 \bibliography{HUSTthesis}\label{bibtexref}
 \hongzifuzhu{第一个参考文献为Bibtex使用fzHUSTthesisRef生成，如果不使用Bibtex可删除，然后只用后一个参考文献。}
-
 
 \begin{thebibliography}{3}
 	\label{latexref}
@@ -621,7 +615,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \end{thebibliography}
 
-%----------------------------附录----------------------------------%
+% ------------------------------------ 附录 ------------------------------------ %
 \clearpage
 \appendix
 \addcontentsline{toc}{section}{附录}
