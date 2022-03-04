@@ -1,30 +1,24 @@
-%%
-%% This is the file `HUSTthesis.tex' designed for the undergraduate thesis at Huazhong University of Science and Technology.
-%%
-%%
-%% Copyright (C) 2019~ by Zhou Feng 冯洲 <https://github.com/zfengg>
-%%
-%% Annoucement:
-%% Since this work is created by Zhou Feng in 2019 to help finish the undergraduate thesis at HUST more efficiently and elegantly, it can only serve for educational and academical purpose while should never be used for commercial or profitable business.
-%% ONLY for the undergratuate thesis at HUST.
-%% This work has no LPPL maintenance or any other public liscenses like MIT Liscense or General Public Liscenses(GPL). Hence the author take no responsibilites for any loss of the user using this template.
-%%
-%% The Current Maintainer of this work is Zhou Feng. All the advice is welcomed by sending an e-mail to the mailbox fengzhou1113@gmail.com
-%%
-%% Aiming to reach more friends, this work directly and only contains the HUSTthesis.tex. And I have carefully included all the settings according to the offical documents and explaination after each command line.
-
-%% This file should compiled with XeLaTex. The edit sorftware TexStudio is recommended by zhou.
-
-%% BTW: Be aware that my purpose is to provide a friendly latex template for myself or maybe other HUSTers, so the only thing you need to do before you start your own work is to imitate the example tex file, fzHUSTtrans.tex. Good luck!
-
+% HUSTthesis.tex @ https://github.com/zfengg/HUSTtex/tree/master/HUSTthesis
+%
+% 	A simple tex template for the undergraduate thesis at HUST.
+%
+% author: Zhou Feng @ 2019
+%
+% requirements:
+%	TeX environments: TeXlive/MacTeX or MiKTeX
+%	compiler: XeLaTeX
+%
+% ---------------------------------------------------------------------------- %
+%                                   preamble                                   %
+% ---------------------------------------------------------------------------- %
 \documentclass[a4paper]{article}
-% 10.5pt equals 5 hao font.
+% 10.5pt = 5 hao
 
 % ---------------------------------- layout ---------------------------------- %
-%\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
-\usepackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry}
-\geometry{headsep=1em,footskip=2em}
-\geometry{headheight=14pt}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,% margins
+			headheight=1.5cm,headsep=1em,
+			footskip=2em,
+			]{geometry}
 
 % ------------------------------- math symbols ------------------------------- %
 % 载入常用的数学包, 符号包
@@ -32,6 +26,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
+\usepackage{blindtext}
 
 %----------------------------------------------------------------%
 %% linespace 行间距，段间距等等
@@ -87,8 +82,8 @@
 % \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
 
 % ---------------------------------------------------------------------------- %
-%% header and footer. 页眉，页脚
-\usepackage{fancyhdr} % Then you can specialize the header and footer for your own use.
+%% header and footer 页眉，页脚
+\usepackage{fancyhdr} % for header and footer
 % 设置页眉样式
 \newcommand{\headstyle}{
  \fancyhead[C]{ \hwzs\wuhao 华\hspace{0.5em}中\hspace{0.5em}科\hspace{0.5em}技\hspace{0.5em}大\hspace{0.5em}学\hspace{0.5em}毕\hspace{0.5em}业\hspace{0.5em}设\hspace{0.5em}计\hspace{0.5em}(论\hspace{0.5em}文)}
@@ -118,12 +113,12 @@
 % 不需要使用part和chapter层级
 \usepackage{titlesec}
 \usepackage{titletoc}
-\titleformat{\section}{\centering \hei \bfseries\xiaoerhao}{\thesection}{1em}{} % 在section标题编号后面加个点
+\titleformat{\section}{\centering\hei\bfseries\xiaoerhao}{\thesection}{1em}{} % 在section标题编号后面加个点
 % \titlelabel{\thetitle.\quad} % add a dot after the counter for all levels of sections
 % \titleformat*{\section}{\wuhao\bfseries} % 设置标签的形式，5号加粗
-\titleformat*{\subsection}{\raggedright \hei \bfseries \sihao}
-\titleformat*{\subsubsection}{\raggedright \hei \bfseries \xiaosihao}
-\titleformat{\paragraph}[hang]{\raggedright \hei \bfseries \xiaosihao}{\theparagraph}{1em}{}[]
+\titleformat*{\subsection}{\raggedright\hei\bfseries\sihao}
+\titleformat*{\subsubsection}{\raggedright\hei\bfseries\xiaosihao}
+\titleformat{\paragraph}[hang]{\raggedright\hei\bfseries\xiaosihao}{\theparagraph}{1em}{}[]
 
 % manual
 % \titleformat{command}[shape]{format}{label}{sep}{before-code}[after-code]
@@ -155,9 +150,9 @@
 \usepackage{amsthm}
 \newtheorem{thm}{\textbf{定理}}[section]
 % The section in [] can be replaced by chapter or subsection
-\theoremstyle{definition} \newtheorem{law}[thm]{Law}
-\theoremstyle{plain} \newtheorem{jury}[thm]{Jury}
-\theoremstyle{remark} \newtheorem*{marg}{Margaret}
+\theoremstyle{definition} 
+\theoremstyle{plain}
+\theoremstyle{remark}
 
 % ---------------------------------------------------------------------------- %
 % for the caption and reference 图表及公式的编号规范
@@ -189,7 +184,7 @@
 \newcolumntype{R}{>{\raggedright \arraybackslash}X}
 
 % ---------------------------------------------------------------------------- %
-% set the style of counters设置计数器
+% set the style of counters 设置计数器
 % 设置重新计数的位置
 \makeatletter
 \@addtoreset{footnote}{page}
@@ -199,7 +194,7 @@
 \makeatother
 
 % ---------------------------------------------------------------------------- %
-% tableofcontents, listoftables and listoffigures, 目录
+% tableofcontents, listoftables and listoffigures 目录
 %\renewcommand\listfigurename{插图列表}
 %\renewcommand\listtablename{表格列表}
 %\titlecontents{标题名}[左间距]{标题格式}{标题标志}{无序号标题}{指引线与页码}[下间距]
@@ -214,8 +209,8 @@
 % ---------------------------------------------------------------------------- %
 % reference and citation 参考文献
 \usepackage{natbib}
-\renewcommand{\refname}{\centerline{\hei \xiaoerhao 参考文献}}
-\bibsep=0pt % 用来设置每个\bibitem之间的间距
+\renewcommand{\refname}{\centerline{\hei\xiaoerhao 参考文献}}
+%\bibsep=0pt % 用来设置每个\bibitem之间的间距
 % \renewcommand{\bibname}{参考文献} % For the document class 参考文献
 % \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}} % If you want the citation label to show at the uperscript position.
 
@@ -320,10 +315,10 @@
 
 % 定义致谢环境
 \newenvironment{thankpage}{
-	\clearpage
-	\phantomsection
-	\addcontentsline{toc}{section}{致谢}
-	\section*{致\hspace{2em}谢}
+	\clearpage%
+	\phantomsection%
+	\addcontentsline{toc}{section}{致谢}%
+	\section*{致\hspace{2em}谢}%
 }{
 	\clearpage
 }
@@ -395,20 +390,21 @@
 }
 
 % ------------------------------------ 标题页 ----------------------------------- %
-% 下面填写自己相应的信息就可以了
-\title{毕业论文题目}  		  % 论文题目
-\def\school{数学与统计学院}   % 院系
-\def\classnum{应数拔尖1501班} 		 % 专业班级
-\author{学生姓名}			 % 姓名
-\def\stunum{U201512345} 	 % 学号
-\def\instructor{导师姓名}	 % 指导老师
-\date{\today}   			 % 日期，自己填就可以了
+\title{毕业论文题目} % 论文题目
+\def\school{数学与统计学院} % 院系
+\def\classnum{应数拔尖1501班} % 专业班级
+\author{学生姓名} % 姓名
+\def\stunum{U201512345}	% 学号
+\def\instructor{导师姓名} % 指导老师
+\date{\today} % 日期
 
 % -------------------------------- quickinput -------------------------------- %
 % 利用\newcommand{cmd}{def} 设置一些常用的代码，提高效率，这里可以自行删除，下面是我敲翻译时候打的一些command。
 \newcommand{\hongzifuzhu}[1]{\textcolor{red}{\kai \wuhao(#1)}}
 
-
+% ---------------------------------------------------------------------------- %
+%                                   document                                   %
+% ---------------------------------------------------------------------------- %
 \begin{document}
 
 \maketitle % 生成标题页，个人建议直接使用学校给的word转成pdf与这里生成的pdf第一页合并，再去打印封皮。
@@ -429,7 +425,7 @@
 \end{cnabstract}
 
 % ----------------------------------- 英文摘要 ----------------------------------- %
-\begin{enabstract}{$ \times\times\times\times $;$ \times\times\times\times $;$ \times\times\times\times $;$ \times\times\times\times $}
+\begin{enabstract}{$ \times\times\times\times $; $ \times\times\times\times $; $ \times\times\times\times $; $ \times\times\times\times $}
 
 	$\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
 
@@ -452,14 +448,14 @@
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
 
 \subsection{$\times\times\times\times\times\times $}
-\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 \subsection{$ \times\times\times\times\times\times $}
-\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
 
-\hongzifuzhu{ 宋体小4号, 行间距固定1.5倍行距，字符间距为标准}
+\hongzifuzhu{宋体小4号, 行间距固定1.5倍行距，字符间距为标准}
 
 \hspace{15em} \ldots\ldots\ldots
 
@@ -468,14 +464,14 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 \hspace{15em} \ldots\ldots\ldots
 
 \subsubsection{$\times\times\times\times\times\times $}
-\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 
 \subsubsection{$\times\times\times\times\times\times $}
-\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 \paragraph{$ \times\times\times\times\times\times $}
-\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体小4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 
 \sectionbreak
@@ -485,11 +481,11 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
 
 \subsection{二级标题}
-\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
 $ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $
 
-\hongzifuzhu{ 宋体小4号, 行间距固定1.5倍行距，字符间距为标准}
+\hongzifuzhu{宋体小4号, 行间距固定1.5倍行距，字符间距为标准}
 
 \hspace{15em} \ldots\ldots\ldots
 
@@ -508,12 +504,13 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 % ---------------------------------------------------------------------------- %
 \section{方程及图表}
+
 \hspace{12em}\hongzifuzhu{黑体小二加粗居中}
 
 \subsection{$\times\times\times\times\times\times $}
-\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman4号加粗}
+\hongzifuzhu{黑体4号加粗，字母、阿拉伯数字为Times New Roman 4号加粗}
 
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $，其 $ \times\times\times\times\times$可表示如下：
+$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $，其 $ \times\times\times\times\times$ 可表示如下：
 \begin{equation}
 	E_{1}=A_{1}sin\!\left(2\pi f_{1}t+\varphi_{01}+\varphi_{path1} \right)
 \end{equation}
@@ -545,20 +542,17 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{testmindmap}
+	\includegraphics[width=0.75\textwidth]{testmindmap}
 	\caption{测试图片, 因为学校模板给的word中的图片就是从这上面截取的部分，所以另存为PNG之后就是这个样子}
 	\label{testfig}
 \end{figure}
-
-$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reffig{E8}所示)
-
+$ \times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times\times $  (如\reffig{E8} 所示)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{E8Petrie}
 	\caption{测试图片: E8 李群}
 	\label{E8}
 \end{figure}
-
 \textcolor{red}{(图标题：位于图下方，黑体小4号，字母、阿拉伯数字为Time New Roman 小4号)}
 
 
@@ -576,23 +570,43 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 		\end{itemize}
 \end{description}
 
+
+
 \sectionbreak
 
 % ---------------------------------------------------------------------------- %
 \section{使用说明}\seccontent
 \begin{description}
 	\seccontent
-	\item[基本信息] 作者：冯洲 \href{mailto:fengzhou1113@gmail.com}{fengzhou1113@gmail.com}. 版本信息：2019/3/1, v1.0 hosted on \url{https://github.com/zfengg/HUSTtex}。 如果有任何建议及纠正，欢迎邮件联系作者，非常感谢！
-	\item[必备条件]  安装最新版本的 [TeXLive](\url{http://www.tug.org/texlive/})（推荐）或 [MiKTeX](\url{http://miktex.org/})。请确保所有宏包都更新至最新。由于中文支持利用的是包\textbf{XeCJK}，编译器请使用 Xe\LaTeX。 编辑器推荐TeXStudio(\url{http://texstudio.sourceforge.net/}). 此文件在windows平台上测试成功，其他平台如Linux，mac没试过，哈哈哈！
-	\item[图表引用] 图标的编号及题注已设计符合要求，如要引用, 请使用\verb|\reffig{}|引用图，\verb|\reftab{}|引用表格，以达到要求样式。
-	\item[公式交叉引用] 方程的编号已调好，但是引用的格式我没有另外设计，因为引用的地方可能把公式叫法不同，引用请使用自带的$\backslash$ref$\lbrace\rbrace$
+	\item[基本信息] 作者：冯洲 \href{https://github.com/zfengg}{@zfengg}. 版本信息：2019/1/23, v1.0发布在 \href{https://github.com/zfengg/HUSTtex}{HUSTtex} 仓库。 如果有任何建议及纠正，欢迎 \href{https://github.com/zfengg/HUSTtex/issues}{Issue} 或者 \href{https://github.com/zfengg/HUSTtex/pulls}{Pull request}！
+	
+	\item[必备条件]  安装最新版本的 \href{http://www.tug.org/texlive/}{TeXLive}（推荐）或 \href{http://miktex.org/}{MiKTeX}。请确保所有宏包都更新至最新。因为中文支持利用的是包\textbf{XeCJK}，所以编译器请使用 Xe\LaTeX。 编辑器推荐 \href{http://texstudio.sourceforge.net/}{TeXstudio}。 
+	此文件在 Windows, Linux, MacOS 编译通过。
+	
+	\item[章节内部及其他环境内部的格式] 请在每个环境或章节后添加 $\backslash$seccontent (5号宋体，1.5倍行距)。 例如 
+	\verb|\section\seccontent|。
+	如正文中的数字和字母要加粗，Ctrl+B即可。
+	
+	\item[图表引用] 图标的编号及题注已设计符合要求，如要引用, 请使用$\backslash$reffig$\lbrace\rbrace$ 引用图，$\backslash$reftab$\lbrace\rbrace$引用表格，以达到要求样式。
+	
+	\item[公式交叉引用] 方程的编号已调好，但是引用的格式我没有另外设计，因为引用的地方可能把公式叫法不同，引用请使用自带的$\backslash$ref$\lbrace\rbrace$。
+	
 	\item[距离控制] 这个tex文件的距离控制可能不太精细，如果有具体的标准数值请联系，作者来完善！
-	\item[页眉页脚] 页眉页脚的样式已经调好，距页边缘的应该也没错。如果知道精确的距离请邮件通知我，我马上调整，谢谢！
-	\item[超链接及书签] 利用hyperref包，每个link, cite, url已调整成超链接，点击即可到达相应位置。pdf书签及链接的样式请在头文件处根据自己的喜好修改。
-	\item[参考文献] 其实论文翻译这块给的模板并没有要求参考文献，可自行删除，但是这里提供了两种参考文献的样式：第一种Bib\TeX(\url{http://www.bibtex.org/}), 第二种直接利用环境 \verb|\thebibliography|.
-	\item[其他] 如脚标，目录，图表目录之类的已经编写完成符合要求。如果有什么特别的需要，就直接修改头文件相应内容即可。之后我也会自己敲华科毕业论文的tex, 到时候每个细节都要改进的。
+	
+	\item[页眉页脚] 页眉页脚的样式已经调好，距页边缘的应该也没错。如果知道精确的距离请\href{https://github.com/zfengg/HUSTtex/issues}{Issue}，我马上调整，谢谢！
+	\item[超链接及书签] 利用hyperref包，每个link, cite, url已调整成超链接，点击即可到达相应位置。PDF书签及链接的样式请在头文件处根据自己的喜好修改。
+	
+	\item[参考文献] 其实论文翻译这块给的模板并没有要求参考文献，可自行删除，但是这里提供了两种参考文献的样式：第一种使用\href{http://www.bibtex.org/}{BiB\TeX}\ 引用 \verb|.bib| 文件。第二种直接利用环境 \verb*|\thebibliography|。Tip：可以把使用BiB\TeX 生成的 \verb*|.bbl| 文件内容粘到 \verb*|.tex| 文件中以达到文件的独立性。
+	
+	\item[其他] 如脚标，目录，图表目录之类的，参考文献翻译没有要求，所以我就没设计，应该不会用。如果有什么特别的需要，就直接修改头文件相应内容即可。
+	
 	\item[注] 这个tex包含正文部分和封面部分，如果觉得这个封面不太好，那么把学校给的封面打印即可。
 \end{description}
+
+
+\section{随机文本测试}
+\blindtext[4]
+
 
 % ------------------------------------ 致谢 ------------------------------------ %
 \begin{thankpage}
