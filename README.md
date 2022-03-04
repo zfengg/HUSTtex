@@ -1,13 +1,13 @@
 # HUSTtex-华中科技大学本科毕业论文系列TeX模板
-A series of `LaTeX` templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology.
+A series of TeX templates for the tasks to complete the undergraduate thesis at Huazhong University of Science and Technology.
 
-## 说明
+## Usage 使用说明
 编译相应`.tex`文件就行咯~ :rocket:
-> 请使用 [**XeLaTeX**](https://en.wikipedia.org/wiki/XeTeX) 编译！！！（正常默认是 `pdflatex`？）
+> 请使用 [**XeLaTeX**](https://en.wikipedia.org/wiki/XeTeX) 编译！！！（正常默认是 `pdflatex`）
 
-推荐使用编辑器 [TeXstudio](https://www.texstudio.org/)。
+推荐使用编辑器 [TeXstudio](https://www.texstudio.org/)
 
-The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou and be sure to set the compiler as **XeLaTeX**.
+The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended and be sure to set the compiler as **XeLaTeX**.
 
 ## `.tex` 模板 `.tex` files
 - 开题报告(thesis proposal): [`HUSTproposal.tex`](HUSTproposal\HUSTproposal.tex)
@@ -15,7 +15,7 @@ The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended by Zhou 
 - 外文翻译(foreign literature translation): [`HUSTtrans.tex`](HUSTtrans/HUSTtrans.tex)
 - 论文(thesis): [`HUSTthesis.tex`](HUSTthesis/HUSTthesis.tex)
 
-以上所有`tex`文件下载即可在**XeLaTeX**编译通过（只需原生[`TeXLive`](https://www.tug.org/texlive/), [`MacTeX`](https://www.tug.org/mactex/), [`MiKTeX`](https://miktex.org/)等主流tex环境）。
+以上所有`.tex`文件下载即可在**XeLaTeX**编译通过（只需原生[`TeXLive`](https://www.tug.org/texlive/), [`MacTeX`](https://www.tug.org/mactex/), [`MiKTeX`](https://miktex.org/)等主流TeX环境）。
 
 基本没有任何其他依赖（除了很少出现的字体缺失，见下文）。示例及说明可以参考相应文件夹中的`.pdf`文档。
 
