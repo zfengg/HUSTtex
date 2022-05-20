@@ -206,6 +206,42 @@
 \titlecontents{subsubsection}[4em]{\song\xiaosihao}{\contentslabel{4em}}{\hspace*{-4em}}{\titlerule*[8pt]{.}\contentspage}
 \titlecontents{paragraph}[5em]{\song\xiaosihao}{\contentslabel{5em}}{\hspace*{-5em}}{\titlerule*[8pt]{.}\contentspage}
 
+\makeatletter
+\let\old@l@section\l@section
+\renewcommand{\l@section}[2]{%
+  \old@l@section{#1}{#2} % Regular setting of \section in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@subsection\l@subsection
+\renewcommand{\l@subsection}[2]{%
+  \old@l@subsection{#1}{#2} % Regular setting of \subsection in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@subsubsection\l@subsubsection
+\renewcommand{\l@subsubsection}[2]{%
+  \old@l@subsubsection{#1}{#2} % Regular setting of \subsubsection in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@paragraph\l@paragraph
+\renewcommand{\l@paragraph}[2]{%
+  \old@l@paragraph{#1}{#2} % Regular setting of \paragraph in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
 % ---------------------------------------------------------------------------- %
 % reference and citation 参考文献
 \usepackage{natbib}
