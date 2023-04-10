@@ -10,8 +10,8 @@ A series of TeX templates for the tasks to complete the undergraduate thesis at 
 The `TeX` editor [TeXstudio](https://www.texstudio.org/) is recommended and be sure to set the compiler as **XeLaTeX**.
 
 ## `.tex` 模板 `.tex` files
-- 开题报告(thesis proposal): [`HUSTproposal.tex`](HUSTproposal\HUSTproposal.tex)
-- 开题答辩(thesis opening report): [`HUSTopening.tex`](HUSTopening\HUSTopening.tex)
+- 开题报告(thesis proposal): [`HUSTproposal.tex`](HUSTproposal/HUSTproposal.tex)
+- 开题答辩(thesis opening report): [`HUSTopening.tex`](HUSTopening/HUSTopening.tex)
 - 外文翻译(foreign literature translation): [`HUSTtrans.tex`](HUSTtrans/HUSTtrans.tex)
 - 论文(thesis): [`HUSTthesis.tex`](HUSTthesis/HUSTthesis.tex)
 
