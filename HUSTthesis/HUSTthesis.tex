@@ -50,6 +50,14 @@
 \setCJKmonofont{SimSun} 	% monospace font for \texttt
 % \punctstyle{kaiming}  	% Remove the space used by symbols like comma. Special for the mainland students like us HUSTers.
 \setCJKfamilyfont{song}{SimSun}                       % 宋体 song
+
+%----------------If Linux Or macOS-------------------------------%
+% use the codes bellow instead
+% \setCJKmainfont[BoldFont=SimSun-Bold]{SimSun} 	% set the mainfont of Chinese as songti. (serif) for
+% \setCJKsansfont[BoldFont=SimSun-Bold]{SimSun} 	% sans serif font for \textsf
+% \setCJKmonofont[BoldFont=SimSun-Bold]{SimSun} 	% monospace font for \texttt
+% \setCJKfamilyfont{song}[BoldFont=SimSun-Bold]{SimSun}   % 宋体 song for macOS & maybe Linux
+
 \newcommand{\song}{\CJKfamily{song}}
 \setCJKfamilyfont{kai}{KaiTi}                         % 楷体  kai
 \newcommand{\kai}{\CJKfamily{kai}}
@@ -205,6 +213,42 @@
 \titlecontents{subsection}[3em]{\song\xiaosihao}{\contentslabel{3em}}{\hspace*{-3em}}{\titlerule*[8pt]{.}\contentspage}
 \titlecontents{subsubsection}[4em]{\song\xiaosihao}{\contentslabel{4em}}{\hspace*{-4em}}{\titlerule*[8pt]{.}\contentspage}
 \titlecontents{paragraph}[5em]{\song\xiaosihao}{\contentslabel{5em}}{\hspace*{-5em}}{\titlerule*[8pt]{.}\contentspage}
+
+\makeatletter
+\let\old@l@section\l@section
+\renewcommand{\l@section}[2]{%
+  \old@l@section{#1}{#2} % Regular setting of \section in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@subsection\l@subsection
+\renewcommand{\l@subsection}[2]{%
+  \old@l@subsection{#1}{#2} % Regular setting of \subsection in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@subsubsection\l@subsubsection
+\renewcommand{\l@subsubsection}[2]{%
+  \old@l@subsubsection{#1}{#2} % Regular setting of \subsubsection in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
+
+\makeatletter
+\let\old@l@paragraph\l@paragraph
+\renewcommand{\l@paragraph}[2]{%
+  \old@l@paragraph{#1}{#2} % Regular setting of \paragraph in ToC
+  \pagebreak[0] % Add a zero penalty (for possible page break)
+  \thispagestyle{main}
+  }
+\makeatother
 
 % ---------------------------------------------------------------------------- %
 % reference and citation 参考文献
@@ -618,7 +662,7 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 \phantomsection
 \addcontentsline{toc}{section}{参考文献}
 
-\bibliographystyle{plain}
+\bibliographystyle{gbt7714-numerical} %国标格式，若不使用国标，但是要按顺序引用，可以考虑 \bibliographystyle{unsrt}
 \bibliography{HUSTthesis}\label{bibtexref}
 \hongzifuzhu{第一个参考文献为使用 Bib\TeX 基于 $ \mathtt{HUSTthesis.bib} $ 生成。 如果不使用 Bib\TeX 可删除，然后只用后一个参考文献。}
 
