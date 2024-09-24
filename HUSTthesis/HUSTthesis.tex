@@ -46,6 +46,11 @@
 \usepackage{ctex}		 	% If you are lazy, the CTEX suit is enough.
 % Chinese font
 \usepackage{xeCJK}		 	% For the Chinese through XeLaTex
+\xeCJKsetup{AutoFakeBold=true, % use fake-bold when the bold font is not set priorly
+			AutoFakeSlant=true, % for fake-slant, similarly as above
+%			EmboldenFactor=4, % weight for fake-bold, default: 4
+%			SlantFactor=0.167, % angle for fake-slant, default: 0.167 in [-0.999, 0.999]
+			}
 \setCJKmainfont{SimSun} 	% set the mainfont of Chinese as songti. (serif) for
 \setCJKsansfont{SimSun} 	% sans serif font for \textsf
 \setCJKmonofont{SimSun} 	% monospace font for \texttt
@@ -607,6 +612,10 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 
 \section{随机文本测试}
 \blindtext[4]
+
+\section{其他测试}
+\subsection{粗体与斜体}
+正常，\textbf{粗体}，\textit{斜体}。
 
 
 % ------------------------------------ 致谢 ------------------------------------ %

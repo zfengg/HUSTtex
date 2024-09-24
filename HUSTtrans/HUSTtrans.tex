@@ -45,7 +45,12 @@
 %% For the fonts (style, color, size).字体的大小，颜色，以及定义常用的字号
 \usepackage{ctex}% If you are lazy, the CTEX suit is enough.
 % Chinese Font
-\usepackage{xeCJK}% For the Chinese through XeLaTex
+\usepackage{xeCJK}% For the Chinese through XeLaTeX
+\xeCJKsetup{AutoFakeBold=true, % use fake-bold when the bold font is not set priorly
+	AutoFakeSlant=true, % for fake-slant, similarly as above
+	%			EmboldenFactor=4, % weight for fake-bold, default: 4
+	%			SlantFactor=0.167, % angle for fake-slant, default: 0.167 in [-0.999, 0.999]
+}
 \setCJKmainfont{SimSun} % set the mainfont of Chinese as songti. (serif) for  
 \setCJKsansfont{SimSun} % sans serif font for \textsf
 \setCJKmonofont{SimSun} % monospace font for \texttt
@@ -400,6 +405,10 @@ $ \times\times\times\times\times\times\times\times\times\times\times\times\times
 	
 	\item[注] 这个文献翻译只包含正文部分，学校给的封面按照要求打印即可。还有参考文献原文，一般收到的是 PDF，在生成 PDF 之后，利用处理PDF的软件组合一下就好啦！
 \end{description}
+
+\section{其他测试}
+\subsection{粗体与斜体}
+正常，\textbf{粗体}，\textit{斜体}。
 
 \appendix
 \phantom{\cite{eXGuru1999,DonaldKnuth1984,Rudin}}
